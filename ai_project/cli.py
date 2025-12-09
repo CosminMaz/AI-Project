@@ -37,7 +37,7 @@ def main():
         sys.exit(1)
 
     # Limit for executing classical algorithms (DFS, BFS, etc.)
-    limit = 10
+    limit = 8
 
     final_results = run_experiment(n_size, limit)
     final_text = generate_response(n_size, final_results, limit, user_question)
