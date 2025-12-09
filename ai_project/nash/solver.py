@@ -15,3 +15,5 @@ def solve_nash_equilibrium(user_question):
     response += "Notă: Logica completă pentru această problemă va fi implementată în acest modul."
     
     return response
+
+
