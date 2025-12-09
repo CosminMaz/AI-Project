@@ -1,12 +1,13 @@
 import random
 import time
+import sys
 from contextlib import redirect_stdout
 import io
 
 
-from others import NQueensProblem, bfs, dfs, iddfs, NQueensVisualizer
-from simulated_annealing import simulated_annealing, fast_conflicts
-from mrv import solve_n_queens_mrv
+from first.nqueens.others import NQueensProblem, bfs, dfs, iddfs, NQueensVisualizer
+from first.nqueens.simulated_annealing import simulated_annealing, fast_conflicts
+from first.nqueens.mrv import solve_n_queens_mrv
 
 def run_experiment(n_size, limit):
     """
