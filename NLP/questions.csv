@@ -1,0 +1,363 @@
+question_id,source,generated_question,correct_answer
+2,IA_8.pdf_p2,Is Bazat˘a pe model ADP ( Adaptive Dynamic Programming )?,Bazat˘a pe model is ADP (Adaptive Dynamic Programming)
+3,IA_8.pdf_p2,Is F˘ar˘a model Estimarea direct˘a a utilit˘atii?,F˘ar˘a model is Estimarea direct˘a a utilit˘atii
+4,IA_8.pdf_p2,Is F˘ar˘a model diferentelor temporale?,F˘ar˘a model is diferentelor temporale
+8,IA_8.pdf_p4,"Are , Agentul nu control asupra actiunilor sale ?",", Agentul nu are control asupra actiunilor sale."
+13,IA_8.pdf_p4,Is Pasiv˘a agentulˆınvat˘a utilitatea de a fiˆın anumite st˘ari ?,Pasiv˘a is agentulˆınvat˘a utilitatea de a fiˆın anumite st˘ari.
+14,IA_8.pdf_p4,Are Agentul nu control asupra actiunilor sale . Aplicatii is robotic˘a ?,Agentul nu are control asupra actiunilor sale. Aplicatii is robotic˘a.
+15,IA_8.pdf_p4,Is Activ˘a agentul trebuie s˘aˆınvete ce s˘a fac˘a ?,Activ˘a is agentul trebuie s˘aˆınvete ce s˘a fac˘a.
+17,IA_8.pdf_p5,Is F˘ar˘a model descoper˘a politica optim˘a f˘ar˘a aˆınv˘ata modelul?,F˘ar˘a model is descoper˘a politica optim˘a f˘ar˘a aˆınv˘ata modelul
+22,IA_8.pdf_p7,Is Politica este fix˘a ˆın starea s execut˘aˆıntotdeauna actiunea π ( s )?,Politica este fix˘a is ˆın starea s execut˘aˆıntotdeauna actiunea π(s)
+23,IA_8.pdf_p7,Is Scopul ˆınvat˘a cˆat de bun˘a este politica π?,Scopul is ˆınvat˘a cˆat de bun˘a este politica π
+35,IA_8.pdf_p10,Is Inv˘atarea bazat˘a pe model Programarea dinamic˘a?,Inv˘atarea bazat˘a pe model is Programarea dinamic˘a
+44,IA_8.pdf_p12,Is ( cid 88 )?,(cid is 88)
+45,IA_8.pdf_p12,Is Jocul de table 1020 ecuatii cu 1020 necunoscute?,Jocul de table is 1020 ecuatii cu 1020 necunoscute
+49,IA_8.pdf_p14,Is Inv˘atare f˘ar˘a model Estimarea direct˘a a utilit˘atii?,Inv˘atare f˘ar˘a model is Estimarea direct˘a a utilit˘atii
+50,IA_8.pdf_p14,"Is Exemplu ⇝ ( 1,2 ) −.04 ⇝ ( 1,3 ) −.04 ⇝ ( 1,2 ) −.04 ⇝ ( 1,3 ) −.04 ⇝?","Exemplu is ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝"
+51,IA_8.pdf_p14,Is Utilitatea estimat˘a media valorilor esantionate?,Utilitatea estimat˘a is media valorilor esantionate
+60,IA_8.pdf_p17,"Is Scopul estimarea utilit˘atilor Uπ ( s ) , date episoadele generate?","Scopul is estimarea utilit˘atilor Uπ(s), date episoadele generate"
+61,IA_8.pdf_p17,"Is Dup˘a primaˆıncercare estim˘arile Uπ ( 1,3 ) =0.84 , Uπ ( 2,3 ) =0.92 ?","Dup˘a primaˆıncercare is estim˘arile Uπ(1,3)=0.84,Uπ(2,3)=0.92."
+62,IA_8.pdf_p17,"Is a douaˆıncercare tranzitia ( 1,3 ) → ( 2,3 ) ?","a douaˆıncercare is tranzitia (1,3)→(2,3)."
+66,IA_8.pdf_p18,Is Obs metoda nu are nevoie de un model de tranzitii P pentru a?,Obs is metoda nu are nevoie de un model de tranzitii P pentru a
+68,IA_8.pdf_p19,Is Diferente temporale pseudocod?,Diferente temporale is pseudocod
+69,IA_8.pdf_p19,Is Demo https : //cs.stanford.edu/people/karpathy/reinforcejs/gridworld_td.html?,Demo is https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_td.html
+71,IA_8.pdf_p20,Is Inv˘atarea diferentelor temporale exemplu?,Inv˘atarea diferentelor temporale is exemplu
+80,IA_8.pdf_p26,"Are 0.1 ▶ agentul mereu o¸sans˘a de explorare , pentru a evita optimele locale FII , UAIC Curs8 IA2025/2026 26/41?","0.1 ▶ agentul are mereu o¸sans˘a de explorare, pentru a evita optimele locale FII,UAIC Curs8 IA2025/2026 26/41"
+81,IA_8.pdf_p26,Is Dilema exploatare - explorare solutii?,Dilema exploatare - explorare is solutii
+87,IA_8.pdf_p28,What is Relatia dintre utilit˘ati si valorile Q?,"Relatia dintre utilit˘ati si valorile Q is U(s) = max Q(s,a)."
+91,IA_8.pdf_p30,Is Algoritmul Q-Learning pseudocod?,Algoritmul Q-Learning is pseudocod
+94,IA_8.pdf_p31,Is https //huggingface.co/learn/deep-rl-course/unit2/q-learning-example?,https is //huggingface.co/learn/deep-rl-course/unit2/q-learning-example
+97,IA_8.pdf_p32,Is SARSA utilizeaz˘a abordarea TD se actualizeaz˘a tabelul Q dup˘a?,SARSA utilizeaz˘a abordarea TD is se actualizeaz˘a tabelul Q dup˘a
+98,IA_8.pdf_p32,Is Exemplu aplicatie Windy Gridworld?,Exemplu aplicatie is Windy Gridworld
+99,IA_8.pdf_p32,Is http //www.incompleteideas.net/book/ebook/node64.html?,http is //www.incompleteideas.net/book/ebook/node64.html
+102,IA_8.pdf_p34,Is intrare o stare?,intrare is o stare
+103,IA_8.pdf_p34,"Is iesire o estimare a lui Q , pentru fiecare actiune posibil˘a?","iesire is o estimare a lui Q, pentru fiecare actiune posibil˘a"
+109,IA_8.pdf_p35,Is Functia de cost eroarea medie patratic˘a dintre valorea Q prezis˘a si?,Functia de cost is eroarea medie patratic˘a dintre valorea Q prezis˘a si
+110,IA_8.pdf_p35,"Is Valoarea tint˘a target ( s′ ) = r +γmax Q ( s′ , a′ )?","Valoarea tint˘a is target(s′) = r +γmax Q(s′,a′)"
+111,IA_8.pdf_p35,Is Descriere https : //deeplearningmath.org/deep-reinforcement-learning.html?,Descriere is https://deeplearningmath.org/deep-reinforcement-learning.html
+112,IA_8.pdf_p35,Is Demo https : //cs.stanford.edu/people/karpathy/reinforcejs/?,Demo is https://cs.stanford.edu/people/karpathy/reinforcejs/
+115,IA_8.pdf_p36,Is experience replay memor˘am experientele si le folosim?,experience replay is memor˘am experientele si le folosim
+118,IA_8.pdf_p37,Is Solutie o retea separat˘a pentru a estima valoarea tint˘a ?,Solutie is o retea separat˘a pentru a estima valoarea tint˘a.
+127,IA_8.pdf_p41,Is artificial Intelligence A modern Approach . Ch . 21 . Reinforcement?,Artificial Intelligence is A modern Approach. Ch. 21. Reinforcement
+128,IA_8.pdf_p41,Is http //incompleteideas.net/book/RLbook2020.pdf?,http is //incompleteideas.net/book/RLbook2020.pdf
+130,IA_3.pdf_p1,Is week 3 informed strategies and alternative problem spaces?,Week 3 is informed strategies and alternative problem spaces
+132,IA_3.pdf_p2,Is Problem finding a path in a graph?,Problem is finding a path in a graph
+134,IA_3.pdf_p4,Is common sense as good as a mathematical proof ?,Common sense is as good as a mathematical proof.
+135,IA_3.pdf_p4,Are statistical proofs hard to get and largely irrelevant ?,Statistical proofs are hard to get and largely irrelevant.
+140,IA_3.pdf_p5,"Is Heuristic function applied to any state , returns extreme and?","Heuristic is function applied to any state, returns extreme and"
+142,IA_3.pdf_p6,"Is below , h a distance ?","Below, h is a distance."
+146,IA_3.pdf_p6,Is requiring that a node included in a path ( solution ) should estimate at least as lengthy paths ?,Requiring that a node is included in a path (solution) should estimate at least as lengthy paths.
+150,IA_3.pdf_p7,"Should h always be relatively easy to compute , good enough is enough?","h should always be relatively easy to compute, good enough is enough"
+157,IA_3.pdf_p10,Is Best case gets you to the final?,Best case is gets you to the final
+158,IA_3.pdf_p10,Is Worst case DFS with bad?,Worst case is DFS with bad
+160,IA_3.pdf_p11,Is h not a distance !?,h is not a distance!
+161,IA_3.pdf_p11,"Is h ( ) = min , h ( FS ) = max h ( NewState ) ≥ h ( CurrentState ) solution?","h(IS) = min, h(FS) = max h(NewState) ≥ h(CurrentState) solution"
+165,IA_3.pdf_p12,Is Best case fastest general?,Best case is fastest general
+166,IA_3.pdf_p12,Is Worst case fails to find a?,Worst case is fails to find a
+167,IA_3.pdf_p12,Is https //www.youtube.com/watch ? v=j1H3jAAGlEA & l?,https is //www.youtube.com/watch?v=j1H3jAAGlEA&l
+172,IA_3.pdf_p14,Is http //www.cse.iitm.ac.in/~vplab/courses/optimization/SA_SEL_SLIDES.pdf?,http is //www.cse.iitm.ac.in/~vplab/courses/optimization/SA_SEL_SLIDES.pdf
+174,IA_3.pdf_p15,Should the list be re-sorted and extra states removed after every new explored state ?,The list should be re-sorted and extra states removed after every new explored state.
+178,IA_3.pdf_p16,Is https //www.redblobgames.com/pathfinding/a-star/introduction.html?,https is //www.redblobgames.com/pathfinding/a-star/introduction.html
+179,IA_3.pdf_p16,Is https //adrianstoll.com/post/a-star-pathfinding-algorithm-animation/?,https is //adrianstoll.com/post/a-star-pathfinding-algorithm-animation/
+187,IA_3.pdf_p21,"Is consistent heuristic h ( A ) ≤ h ( A , B ) + h ( B ) if B is reachable from A?","Consistent heuristic is h(A) ≤ h(A,B) + h(B) if B is reachable from A"
+192,IA_3.pdf_p22,Are ● you sure the state representation is good enough ??,● Are you sure the state representation is good enough?
+194,IA_3.pdf_p23,Is stochastic known possibilities?,Stochastic is known possibilities
+195,IA_3.pdf_p23,Is non-deterministic known?,Non-deterministic is known
+197,IA_3.pdf_p24,Is partially observable problem space you know what could happen?,Partially observable problem space is you know what could happen
+199,IA_3.pdf_p25,Is unknowable problem space you don ’ t know what could happen?,Unknowable problem space is you don’t know what could happen
+201,IA_3.pdf_p26,Is next week Constraint satisfaction problems ( Variable based models )?,Next week is Constraint satisfaction problems (Variable based models)
+205,IA_3.pdf_p27,Is week 5 Games?,Week 5 is Games
+209,IA_9.pdf_p3,Is what knowledge ??,What is knowledge?
+212,IA_9.pdf_p3,"Is intelligence asking the right question , knowledge is having the right answer ?","Intelligence is asking the right question, knowledge is having the right answer."
+214,IA_9.pdf_p4,Can Knowledge supplement a slow or insufficient intelligence ?,Knowledge can supplement a slow or insufficient intelligence.
+216,IA_9.pdf_p4,"Is Knowledge a product , not a process ( like intelligence ) , so it can be provided ready-made to the computer ?","Knowledge is a product, not a process (like intelligence), so it can be provided ready-made to the computer."
+217,IA_9.pdf_p4,"Is Knowledge built on facts , heuristics and intuition and can change ?","Knowledge is built on facts, heuristics and intuition and can change."
+219,IA_9.pdf_p4,Is example chatbot templates and the Turing test ?,Example is chatbot templates and the Turing test.
+223,IA_9.pdf_p6,Are nodes concepts ?,Nodes are concepts.
+225,IA_9.pdf_p6,Are relations semantic ?,Relations are semantic.
+227,IA_9.pdf_p6,Is greek taxis ( arrangement ) nomia ( method )?,Greek is taxis (arrangement) nomia (method)
+234,IA_9.pdf_p7,"Is x IS-A Y X is a specific type of Y , with additional properties?","X IS-A Y is X is a specific type of Y, with additional properties"
+235,IA_9.pdf_p7,"Is ● Symmetry if a bear IS-A mammal , a mammal IS-A bear ??","● Symmetry is if a bear IS-A mammal, a mammal IS-A bear?"
+236,IA_9.pdf_p7,Is ● Reflexivity bear IS-A bear ??,● Reflexivity is bear IS-A bear?
+237,IA_9.pdf_p7,"Is ● Transitivity if a black bear IS-A bear and a bear IS-A mammal , a?","● Transitivity is if a black bear IS-A bear and a bear IS-A mammal, a"
+238,IA_9.pdf_p7,Is ● Connectivity cat IS-A bear or bear IS-A cat ??,● Connectivity is cat IS-A bear or bear IS-A cat?
+242,IA_9.pdf_p8,Is how adaptable a taxonomy to new knowledge ??,How adaptable is a taxonomy to new knowledge?
+250,IA_9.pdf_p10,Is a type reference Fluffy the cat Ending point ??,a type reference is Fluffy the cat Ending point ?
+255,IA_9.pdf_p11,Is referential network part of a semantic network?,Referential network is part of a semantic network
+256,IA_9.pdf_p11,Is event defined as a set of relations with?,Event is defined as a set of relations with
+260,IA_9.pdf_p12,Is eating agent ( Fluffy ) object ( ? x )?,Eating is agent (Fluffy) object (?x)
+263,IA_9.pdf_p13,Is daemons procedures used to?,Daemons is procedures used to
+266,IA_9.pdf_p14,Is ● Antonymy opposite meaning of good - bad?,● Antonymy is opposite meaning of good - bad
+267,IA_9.pdf_p14,Is ● Hyponymy IS-A ( is a specific kind of… ) student - person?,● Hyponymy is IS-A (is a specific kind of…) student - person
+268,IA_9.pdf_p14,Is ● Meronymy part of ( is structurally included in… ) head - student?,● Meronymy is part of (is structurally included in…) head - student
+269,IA_9.pdf_p14,Is ● Troponymy identifies a manner of… whisper - speak?,● Troponymy is identifies a manner of… whisper - speak
+270,IA_9.pdf_p14,Is ● Entailment identifies requirements divorce - marriage?,● Entailment is identifies requirements divorce - marriage
+271,IA_9.pdf_p14,"Is ● Derivation related to , produced by product - factory?","● Derivation is related to, produced by product - factory"
+275,IA_9.pdf_p16,Can we build complex structures ( ontologies ) using these triplets ?,We can build complex structures (ontologies) using these triplets.
+276,IA_9.pdf_p16,"Is the complexity given by the size , local complexity is reduced ?","The complexity is given by the size, local complexity is reduced."
+278,IA_9.pdf_p16,Can we extract complex knowledge from triplets/ontologies ?,We can extract complex knowledge from triplets/ontologies.
+279,IA_9.pdf_p16,Is what the Relation between A and B ??,What is the Relation between A and B?
+280,IA_9.pdf_p16,Is with whom A/B in Relation ??,With whom is A/B in Relation?
+283,IA_9.pdf_p17,Is ontology attempt of a formal definition?,Ontology is attempt of a formal definition
+285,IA_9.pdf_p18,Is ● I a set of inferences ( rules ) over the ontology performing changes to it ?,● I is a set of inferences (rules) over the ontology performing changes to it.
+287,IA_9.pdf_p18,Is instance concept to which no other concept can be linked by IS-A ?,Instance is concept to which no other concept can be linked by IS-A.
+289,IA_9.pdf_p19,Is most common format RDF?,Most common format is RDF
+291,IA_9.pdf_p20,Is ontologies unlimited expressiveness?,Ontologies is unlimited expressiveness
+298,IA_9.pdf_p22,Is semantic web current state?,Semantic web is current state
+302,IA_9.pdf_p24,Is ● Semantic parasitism externally inferred semantics?,● Semantic parasitism is externally inferred semantics
+303,IA_9.pdf_p24,Is metaphors is “ semantic parasitism ” something positive or?,Metaphors is is “semantic parasitism” something positive or
+304,IA_9.pdf_p24,Is ● Semantic subjectivity different semantics for different contexts?,● Semantic subjectivity is different semantics for different contexts
+312,IA_9.pdf_p27,Are other worlds the same as the real world ( same complexity and capabilities ) ?,Other worlds are the same as the real world (same complexity and capabilities).
+314,IA_9.pdf_p27,Is Actual an index for the world it is uttered ?,Actual is an index for the world it is uttered.
+315,IA_9.pdf_p27,Can possible worlds not be reduced to something more basic ?,Possible worlds cannot be reduced to something more basic.
+317,IA_9.pdf_p27,Is Alternative Probabilistic reasoning?,Alternative is Probabilistic reasoning
+328,IA_4.pdf_p3,Is Sunt definite prin variabilele X cu valori din domeniul D si o?,Sunt definite prin is variabilele X cu valori din domeniul D si o
+329,IA_4.pdf_p3,Is Solutie o asignare complet˘a de valori variabilelor a.ˆı . toate?,Solutie is o asignare complet˘a de valori variabilelor a.ˆı. toate
+330,IA_4.pdf_p3,Is MaxCSP maximizeaz˘a num˘arul de constrˆangeri satisf˘acute?,MaxCSP is maximizeaz˘a num˘arul de constrˆangeri satisf˘acute
+332,IA_4.pdf_p4,Is Exemplu Colorarea unei h˘arti?,Exemplu is Colorarea unei h˘arti
+333,IA_4.pdf_p4,"Is Variabile WA , NT , Q , NSW , V , SA , T?","Variabile is WA, NT, Q, NSW, V, SA, T"
+334,IA_4.pdf_p4,"Is Domenii D = { red , green , blue }?","Domenii is D = {red,green,blue}"
+335,IA_4.pdf_p4,Is Constrˆangeri regiunile adiacente trebuie s˘a aib˘a culori diferite?,Constrˆangeri is regiunile adiacente trebuie s˘a aib˘a culori diferite
+339,IA_4.pdf_p6,Is Exemplu N-Regine?,Exemplu is N-Regine
+340,IA_4.pdf_p6,"Is Domenii { 0,1 }?","Domenii is {0,1}"
+341,IA_4.pdf_p6,Is ( cid 80 )?,(cid is 80)
+343,IA_4.pdf_p7,"Is Domenii { 1,2,3 , ... , N }?","Domenii is {1,2,3,...,N}"
+344,IA_4.pdf_p7,"Is Exprimate implicit ∀i , j non−threatening ( Q , Q )?","Exprimate implicit is ∀i,j non−threatening(Q ,Q )"
+345,IA_4.pdf_p7,"Is Exprimate explicit ( Q , Q ) ∈ { ( 1,3 ) , ( 1,4 ) , ... } ..?","Exprimate explicit is (Q ,Q ) ∈ {(1,3),(1,4),...}..."
+347,IA_4.pdf_p8,Is Exemplu Sudoku?,Exemplu is Sudoku
+348,IA_4.pdf_p8,"Is Variabile x ∈ { 1 , ... ,9 } = : N ( valorile din celulele corespunz˘atoare )?","Variabile is x ∈ {1,...,9} =: N (valorile din celulele corespunz˘atoare)"
+352,IA_4.pdf_p9,Is Exemplu Cryptarithmetic puzzle?,Exemplu is Cryptarithmetic puzzle
+353,IA_4.pdf_p9,Is Variabile F T U W R O X X X?,Variabile is F T U W R O X X X
+354,IA_4.pdf_p9,"Is Domenii { 0,1,2,3,4,5,6,7,8,9 }?","Domenii is {0,1,2,3,4,5,6,7,8,9}"
+355,IA_4.pdf_p9,"Is solution F = 1 , O = 4 , R = 8 , T = 7 , W = 3 , U = 6 ( 734+734=1468 )?","Solution is F = 1,O = 4,R = 8,T = 7,W = 3,U = 6 (734+734=1468)"
+359,IA_4.pdf_p10,Is Exemplu Job-shop scheduling?,Exemplu is Job-shop scheduling
+360,IA_4.pdf_p10,"Is Sarcini instaleaz˘a axele ( fat˘a , spate ) , fixeaz˘a rotile , strˆange piulitele?","Sarcini is instaleaz˘a axele (fat˘a, spate), fixeaz˘a rotile, strˆange piulitele"
+361,IA_4.pdf_p10,"Is Modelare variabila : sarcin˘a , valoare : timpul la careˆıncepe ( minute ) ?","Modelare is variabila: sarcin˘a, valoare: timpul la careˆıncepe (minute)."
+366,IA_4.pdf_p12,Is Exemplu planificarea orarului?,Exemplu is planificarea orarului
+369,IA_4.pdf_p13,Is Variabile x = t cursul c este programat la t?,Variabile is x = t cursul c este programat la t
+373,IA_4.pdf_p14,Is Obs multe probleme din lumea real˘a implic˘a variabile cu valori reale?,Obs is multe probleme din lumea real˘a implic˘a variabile cu valori reale
+374,IA_4.pdf_p14,Is https //www.csplib.org/Problems/?,https is //www.csplib.org/Problems/
+376,IA_4.pdf_p15,Is Probleme CSP binare fiecare constrˆangere se refer˘a la cel mult dou˘a?,Probleme CSP binare is fiecare constrˆangere se refer˘a la cel mult dou˘a
+380,IA_4.pdf_p16,Is c˘autarea ( ex Tasmania este o subproblem˘a independent˘a )?,c˘autarea (ex is Tasmania este o subproblem˘a independent˘a)
+384,IA_4.pdf_p18,"Is Starea initial˘a asignarea vid˘a , ∅?","Starea initial˘a is asignarea vid˘a, ∅"
+385,IA_4.pdf_p18,Is Functia succesor atribuie o valoare unei variabile neasignate?,Functia succesor is atribuie o valoare unei variabile neasignate
+386,IA_4.pdf_p18,Is Testarea obiectivului asignarea curent˘a este complet˘a?,Testarea obiectivului is asignarea curent˘a este complet˘a
+405,IA_4.pdf_p25,Is minimum-remaining-values ( MRV ) alege variabila cu cele mai putine?,Minimum-remaining-values (MRV) is alege variabila cu cele mai putine
+409,IA_4.pdf_p26,Is Least-constraining-value alege valoarea cea mai putin constrˆans˘a?,Least-constraining-value is alege valoarea cea mai putin constrˆans˘a
+410,IA_4.pdf_p26,Is Exemplu ce valoare alegem pentru Q ??,Exemplu is ce valoare alegem pentru Q?
+414,IA_4.pdf_p29,Is Idee actualizeaz˘a domeniul variabilelor neasignate?,Idee is actualizeaz˘a domeniul variabilelor neasignate
+425,IA_4.pdf_p36,Is Arc consistency cea mai simpl˘a form˘a de propagare ; face ca fiecare arc s˘a?,Arc consistency is cea mai simpl˘a form˘a de propagare; face ca fiecare arc s˘a
+436,IA_4.pdf_p40,Is Complexitate timp versiuni?,Complexitate timp is versiuni
+439,IA_4.pdf_p41,Is k-consistent˘a orice asignare consistent˘a a k −1 variabile poate fi?,k-consistent˘a is orice asignare consistent˘a a k −1 variabile poate fi
+441,IA_4.pdf_p42,Is Backtracking neˆıntoarcem la variabila anterioar˘a pentru a-i asigna o?,Backtracking is neˆıntoarcem la variabila anterioar˘a pentru a-i asigna o
+444,IA_4.pdf_p43,Is Idee Mentine o multime de conflicte CONFLICT SET pentru fiecare?,Idee is Mentine o multime de conflicte CONFLICT SET pentru fiecare
+446,IA_4.pdf_p44,Is Exemplu colorarea unei h˘arti?,Exemplu is colorarea unei h˘arti
+454,IA_4.pdf_p49,"Is Exemplu n = 80 , d = 2 , c = 20?","Exemplu is n = 80, d = 2, c = 20"
+457,IA_4.pdf_p50,"Is Teorem˘a dac˘a graful de constrˆangeri nu are cicluri , problema CSP poate?","Teorem˘a is dac˘a graful de constrˆangeri nu are cicluri, problema CSP poate"
+458,IA_4.pdf_p50,"Is ( Reamintim pentru problemele generale CSP , complexitatea timpˆın cazul cel?","(Reamintim is pentru problemele generale CSP, complexitatea timpˆın cazul cel"
+469,IA_4.pdf_p54,Is Selectarea variabilei alege aleator o variabil˘a conflictual˘a?,Selectarea variabilei is alege aleator o variabil˘a conflictual˘a
+472,IA_4.pdf_p56,Is Exemplu 4-Regine?,Exemplu is 4-Regine
+473,IA_4.pdf_p56,"Is Variabile Q , Q , Q , Q ( cˆate o regin˘a pentru fiecare coloan˘a )?","Variabile is Q , Q , Q , Q (cˆate o regin˘a pentru fiecare coloan˘a)"
+474,IA_4.pdf_p56,"Is Domenii D = { 1,2,3,4 } ( pe ce linie se afl˘a fiecare regin˘a )?","Domenii is D = {1,2,3,4} (pe ce linie se afl˘a fiecare regin˘a)"
+476,IA_4.pdf_p57,Is Stare 4 regine pe 4 coloane ( 44 = 256 st˘ari )?,Stare is 4 regine pe 4 coloane (44 = 256 st˘ari)
+477,IA_4.pdf_p57,Is Operatori mut˘a regina ( pe coloan˘a )?,Operatori is mut˘a regina (pe coloan˘a)
+478,IA_4.pdf_p57,Is Testarea obiectivului nu exist˘a atacuri?,Testarea obiectivului is nu exist˘a atacuri
+479,IA_4.pdf_p57,Is Evaluare h ( s ) = num˘arul de atacuri?,Evaluare is h(s) = num˘arul de atacuri
+486,IA_4.pdf_p59,Is st˘ari asign˘ari ale variabilelor?,st˘ari is asign˘ari ale variabilelor
+493,IA_4.pdf_p60,"Is solvers CP Optimizer , OR-Tools?","Solvers is CP Optimizer, OR-Tools"
+495,IA_1.pdf_p1,Is E-mail laura.cornei @ info.uaic.ro?,E-mail is laura.cornei@info.uaic.ro
+496,IA_1.pdf_p1,Is E-mail ionut.pistol @ info.uaic.ro?,E-mail is ionut.pistol@info.uaic.ro
+497,IA_1.pdf_p1,Is E-mail diana.trandabat @ info.uaic.ro?,E-mail is diana.trandabat@info.uaic.ro
+498,IA_1.pdf_p1,Is E-mail madalina.raschip @ info.uaic.ro?,E-mail is madalina.raschip@info.uaic.ro
+503,IA_1.pdf_p2,Are ● Grades given using the formula ROUND ( L * 0.4 + PP * 0.2 + E * 0.4 + B ) ?,● Grades are given using the formula ROUND(L*0.4 + PP*0.2 + E*0.4 + B).
+506,IA_1.pdf_p4,Is CS221 Artificial Intelligence : Principles and Techniques?,CS221 is Artificial Intelligence: Principles and Techniques
+508,IA_1.pdf_p5,"Is artificial Intelligence Wikipedia , Britannica , Merriam-Webster?","Artificial Intelligence is Wikipedia, Britannica, Merriam-Webster"
+509,IA_1.pdf_p5,"Is intelligence Wikipedia , Britannica , Merriam-Webster?","Intelligence is Wikipedia, Britannica, Merriam-Webster"
+512,IA_1.pdf_p8,Is this not AI?,This is not AI
+514,IA_1.pdf_p9,Is ● Chinese room : using rules equivalent to understanding ??,● Chinese room: is using rules equivalent to understanding?
+516,IA_1.pdf_p9,Is ● Turing test is an average human able to distinguish between a human?,● Turing test is is an average human able to distinguish between a human
+517,IA_1.pdf_p9,Is ● Chinese room is using rules equivalent to understanding ??,● Chinese room is is using rules equivalent to understanding?
+524,IA_1.pdf_p16,Is Connectionism vs computationalism : intelligent behaviour a consequence or a goal ??,Connectionism vs computationalism: is intelligent behaviour a consequence or a goal?
+525,IA_1.pdf_p16,Is connectionism : intelligence a product of Computationalism : intelligence is a product structure of functions?,Connectionism: intelligence is a product of Computationalism: intelligence is a product structure of functions
+526,IA_1.pdf_p16,Is Connectionism vs computationalism is intelligent?,Connectionism vs computationalism is is intelligent
+527,IA_1.pdf_p16,Is connectionism intelligence is a product of Computationalism : intelligence is a product?,Connectionism is intelligence is a product of Computationalism: intelligence is a product
+529,IA_1.pdf_p17,Is four perspectives on AI Acting humanly?,Four perspectives on AI is Acting humanly
+530,IA_1.pdf_p17,"Is capabilities NLP , knowledge?","capabilities is NLP, knowledge"
+531,IA_1.pdf_p17,Is ● Pro human intelligence is the?,● Pro is human intelligence is the
+532,IA_1.pdf_p17,Is ● Cons bird flight is the best?,● Cons is bird flight is the best
+534,IA_1.pdf_p18,Is four perspectives on AI Thinking humanly?,Four perspectives on AI is Thinking humanly
+535,IA_1.pdf_p18,Is humans artificial “ brains ” -?,humans is artificial “brains” -
+536,IA_1.pdf_p18,Is ● Pro easy to explain and?,● Pro is easy to explain and
+537,IA_1.pdf_p18,Is ● Cons do we know how?,● Cons is do we know how
+539,IA_1.pdf_p19,Is four perspectives on AI Thinking rationally?,Four perspectives on AI is Thinking rationally
+540,IA_1.pdf_p19,"Is ● Pro Easy to replicate , easy to?","● Pro is Easy to replicate, easy to"
+541,IA_1.pdf_p19,Is ● Cons Informal knowledge is?,● Cons is Informal knowledge is
+544,IA_1.pdf_p20,Is four perspectives on AI Acting rationally?,Four perspectives on AI is Acting rationally
+545,IA_1.pdf_p20,Is results rational agents with?,results is rational agents with
+546,IA_1.pdf_p20,"Is ● Pro most useful results , most?","● Pro is most useful results, most"
+547,IA_1.pdf_p20,Is ● Cons who defines the goals ??,● Cons is who defines the goals?
+554,IA_1.pdf_p21,Is ● Reactive Machines AI produces an output based on the provided current?,● Reactive Machines is AI produces an output based on the provided current
+555,IA_1.pdf_p21,"Is goal . Significant techniques rules ( deterministic or stochastic ) , neural?","goal. Significant techniques is rules (deterministic or stochastic), neural"
+556,IA_1.pdf_p21,Is ● Limited Memory AI adapts using current experiences in order to improve?,● Limited Memory is AI adapts using current experiences in order to improve
+558,IA_1.pdf_p21,"Is ● Theory of Mind AI capable of analyzing , processing and predicting the?","● Theory of Mind is AI capable of analyzing, processing and predicting the"
+559,IA_1.pdf_p21,Is ● Self Aware AI capable of setting it ’ s own goals and changing its own?,● Self Aware is AI capable of setting it’s own goals and changing its own
+562,IA_1.pdf_p24,"Should modeling An AI engine be able to describe , work with and output real-world data All models are lossy?","Modeling An AI engine should be able to describe, work with and output real-world data All models are lossy"
+564,IA_1.pdf_p26,Should an AI engine be able to adapt it ’ s model for particular contexts What is learned is at best as good as the available data?,An AI engine should be able to adapt it’s model for particular contexts What is learned is at best as good as the available data
+567,IA_1.pdf_p27,Is First approach state-based models?,First approach is state-based models
+570,IA_1.pdf_p28,Is second approach variable-based models?,Second approach is variable-based models
+573,IA_1.pdf_p29,Is weeks 2 and 3 State-based models?,Weeks 2 and 3 is State-based models
+575,IA_1.pdf_p30,Is week 4 Constraint satisfaction problems?,Week 4 is Constraint satisfaction problems
+578,IA_1.pdf_p32,Is weeks 6 Neural networks?,Weeks 6 is Neural networks
+580,IA_1.pdf_p33,Is Weeks 6-7-10 Reinforcement learning?,Weeks 6-7-10 is Reinforcement learning
+582,IA_1.pdf_p34,Is Weeks 9-11 Knowledge representation?,Weeks 9-11 is Knowledge representation
+584,IA_1.pdf_p35,Is week 12 Bayesian networks?,Week 12 is Bayesian networks
+586,IA_1.pdf_p36,Is week 13 Planning?,Week 13 is Planning
+589,IA_5.pdf_p1,Is week 5 Game theory?,Week 5 is Game theory
+590,IA_5.pdf_p2,Is what a Game ??,What is a Game?
+592,IA_5.pdf_p3,Are these puzzles ( decision problems ) and not games ( interactive decision problems ) !?,These are puzzles (decision problems) and not games (interactive decision problems)!
+597,IA_5.pdf_p6,Are ● Many games not zero-sum !?,● Many games are not zero-sum!
+601,IA_5.pdf_p6,"Is if the total at most as much as n , each player gets the written amount , otherwise nobody gets anything ?","If the total is at most as much as n, each player gets the written amount, otherwise nobody gets anything."
+604,IA_5.pdf_p7,Is ● Symmetrical games all rules and goals?,● Symmetrical games is all rules and goals
+609,IA_5.pdf_p8,"Is ● Imperfect information games card games , kriegspiel , others ?","● Imperfect information games is card games, kriegspiel, others."
+612,IA_5.pdf_p9,Is the game Tic-Tac-Toe?,The game is Tic-Tac-Toe
+618,IA_5.pdf_p14,Should how a strategy look like ??,How should a strategy look like?
+623,IA_5.pdf_p16,Should the opponent either be the maximising player ( higher score is better ) or minimising player ( lower score is better ) ?,The opponent should either be the maximising player (higher score is better) or minimising player (lower score is better).
+630,IA_5.pdf_p18,Would an exhaustive exploration require 1030 states ?,An exhaustive exploration would require 1030 states.
+631,IA_5.pdf_p18,Is ● MINIMAX predictable and assumes predictable opponents ?,● MINIMAX is predictable and assumes predictable opponents.
+651,IA_5.pdf_p27,Is if A chooses Deny ( -1+-3 ) /2 = -2 If A chooses Confess : ( 0+-2 ) /2=-1?,If A chooses Deny is (-1+-3)/2 = -2 If A chooses Confess: (0+-2)/2=-1
+655,IA_5.pdf_p28,Is strategy The decisions made by a player for all possible states in which he has to make a?,Strategy is The decisions made by a player for all possible states in which he has to make a
+656,IA_5.pdf_p29,Is Dominant strategy A strategy dominant if it always provides payoffs at least as good as any other strategy ?,Dominant strategy A strategy is dominant if it always provides payoffs at least as good as any other strategy.
+657,IA_5.pdf_p29,Is a strategy strictly dominant is the payoffs are always better than any other strategy ?,A strategy is strictly dominant is the payoffs are always better than any other strategy.
+661,IA_5.pdf_p32,Is Pareto optimality A strategy Pareto optimal if no change can be made to it in order to improve the players ’ payoff without diminishing the other players payoffs ?,Pareto optimality A strategy is Pareto optimal if no change can be made to it in order to improve the players’ payoff without diminishing the other players payoffs.
+662,IA_5.pdf_p32,"Is ( Deny/Deny ) Pareto optimal , as well as ( Deny/Confess ) and ( Confess/Deny ) ?","(Deny/Deny) is Pareto optimal, as well as (Deny/Confess) and (Confess/Deny)."
+663,IA_5.pdf_p32,Is ( Confess/Confess ) not optimal as if either player changes decision to improve outcome the outcome for the other player will decrease ?,(Confess/Confess) is not optimal as if either player changes decision to improve outcome the outcome for the other player will decrease.
+668,IA_5.pdf_p33,Is that strategy called Nash optimum or equilibrium ?,That strategy is called Nash optimum or equilibrium.
+669,IA_5.pdf_p33,Has no player a reason to change an equilibrium as long as anybody follows one ?,No player has a reason to change an equilibrium as long as anybody follows one.
+675,IA_5.pdf_p35,Are no there any equilibria ??,NO Are there any equilibria?
+679,IA_5.pdf_p37,Have the money game I n money and I want to give it to a group of m players ?,The money game I have n money and I want to give it to a group of m players.
+681,IA_5.pdf_p37,Is what the equilibrium ??,What is the equilibrium?
+682,IA_5.pdf_p38,Is no What the equilibrium ??,NO What is the equilibrium?
+685,IA_5.pdf_p39,Is what the actual equilibria ??,What is the actual equilibria?
+688,IA_5.pdf_p40,Is Equilibria reached when both choices are made with the same frequency ?,Equilibria is reached when both choices are made with the same frequency.
+689,IA_5.pdf_p41,Are mixed strategies Strategies which not pure are called mixed ?,Mixed strategies Strategies which are not pure are called mixed.
+691,IA_5.pdf_p41,"Are mixed strategies usually non-deterministic , making some random decisions ( stochastic or probabilistic ) ?","Mixed strategies are usually non-deterministic, making some random decisions (stochastic or probabilistic)."
+692,IA_5.pdf_p41,Can how we compute the equilibria for the goalkeeper game ??,How can we compute the equilibria for the goalkeeper game?
+695,IA_5.pdf_p42,Can how much you cooperate with them ??,How much can you cooperate with them?
+696,IA_5.pdf_p42,Is Minimax an equilibria for all two player zero-sum game ?,Minimax is an equilibria for all two player zero-sum game.
+697,IA_5.pdf_p42,What is A chess program implementing Minimax?,A chess program implementing Minimax is easy to defeat.
+699,IA_5.pdf_p43,Is Parrondo 's paradox There at least one winning strategy which can be built using two losing strategies alternatively ?,Parrondo's paradox There is at least one winning strategy which can be built using two losing strategies alternatively.
+702,IA_5.pdf_p43,"Have s1 : If you an even sum , add 3 ?","S1: If you have an even sum, add 3."
+704,IA_5.pdf_p43,"Have s2 : If you an odd sum , substract 1 ?","S2: If you have an odd sum, substract 1."
+706,IA_5.pdf_p43,Is Game add or substract money . Game ends if sum at or below zero ?,Game is add or substract money. Game ends if sum at or below zero.
+709,IA_5.pdf_p44,Have ● Strategies to be unpredictable is many use either random steps or select randomly?,● Strategies have to be unpredictable is many use either random steps or select randomly
+717,IA_7.pdf_p3,What is Prime¸ste feedback din partea mediului?,Prime¸ste feedback din partea mediului is cˆat de bine a actionat pentru
+721,IA_7.pdf_p5,Is Scopul de a determina agentul s˘a actioneze a.ˆı . s˘a-¸si maximizeze?,Scopul is de a determina agentul s˘a actioneze a.ˆı. s˘a-¸si maximizeze
+722,IA_7.pdf_p5,"Is Date de antrenare ( S , A , R ) Stare , Actiune , Recompens˘a?","Date de antrenare is (S,A,R) Stare, Actiune, Recompens˘a"
+724,IA_7.pdf_p6,Is Aplicatii TD-Gammon?,Aplicatii is TD-Gammon
+725,IA_7.pdf_p6,Is intrarea configuratie?,intrarea is configuratie
+726,IA_7.pdf_p6,Is iesirea o estimare a valorii pentru acea configuratie?,iesirea is o estimare a valorii pentru acea configuratie
+728,IA_7.pdf_p7,Is Aplicatii robotic˘a?,Aplicatii is robotic˘a
+729,IA_7.pdf_p7,Is AIBO ˆınvat˘a s˘a mearg˘a ’ 04 Minitaur quadrupedal robot : ˆınvat˘a?,AIBO is ˆınvat˘a s˘a mearg˘a ’04 Minitaur quadrupedal robot: ˆınvat˘a
+730,IA_7.pdf_p7,Is https //sites.google.com/view/?,https is //sites.google.com/view/
+731,IA_7.pdf_p7,Is https //www.cs.utexas.edu/users/?,https is //www.cs.utexas.edu/users/
+734,IA_7.pdf_p8,"Is 2016 a cˆastigatˆımpotriva lui Lee Sedol , juc˘ator de GO profesionist?","2016 is a cˆastigatˆımpotriva lui Lee Sedol, juc˘ator de GO profesionist"
+736,IA_7.pdf_p8,"Is 2017 a cˆastigatˆımpotriva lui Ke Jie , cel mai bun juc˘ator de GO?","2017 is a cˆastigatˆımpotriva lui Ke Jie, cel mai bun juc˘ator de GO"
+737,IA_7.pdf_p8,Is AlphaGo Zero aˆınv˘atat s˘a joace f˘ar˘a informatii din jocuri ale persoanelor?,AlphaGo Zero is aˆınv˘atat s˘a joace f˘ar˘a informatii din jocuri ale persoanelor
+741,IA_7.pdf_p10,Is Agentul primeste o recompens˘a -0.04 pentru st˘arile nonterminale ;?,Agentul primeste o recompens˘a is -0.04 pentru st˘arile nonterminale;
+743,IA_7.pdf_p11,"Is Stochastic pentru secventa ( sus , sus , dreapta , dreapta , dreapta ) , ajungemˆın?","Stochastic is pentru secventa (sus, sus, dreapta, dreapta, dreapta), ajungemˆın"
+746,IA_7.pdf_p12,Is proces Markov un model matematic pentru a descrie o secvent˘a de?,Proces Markov is un model matematic pentru a descrie o secvent˘a de
+747,IA_7.pdf_p12,Is proces Markov de ordinˆıntˆai starea curent˘a s depinde doar de?,Proces Markov de ordinˆıntˆai is starea curent˘a s depinde doar de
+753,IA_7.pdf_p13,Is proces de decizie Markov o problem˘a de decizie secvential˘a pentru un?,Proces de decizie Markov is o problem˘a de decizie secvential˘a pentru un
+760,IA_7.pdf_p14,"Is St˘ari Cool , Warm , Overheated . Actiuni : Slow , Fast . Dac˘a merge?","St˘ari is Cool, Warm, Overheated. Actiuni: Slow, Fast. Dac˘a merge"
+762,IA_7.pdf_p15,Is Exemplu arborele de c˘autare?,Exemplu is arborele de c˘autare
+772,IA_7.pdf_p17,Is Utilitate suma recompenselor pentru o secvent˘a de st˘ari ?,Utilitate is suma recompenselor pentru o secvent˘a de st˘ari.
+773,IA_7.pdf_p17,Is Calitatea unei politici utilitatea asteptat˘a a secventelor posibile de?,Calitatea unei politici is utilitatea asteptat˘a a secventelor posibile de
+774,IA_7.pdf_p17,Is Mediu stochastic putem avea o secvent˘a diferit˘a de st˘ari cˆand?,Mediu stochastic is putem avea o secvent˘a diferit˘a de st˘ari cˆand
+776,IA_7.pdf_p18,Is Exemplu politica optim˘a si valorile st˘arilor?,Exemplu is politica optim˘a si valorile st˘arilor
+784,IA_7.pdf_p21,Is Exemplu 1 γ = 0.5?,Exemplu 1 is γ = 0.5
+785,IA_7.pdf_p21,Is Exemplu 2 Quiz?,Exemplu 2 is Quiz
+790,IA_7.pdf_p22,Is ( cid 88 ) ( cid:88 )?,(cid is 88) (cid:88)
+793,IA_7.pdf_p23,Is ( cid 34 ) ( cid:35 )?,(cid is 34) (cid:35)
+798,IA_7.pdf_p24,Is Exemplu fie γ = 1 si R ( s ) = −0.04 ?,Exemplu is fie γ = 1 si R(s) = −0.04.
+800,IA_7.pdf_p25,Is Principiul Maximum Expected Utility alege actiunea care maximizeaz˘a?,Principiul Maximum Expected Utility is alege actiunea care maximizeaz˘a
+806,IA_7.pdf_p27,Is Cea mai bun˘a actiune Up ?,Cea mai bun˘a actiune is Up.
+812,IA_7.pdf_p31,Is Iterarea valorilor pseudocod?,Iterarea valorilor is pseudocod
+817,IA_7.pdf_p33,Is Exemplu Cursa?,Exemplu is Cursa
+818,IA_7.pdf_p33,Is Demo https : //courses.grainger.illinois.edu/cs440/fa2018/?,Demo is https://courses.grainger.illinois.edu/cs440/fa2018/
+824,IA_7.pdf_p36,"Is 1 . Evaluarea politicii dat˘a o politic˘a π , calculeaz˘a U =Uπi utilit˘at ile?","1. Evaluarea politicii is dat˘a o politic˘a π , calculeaz˘a U =Uπi utilit˘at ile"
+825,IA_7.pdf_p36,"Is 2. politicii calculeaz˘a o nou˘a politic˘a π , pe baza?","2. politicii is calculeaz˘a o nou˘a politic˘a π , pe baza"
+828,IA_7.pdf_p38,"Is Exemplu π ( 1,1 ) = Up , π ( 1,2 ) = Up?","Exemplu is π (1,1) = Up, π (1,2) = Up"
+833,IA_7.pdf_p40,Is Iterarea politicilor pseudocod?,Iterarea politicilor is pseudocod
+834,IA_7.pdf_p40,Is Demo https : //cs.stanford.edu/people/karpathy/reinforcejs/gridworld_dp.html?,Demo is https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_dp.html
+840,IA_7.pdf_p41,"Is Idee esantionare pentru a estima functiile utilitate U ( s ) , ∀s ?","Idee is esantionare pentru a estima functiile utilitate U (s),∀s."
+842,IA_7.pdf_p41,Is First-visit MC media sumei recompenselor obtinuteˆın urma primelor?,First-visit MC is media sumei recompenselor obtinuteˆın urma primelor
+843,IA_7.pdf_p41,Is every-visit MC media sumei recompenselor obtinute pentru toate?,Every-visit MC is media sumei recompenselor obtinute pentru toate
+847,IA_7.pdf_p42,Is Monte Carlo astept˘am pˆan˘a la terminarea episodului pentru a calcula?,Monte Carlo is astept˘am pˆan˘a la terminarea episodului pentru a calcula
+870,IA_6.pdf_p8,Is Scop estimarea parametrilor care minimizeaz˘a eroarea ( diferentaˆıntre?,Scop is estimarea parametrilor care minimizeaz˘a eroarea (diferentaˆıntre
+871,IA_6.pdf_p8,Is Scop obtinerea de informatii?,Scop is obtinerea de informatii
+874,IA_6.pdf_p9,Is Aplicatii Clasificare?,Aplicatii is Clasificare
+875,IA_6.pdf_p9,Is Exemplu identificarea speciei din care face parte o floare de iris?,Exemplu is identificarea speciei din care face parte o floare de iris
+876,IA_6.pdf_p9,Is atribute lungime si l˘atime sepale/petale?,atribute is lungime si l˘atime sepale/petale
+877,IA_6.pdf_p9,"Is clase Iris versicolor , Iris setosa , Iris virginica?","clase is Iris versicolor, Iris setosa, Iris virginica"
+879,IA_6.pdf_p10,Is Aplicatii Regresie?,Aplicatii is Regresie
+880,IA_6.pdf_p10,What is Diferenta dintre clasificare si regresie?,Diferenta dintre clasificare si regresie is tipul iesirii (discret vs. continuu)
+886,IA_6.pdf_p12,Is Intrare un vector de valori reale x?,Intrare is un vector de valori reale x
+891,IA_6.pdf_p13,Is ( cid 40 )?,(cid is 40)
+892,IA_6.pdf_p13,"Is ˆinv˘atarea unui perceptron alegerea ponderilor w , ... , w ?","ˆInv˘atarea unui perceptron is alegerea ponderilor w ,...,w ."
+894,IA_6.pdf_p14,Is Notatie simplificat˘a o intrare constant˘a x = 1 ?,Notatie simplificat˘a is o intrare constant˘a x = 1.
+895,IA_6.pdf_p14,Is ( cid 80 ) n →− →−?,(cid is 80)n →− →−
+896,IA_6.pdf_p14,Is Perceptron un neuron artificial care utilizeaz˘a functia de activare?,Perceptron is un neuron artificial care utilizeaz˘a functia de activare
+898,IA_6.pdf_p15,Is Scopul s˘a clasific˘am intr˘arileˆın 2 clase?,Scopul is s˘a clasific˘am intr˘arileˆın 2 clase
+899,IA_6.pdf_p15,Is Perceptronul un hiperplan careˆımparte spatiul vectorilor de intrare?,Perceptronul is un hiperplan careˆımparte spatiul vectorilor de intrare
+900,IA_6.pdf_p15,Is Ecuatia hiperplanului w · x = 0?,Ecuatia hiperplanului is w · x = 0
+914,IA_6.pdf_p19,Is ponderilor identific˘a vectorul de ponderi a.i . perceptronul?,ponderilor is identific˘a vectorul de ponderi a.i. perceptronul
+926,IA_6.pdf_p24,Is Regula delta utilizeaz˘a Gradient descent pentru a c˘autaˆın spatiul?,Regula delta is utilizeaz˘a Gradient descent pentru a c˘autaˆın spatiul
+927,IA_6.pdf_p24,Is 1 ( cid 88 )?,1 (cid is 88)
+933,IA_6.pdf_p25,Is gradient descent modific˘aˆın mod repetat vectorul de ponderi . La fiecare?,Gradient descent is modific˘aˆın mod repetat vectorul de ponderi. La fiecare
+940,IA_6.pdf_p27,Is ( cid 88 ) δ?,(cid is 88) δ
+945,IA_6.pdf_p29,"Is stochastic gradient descent actualizarea ponderilor incremental , calculˆand?","Stochastic gradient descent is actualizarea ponderilor incremental, calculˆand"
+953,IA_6.pdf_p32,Is Exemplu Retea antrenat˘a s˘a recunoasc˘aˆıntre 10 vocale ( ” h d ” ) ?,Exemplu is Retea antrenat˘a s˘a recunoasc˘aˆıntre 10 vocale (”h d”).
+956,IA_6.pdf_p34,Is ( cid 40 ) ( cid:40 )?,(cid is 40) (cid:40)
+958,IA_6.pdf_p35,Is Exemplu retea neuronal˘a cu functia de activare sigmoid?,Exemplu is retea neuronal˘a cu functia de activare sigmoid
+966,IA_6.pdf_p38,Is →− 1 ( cid 88 ) ( cid:88 )?,→− 1 (cid is 88) (cid:88)
+969,IA_6.pdf_p40,"Is Initializarea alege num˘arul de intr˘ari , unit˘ati ascunse si de iesire ;?","Initializarea is alege num˘arul de intr˘ari, unit˘ati ascunse si de iesire;"
+975,IA_6.pdf_p43,Is →− ( cid 88 )?,→− (cid is 88)
+986,IA_6.pdf_p50,Is Exemplu din Artificial Intelligence . A Guide to Intelligent Systems ?,Exemplu is din Artificial Intelligence. A Guide to Intelligent Systems.
+988,IA_6.pdf_p51,Is Convergenta algoritmul Backpropagation converge c˘atre un minim?,Convergenta is algoritmul Backpropagation converge c˘atre un minim
+989,IA_6.pdf_p51,"Is batch learning ponderile se actualizeaz˘a o singur˘a dat˘a , dup˘a?","batch learning is ponderile se actualizeaz˘a o singur˘a dat˘a, dup˘a"
+990,IA_6.pdf_p51,Is Avantaj rezultatele antren˘arii nu mai depind de ordineaˆın care sunt?,Avantaj is rezultatele antren˘arii nu mai depind de ordineaˆın care sunt
+995,IA_6.pdf_p53,Is weight decay include o penalitateˆın functia de eroare?,weight decay is include o penalitateˆın functia de eroare
+997,IA_6.pdf_p54,"Is dropout ˆın timpul antren˘arii , set˘am aleatoriu functiile de activare la 0?","Dropout is ˆın timpul antren˘arii, set˘am aleatoriu functiile de activare la 0"
+998,IA_6.pdf_p54,Is early stopping oprim antrenarea?,Early stopping is oprim antrenarea
+1000,IA_6.pdf_p55,Is Cross entropy pentru modele care returneaz˘a o probabilitate?,Cross entropy is pentru modele care returneaz˘a o probabilitate
+1001,IA_6.pdf_p55,Is Mean squared error pentru regresie?,Mean squared error is pentru regresie
+1003,IA_6.pdf_p56,Is Proiectarea retelelor neuronale Etape?,Proiectarea retelelor neuronale is Etape
+1004,IA_6.pdf_p56,"Is Arhitectura num˘ar de nivele si de unit˘ati pe fiecare nivel , topologie?","Arhitectura is num˘ar de nivele si de unit˘ati pe fiecare nivel, topologie"
+1005,IA_6.pdf_p56,Is Arhitecturi unidirectionale vs. recurente?,Arhitecturi is unidirectionale vs. recurente
+1006,IA_6.pdf_p56,Is Antrenare determinarea valorilor ponderilor?,Antrenare is determinarea valorilor ponderilor
+1007,IA_6.pdf_p56,Is Validare testarea modelului pe date de test?,Validare is testarea modelului pe date de test
+1008,IA_6.pdf_p56,Is https //playground.tensorflow.org/?,https is //playground.tensorflow.org/
+1016,IA_2.pdf_p1,Is week 2 models and uninformed search strategies?,Week 2 is models and uninformed search strategies
+1020,IA_2.pdf_p4,Is which larger ??,Which is larger?
+1022,IA_2.pdf_p4,Should a solution produce the correct answer for all possible instances?,A solution should produce the correct answer for all possible instances
+1023,IA_2.pdf_p4,"Is Problem We have two numbers , A and B . Which is?","Problem is We have two numbers, A and B. Which is"
+1024,IA_2.pdf_p4,"Is instance A= ? , B= ??","Instance is A=?, B=?"
+1028,IA_2.pdf_p5,Is validating a NP solution a P problem ?,Validating a NP solution is a P problem.
+1034,IA_2.pdf_p6,Can the rest be solved by a computer ?,The rest can be solved by a computer.
+1035,IA_2.pdf_p6,Is solvable NP-hard problems QSAT : is a logical proposition using?,Solvable NP-hard problems is QSAT: is a logical proposition using
+1036,IA_2.pdf_p6,Is undecideable NP-hard problems Turing Halting problem : given an?,Undecideable NP-hard problems is Turing Halting problem: given an
+1040,IA_2.pdf_p7,"Had “ If I only one hour to save the world , I would spend fifty-five minutes defining the problem , and only five minutes finding the solution. ” A.Einstein?","“If I had only one hour to save the world, I would spend fifty-five minutes defining the problem, and only five minutes finding the solution.” A.Einstein"
+1043,IA_2.pdf_p10,Have generalized Hanoi Towers We n towers with m distinct sized pieces placed on one of the towers ?,Generalized Hanoi Towers We have n towers with m distinct sized pieces placed on one of the towers.
+1046,IA_2.pdf_p11,Is state all data required to?,State is all data required to
+1051,IA_2.pdf_p15,Has there to be at least one initial state ?,There has to be at least one initial state.
+1053,IA_2.pdf_p16,Has there to be at least one final state ?,There has to be at least one final state.
+1055,IA_2.pdf_p17,Is Problem space all possible states?,Problem space is all possible states
+1056,IA_2.pdf_p18,Is what the problem now ??,What is the problem now?
+1057,IA_2.pdf_p18,Is how difficult it to solve ??,How difficult is it to solve?
+1058,IA_2.pdf_p18,Has Problem space m dimensions Final state How many states are within the space ??,Problem space has m dimensions Final state How many states are within the space?
+1059,IA_2.pdf_p18,Can how you move within the problem space ??,How can you move within the problem space?
+1065,IA_2.pdf_p20,Is no smaller piece placed atop piece k 2 ?,No smaller piece is placed atop piece k 2.
+1071,IA_2.pdf_p23,Has ● to memorise each generated state : very costly ?,● Has to memorise each generated state: very costly.
+1074,IA_2.pdf_p23,Is ● Uniform cost if options have different?,● Uniform cost is if options have different
+1077,IA_2.pdf_p24,Is ● IDS Explore only up to an increasing?,● IDS is Explore only up to an increasing
+1080,IA_2.pdf_p25,"Can ● Backtracking avoid loops WITHOUT storing visited states ● Backtracking can prune invalid branches earlier , if the order and selection of neighbours is optimal?","● Backtracking can avoid loops WITHOUT storing visited states ● Backtracking can prune invalid branches earlier, if the order and selection of neighbours is optimal"

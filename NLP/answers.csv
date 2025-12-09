@@ -1,0 +1,1085 @@
+id,source,original_text,type
+0,IA_8.pdf_p1,Reinforcement learning (II) IA 2025/2026,narrative
+1,IA_8.pdf_p2,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 2/41",narrative
+2,IA_8.pdf_p2,Bazat˘a pe model is ADP (Adaptive Dynamic Programming),diagram_extracted
+3,IA_8.pdf_p2,F˘ar˘a model is Estimarea direct˘a a utilit˘atii,diagram_extracted
+4,IA_8.pdf_p2,F˘ar˘a model is diferentelor temporale,diagram_extracted
+5,IA_8.pdf_p3,"Reinforcement learning ▶ Proces de decizie Markov ▶ ˆInv˘atare cuˆınt˘arire , ▶ ▶ Multimea de st˘ari S, Se bazeaz˘a pe procese de , multimea de actiuni A decizie Markov, dar: , , ▶ Modelul de tranzitii P(s′|s,a) ▶ Modelul de tranzitii este , , este cunoscut necunoscut ▶ ▶ Functia de recompens˘a R(s) Functia de recompens˘a este , , este cunoscut˘a necunoscut˘a ▶ Calculeaz˘a o politic˘a optim˘a ▶ ˆInvat˘a o politic˘a optim˘a , FII,UAIC Curs8 IA2025/2026 3/41",narrative
+6,IA_8.pdf_p4,"Tipuri deˆınv˘atare cuˆınt˘arire , ▶ Pasiv˘a: agentulˆınvat˘a utilitatea de a fiˆın anumite st˘ari.",narrative
+7,IA_8.pdf_p4,", Agentul execut˘a o politic˘a fix˘a si o evalueaz˘a.",narrative
+8,IA_8.pdf_p4,", Agentul nu are control asupra actiunilor sale.",narrative
+9,IA_8.pdf_p4,", , ▶ Activ˘a: agentul trebuie s˘aˆınvete ce s˘a fac˘a.",narrative
+10,IA_8.pdf_p4,", Agentul trebuie s˘a exploreze mediul si s˘a utilizeze informatiaˆınv˘atat˘a.",narrative
+11,IA_8.pdf_p4,", , , Agentulˆısi actualizeaz˘a politica pe m˘asur˘a ceˆınvat˘a.",narrative
+12,IA_8.pdf_p4,", , FII,UAIC Curs8 IA2025/2026 4/41",narrative
+13,IA_8.pdf_p4,Pasiv˘a is agentulˆınvat˘a utilitatea de a fiˆın anumite st˘ari.,diagram_extracted
+14,IA_8.pdf_p4,Agentul nu are control asupra actiunilor sale. Aplicatii is robotic˘a.,diagram_extracted
+15,IA_8.pdf_p4,Activ˘a is agentul trebuie s˘aˆınvete ce s˘a fac˘a.,diagram_extracted
+16,IA_8.pdf_p5,"Tipuri deˆınv˘atare cuˆınt˘arire , ▶ Bazat˘a pe model ▶ ˆınvat˘a modelul de tranzitii si recompense, si , , , , ▶ ˆıl foloseste pentru a descoperi politica optim˘a , ▶ F˘ar˘a model: descoper˘a politica optim˘a f˘ar˘a aˆınv˘ata modelul , FII,UAIC Curs8 IA2025/2026 5/41",narrative
+17,IA_8.pdf_p5,F˘ar˘a model is descoper˘a politica optim˘a f˘ar˘a aˆınv˘ata modelul,diagram_extracted
+18,IA_8.pdf_p6,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 6/41",narrative
+22,IA_8.pdf_p7,"ˆ Inv˘atarea pasiv˘a , ▶ Politica este fix˘a: ˆın starea s execut˘aˆıntotdeauna actiunea π(s) , ▶ Scopul: ˆınvat˘a cˆat de bun˘a este politica π , ▶ ˆınvat˘a utilitatea Uπ(s) , cum?",narrative
+23,IA_8.pdf_p7,"execut˘a politica siˆınvat˘a din experient˘a , , , ▶ abordare similar˘a cu pasul (1) de evaluare a politicii din cadrul algoritmului Iterarea politicilor; diferenta: nu cunoastem modelul de , , tranzitii P(s′|s,a) si nici R(s) , , ▶ ˆInv˘atarea pasiv˘a este o modalitate de explorare a mediului.",narrative
+24,IA_8.pdf_p7,", FII,UAIC Curs8 IA2025/2026 7/41",narrative
+25,IA_8.pdf_p7,Politica este fix˘a is ˆın starea s execut˘aˆıntotdeauna actiunea π(s),diagram_extracted
+26,IA_8.pdf_p7,Scopul is ˆınvat˘a cˆat de bun˘a este politica π,diagram_extracted
+27,IA_8.pdf_p7,algoritmului Iterarea politicilor; diferenta is nu cunoastem modelul de,diagram_extracted
+28,IA_8.pdf_p8,"ˆ Inv˘atarea pasiv˘a , ▶ Agentul execut˘a o serie deˆıncerc˘ari (trials) (1,1)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(2,3)−.04 ⇝ (3,3)−.04 ⇝(4,3)+1 (1,1)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(2,3)−.04 ⇝(3,3)−.04 ⇝(3,2)−.04 ⇝ (3,3)−.04 ⇝(4,3)+1 (1,1)−.04 ⇝(2,1)−.04 ⇝(3,1)−.04 ⇝(3,2)−.04 ⇝(4,2)−1 ▶ Politica este aceeasi, dar mediul este nedeterminist , ▶ Scopul este s˘aˆınvete utilitatea asteptat˘a Uπ(s) = E [ (cid:80)∞ γtR(S )] , , t=0 t FII,UAIC Curs8 IA2025/2026 8/41",narrative
+29,IA_8.pdf_p8,▶ Uπ(s) (cid is 80)∞ γtR(S,diagram_extracted
+30,IA_8.pdf_p9,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 9/41",narrative
+34,IA_8.pdf_p10,"ˆ Inv˘atarea bazat˘a pe model: Programarea dinamic˘a , adaptiv˘a (ADP) 1.",narrative
+35,IA_8.pdf_p10,"ˆInv˘at˘am modelul de tranzitii , , Estim˘am P(s′|s,π(s)) si R(s) dinˆıncerc˘ari.",narrative
+36,IA_8.pdf_p10,", Utiliz˘am un tabel de probabilit˘ati.",narrative
+37,IA_8.pdf_p10,"Estim˘am probabilitatea de , tranzitie.",narrative
+38,IA_8.pdf_p10,Cˆat de des apare rezultatul unei actiuni?,narrative
+39,IA_8.pdf_p10,", , Exemplu: (1,1)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(2,3)−.04 ⇝(3,3)−.04 ⇝(4,3)+1 (1,1)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(2,3)−.04 ⇝(3,3)−.04 ⇝(3,2)−.04 ⇝(3,3)−.04 ⇝(4,3)+1 (1,1)−.04 ⇝(2,1)−.04 ⇝(3,1)−.04 ⇝(3,2)−.04 ⇝(4,2)−1 Actiunea Right este executat˘a de 3 oriˆın starea (1,3) siˆın 2 cazuri , , starea care rezult˘a este (2,3) =⇒ P((2,3)|(1,3),Right) = 2/3 2.",narrative
+40,IA_8.pdf_p10,"Rezolv˘am MDP FII,UAIC Curs8 IA2025/2026 10/41",narrative
+41,IA_8.pdf_p10,Inv˘atarea bazat˘a pe model is Programarea dinamic˘a,diagram_extracted
+42,IA_8.pdf_p11,Programarea dinamic˘a adaptiv˘a (ADP) 1.,narrative
+43,IA_8.pdf_p11,"ˆInv˘atarea modelului empiric , Exemplu: FII,UAIC Curs8 IA2025/2026 11/41",narrative
+44,IA_8.pdf_p12,Programarea dinamic˘a adaptiv˘a 2.,narrative
+45,IA_8.pdf_p12,Utiliz˘am programarea dinamic˘a pentru rezolvarea procesului de decizie Markov.,narrative
+46,IA_8.pdf_p12,"Probabilit˘atile si recompenseleˆınv˘atate se introducˆın ecuatiile , , , , Bellman (politica fix˘a).",narrative
+47,IA_8.pdf_p12,"(cid:88) Uπ(s) = R(s)+γ P(s′|s,π(s))Uπ(s′) s′ Se rezolv˘a sistemul de ecuatii liniare cu necunoscutele Uπ(s).",narrative
+48,IA_8.pdf_p12,", ADP este ineficient˘a dac˘a spatiul st˘arilor este mare.",narrative
+49,IA_8.pdf_p12,", ▶ Sistem de ecuatii liniare de ordin n , ▶ Jocul de table: 1020 ecuatii cu 1020 necunoscute , FII,UAIC Curs8 IA2025/2026 12/41",narrative
+50,IA_8.pdf_p12,(cid is 88),diagram_extracted
+51,IA_8.pdf_p12,Jocul de table is 1020 ecuatii cu 1020 necunoscute,diagram_extracted
+52,IA_8.pdf_p13,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 13/41",narrative
+56,IA_8.pdf_p14,"ˆ Inv˘atare f˘ar˘a model: Estimarea direct˘a a utilit˘atii , , ▶ Utilitatea unei st˘ari este recompensa total˘a asteptat˘a de la acea stare , ˆınainte (reward-to-go) Exemplu: (1,1)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝ (2,3)−.04 ⇝(3,3)−.04 ⇝(4,3)+1 (1,1)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(2,3)−.04 ⇝(3,3)−.04 ⇝(3,2)−.04 ⇝ (3,3)−.04 ⇝(4,3)+1 (1,1)−.04 ⇝(2,1)−.04 ⇝(3,1)−.04 ⇝(3,2)−.04 ⇝(4,2)−1 Primaˆıncercare produce: ▶ starea (1,1) recompensa total˘a 0.72 (1 - .04 x 7) ▶ starea (1,2) dou˘a recompense totale 0.76 si 0.84 , ▶ starea (1,3) dou˘a recompense totale 0.80 si 0.88, ... , ▶ Utilitatea estimat˘a: media valorilor esantionate , ▶ U(1,1) = 0.72, U(1,2) = 0.80, U(1,3) = 0.84 etc.",narrative
+57,IA_8.pdf_p14,"FII,UAIC Curs8 IA2025/2026 14/41",narrative
+58,IA_8.pdf_p14,Inv˘atare f˘ar˘a model is Estimarea direct˘a a utilit˘atii,diagram_extracted
+59,IA_8.pdf_p14,"Exemplu is ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝(1,2)−.04 ⇝(1,3)−.04 ⇝",diagram_extracted
+60,IA_8.pdf_p14,Utilitatea estimat˘a is media valorilor esantionate,diagram_extracted
+61,IA_8.pdf_p15,"Estimarea direct˘a a utilit˘atii , ▶ Presupune c˘a utilit˘atile sunt independente (fals).",narrative
+62,IA_8.pdf_p15,", Nu tine cont de faptul c˘a utilitatea unei st˘ari depinde de utilit˘atile , , st˘arilor succesoare (constrˆangerile date de ecuatiile Bellman) , (cid:88) Uπ(s) = R(s)+γ P(s′|s,π(s))Uπ(s′) s′ ▶ c˘autareaˆıntr-un spatiu mult mai mare , ▶ convergenta este foarte lent˘a , ▶ Avem toate episoadele dinainte FII,UAIC Curs8 IA2025/2026 15/41",narrative
+64,IA_8.pdf_p16,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 16/41",narrative
+68,IA_8.pdf_p17,"ˆ Inv˘atarea diferentelor temporale (Temporal Differences) , , ▶ Combin˘a avantajele abord˘arilor Programarea dinamic˘a adaptiv˘a si , Estimarea direct˘a a utilit˘atii , ▶ satisface aproximativ ecuatiile Bellman , ▶ actualizeaz˘a doar st˘arile direct afectate ▶ Scopul: estimarea utilit˘atilor Uπ(s), date episoadele generate , utilizˆand politica π; actiunile sunt decise de politica π. , ▶ Utilit˘atile sunt ajustate dup˘a fiecare tranzitie observat˘a.",narrative
+69,IA_8.pdf_p17,", , Exemplu: ▶ Dup˘a primaˆıncercare: estim˘arile Uπ(1,3)=0.84,Uπ(2,3)=0.92.",narrative
+70,IA_8.pdf_p17,"▶ ˆIn a douaˆıncercare: tranzitia (1,3)→(2,3).",narrative
+71,IA_8.pdf_p17,", Constrˆangerea dat˘a de ecuatia Bellman impune actualizarea Uπ(1,3).",narrative
+72,IA_8.pdf_p17,", FII,UAIC Curs8 IA2025/2026 17/41",narrative
+73,IA_8.pdf_p17,"Scopul is estimarea utilit˘atilor Uπ(s), date episoadele generate",diagram_extracted
+74,IA_8.pdf_p17,"Dup˘a primaˆıncercare is estim˘arile Uπ(1,3)=0.84,Uπ(2,3)=0.92.",diagram_extracted
+75,IA_8.pdf_p17,"a douaˆıncercare is tranzitia (1,3)→(2,3).",diagram_extracted
+76,IA_8.pdf_p18,"ˆ Inv˘atarea diferentelor temporale , , ▶ Ecuatia diferentelor temporale utilizeaz˘a diferenta utilit˘atilorˆıntre , , , , st˘ari succesive: Uπ(s) ← Uπ(s)+α(R(s)+γUπ(s′)−Uπ(s)) α rata deˆınv˘atare , Actualizarea implic˘a doar starea urm˘atoare s′, pe cˆand conditiile de , echilibru (ec.",narrative
+77,IA_8.pdf_p18,Bellman) implic˘a toate st˘arile urm˘atoare posibile.,narrative
+78,IA_8.pdf_p18,"▶ Metoda aplic˘a o serie de corectii pentru a converge , ▶ Obs: metoda nu are nevoie de un model de tranzitii P pentru a , realiza actualiz˘arile FII,UAIC Curs8 IA2025/2026 18/41",narrative
+79,IA_8.pdf_p18,Obs is metoda nu are nevoie de un model de tranzitii P pentru a,diagram_extracted
+80,IA_8.pdf_p19,"Diferente temporale: pseudocod , Demo: https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_td.html FII,UAIC Curs8 IA2025/2026 19/41",narrative
+81,IA_8.pdf_p19,Diferente temporale is pseudocod,diagram_extracted
+82,IA_8.pdf_p19,Demo is https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_td.html,diagram_extracted
+83,IA_8.pdf_p20,"ˆ Inv˘atarea diferentelor temporale: exemplu , , FII,UAIC Curs8 IA2025/2026 20/41",narrative
+84,IA_8.pdf_p20,Inv˘atarea diferentelor temporale is exemplu,diagram_extracted
+85,IA_8.pdf_p21,"ˆ Inv˘atarea diferentelor temporale , , ▶ Rata deˆınv˘atare α determin˘a viteza de convergent˘a la utilitatea real˘a , , ▶ Valoarea medie a Uπ(s) va converge la valoarea corect˘a ▶ suficienteˆıncerc˘ari, tranzitiile rare apar rar , ▶ dac˘a α este o functie care scade pe m˘asur˘a ce nr.",narrative
+86,IA_8.pdf_p21,"de vizit˘ari ale unei , st˘ari creste, atunci Uπ(s) converge la valoarea corect˘a , ▶ functia α(n)=1/n sau α(n)=1/(1+n)∈(0,1] , FII,UAIC Curs8 IA2025/2026 21/41",narrative
+87,IA_8.pdf_p22,"Diferente temporale vs. Programare dinamic˘a adaptiv˘a , ▶ TD nu are nevoie de model, ADP este bazat˘a pe model ▶ TD utilizeaz˘a doar succesorul observat pentru actualizare si nu toti , , succesorii ▶ TD converge mai lent, dar execut˘a calcule mai simple ▶ TD poate fi v˘azut ca o aproximare a ADP FII,UAIC Curs8 IA2025/2026 22/41",narrative
+88,IA_8.pdf_p23,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 23/41",narrative
+92,IA_8.pdf_p24,"ˆ Inv˘atarea pasiv˘a vs. ˆınv˘atarea activ˘a , , ▶ Agentul pasiv are o politic˘a fix˘a vs. agentul activ trebuie s˘a decid˘a actiunile , ▶ Agentul pasivˆınvat˘a (probabilit˘atile tranzitiilor si) utilit˘atile st˘arilor si , , , , , , alege actiunile optime , vs. Agentul activˆısi actualizeaz˘a politica pe m˘asur˘a ceˆınvat˘a , , ▶ scopul este s˘aˆınvete politica optim˘a , ▶ ˆıns˘a, functia utilitate nu este cunoscut˘a decˆat aproximativ , FII,UAIC Curs8 IA2025/2026 24/41",narrative
+93,IA_8.pdf_p25,"Exploatare vs. explorare Dilema exploatare-explorare a agentului ▶ s˘aˆısi maximizeze utilitatea, pe baza cunostintelor curente, sau , , , ▶ s˘aˆısiˆımbun˘at˘ateasc˘a cunostintele , , , , Este necesar un compromisˆıntre ▶ exploatare ▶ agentul opresteˆınv˘atarea si execut˘a actiunile date de politic˘a , , , , ▶ explorare ▶ agentulˆınvat˘aˆıncercˆand actiuni noi , , FII,UAIC Curs8 IA2025/2026 25/41",narrative
+94,IA_8.pdf_p26,"Dilema exploatare - explorare: solutii , Metoda ϵ-greedy ▶ Fie ϵ ∈ [0,1] ▶ Actiunea urm˘atoare selectat˘a va fi: , ▶ o actiune aleatoare, cu probabilitatea ϵ , ▶ actiunea optim˘a, cu probabilitatea 1−ϵ , ▶ Implementare ▶ initial ϵ=1 (explorare) , ▶ cˆand se termin˘a un episod deˆınv˘atare, ϵ scade (de ex.",narrative
+95,IA_8.pdf_p26,"cu 0.05) - cre¸ste , progresiv rata de exploatare ▶ ϵ nu scade niciodat˘a sub un prag, de ex.",narrative
+96,IA_8.pdf_p26,"0.1 ▶ agentul are mereu o¸sans˘a de explorare, pentru a evita optimele locale FII,UAIC Curs8 IA2025/2026 26/41",narrative
+97,IA_8.pdf_p26,Dilema exploatare - explorare is solutii,diagram_extracted
+98,IA_8.pdf_p27,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 27/41",narrative
+102,IA_8.pdf_p28,"Algoritmul Q-Learning (Watkins, 1989) ▶ ˆInvat˘a o functie actiune-valoare Q(s,a) (Q quality).",narrative
+103,IA_8.pdf_p28,", , , Q(s,a) valoarea asociat˘a realiz˘arii actiunii aˆın starea s. , Relatia dintre utilit˘ati si valorile Q: U(s) = max Q(s,a).",narrative
+104,IA_8.pdf_p28,", , , a ▶ Ecuatiile adev˘arate la echilibru cˆand valorile Q sunt corecte , (cid:88) Q(s,a) = R(s)+γ P(s′|s,a)max Q(s′,a′) a′ s′ Acestea pot fi utilizateˆıntr-un proces iterativ care calculeaz˘a valorile Q exacte.",narrative
+105,IA_8.pdf_p28,"FII,UAIC Curs8 IA2025/2026 28/41",narrative
+106,IA_8.pdf_p28,"Relatia dintre utilit˘ati si valorile Q is U(s) = max Q(s,a).",diagram_extracted
+108,IA_8.pdf_p29,"Algoritmul Q-Learning ▶ Un agent TD careˆınvat˘a o functie Q nu are nevoie de un model , , probabilist P(s′|s,a) (ˆınv˘atare f˘ar˘a model).",narrative
+109,IA_8.pdf_p29,", ▶ Pentru fiecare esantion (s,a,s′,r), se actualizeaz˘a valoarea Q. , Ecuatia de actualizare pentru TD Q-Learning: , Q(s,a) = Q(s,a)+α(R(s)+γmax Q(s′,a′)−Q(s,a)) a′ (executˆand actiunea aˆın starea s rezult˘a s′) , Coeficientul deˆınv˘atare α determin˘a viteza de actualizare a , estim˘arilor; de obicei, α ∈ (0,1) FII,UAIC Curs8 IA2025/2026 29/41",narrative
+110,IA_8.pdf_p30,"Algoritmul Q-Learning: pseudocod f functie de explorare , ▶ Q-learning converge la o politic˘a optim˘a ▶ Q-Learning este mai lent decˆat ADP FII,UAIC Curs8 IA2025/2026 30/41",narrative
+111,IA_8.pdf_p30,Algoritmul Q-Learning is pseudocod,diagram_extracted
+112,IA_8.pdf_p31,"Q-learning Exemplul 1 Q(C,Stop)=?,Q(C,Go)=?",narrative
+113,IA_8.pdf_p31,"Exemplul 2 https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example FII,UAIC Curs8 IA2025/2026 31/41",narrative
+114,IA_8.pdf_p31,https is //huggingface.co/learn/deep-rl-course/unit2/q-learning-example,diagram_extracted
+115,IA_8.pdf_p32,"SARSA ▶ Ecuatia de actualizare , Q(s,a) = Q(s,a)+α(R(s)+γQ(s′,a′)−Q(s,a)) (s′,a′) perechea (starea urm˘atoare, actiunea urm˘atoare) , SARSA utilizeaz˘a abordarea TD: se actualizeaz˘a tabelul Q dup˘a fiecare pas pˆan˘a cand solutia converge/nr.",narrative
+116,IA_8.pdf_p32,", , ▶ Exemplu aplicatie: Windy Gridworld , http://www.incompleteideas.net/book/ebook/node64.html FII,UAIC Curs8 IA2025/2026 32/41",narrative
+117,IA_8.pdf_p32,SARSA utilizeaz˘a abordarea TD is se actualizeaz˘a tabelul Q dup˘a,diagram_extracted
+118,IA_8.pdf_p32,Exemplu aplicatie is Windy Gridworld,diagram_extracted
+119,IA_8.pdf_p32,http is //www.incompleteideas.net/book/ebook/node64.html,diagram_extracted
+120,IA_8.pdf_p33,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 33/41",narrative
+124,IA_8.pdf_p34,"Deep Reinforcement Learning Utilizeaz˘a o retea neural˘a (profund˘a) pentru a aproxima valorile Q , ▶ intrare: o stare iesire: o estimare a lui Q, pentru fiecare actiune posibil˘a , , FII,UAIC Curs8 IA2025/2026 34/41",narrative
+125,IA_8.pdf_p34,intrare is o stare,diagram_extracted
+126,IA_8.pdf_p34,"iesire is o estimare a lui Q, pentru fiecare actiune posibil˘a",diagram_extracted
+127,IA_8.pdf_p35,Deep Reinforcement Learning ▶ Consider˘am ec.,narrative
+128,IA_8.pdf_p35,de actualizare a valorii Q (derivat˘a din ec.,narrative
+129,IA_8.pdf_p35,"Bellman): Q(s,a) = Q(s,a)+α[r +γmax Q(s′,a′)−Q(s,a)] a′ = (1−α)Q(s,a)+α[r +γmax Q(s′,a′)] a′ ▶ Functia de cost: eroarea medie patratic˘a dintre valorea Q prezis˘a si , , valorea tint˘a Q∗ (nu se cunoaste).",narrative
+130,IA_8.pdf_p35,", , Valoarea tint˘a: target(s′) = r +γmax Q(s′,a′) , a′ Minimiz˘am loss(s,a,s′) = (Q(s,a)−target(s′))2.",narrative
+131,IA_8.pdf_p35,"▶ Utiliz˘am metoda Gradient descent pentru a optimiza functia de cost , Descriere: https://deeplearningmath.org/deep-reinforcement-learning.html Demo: https://cs.stanford.edu/people/karpathy/reinforcejs/ FII,UAIC Curs8 IA2025/2026 35/41",narrative
+132,IA_8.pdf_p35,Functia de cost is eroarea medie patratic˘a dintre valorea Q prezis˘a si,diagram_extracted
+133,IA_8.pdf_p35,"Valoarea tint˘a is target(s′) = r +γmax Q(s′,a′)",diagram_extracted
+134,IA_8.pdf_p35,Descriere is https://deeplearningmath.org/deep-reinforcement-learning.html,diagram_extracted
+135,IA_8.pdf_p35,Demo is https://cs.stanford.edu/people/karpathy/reinforcejs/,diagram_extracted
+136,IA_8.pdf_p36,"Deep Q-learning Probleme: ▶ esantioanele sunt corelate → reteaua nu poate generaliza , , ▶ target(s′) este o estimare → convergent˘a lent˘a/alg.",narrative
+137,IA_8.pdf_p36,"nu e stabil , Solutii: , ▶ ϵ-greedy policy ▶ experience replay: memor˘am experientele (s,a,r,s′) si le folosim , , pentru antrenare (mini-batch) FII,UAIC Curs8 IA2025/2026 36/41",narrative
+138,IA_8.pdf_p36,experience replay is memor˘am experientele si le folosim,diagram_extracted
+139,IA_8.pdf_p37,"Double Deep Q-network ▶ Valoarea tint˘a se modific˘a la fiecare iteratie; , , Solutie: o retea separat˘a pentru a estima valoarea tint˘a.",narrative
+140,IA_8.pdf_p37,", , , ▶ la fiecare C iteratii, parametrii din reteaua de predictie sunt copiatiˆın , , , , reteaua tint˘a , , FII,UAIC Curs8 IA2025/2026 37/41",narrative
+141,IA_8.pdf_p37,Solutie is o retea separat˘a pentru a estima valoarea tint˘a.,diagram_extracted
+142,IA_8.pdf_p38,"Function approximation Uˆ (s) = θ f (s)+θ f (s)+...θ f (s) θ 1 1 2 2 n n f ,...f atribute 1 n ˆInvat˘a valorile parametrilor θ = θ ,...θ a.i.",narrative
+143,IA_8.pdf_p38,"functia Uˆ aproximeaz˘a , 1 n , θ functia utilitate.",narrative
+144,IA_8.pdf_p38,", ▶ actualizeaz˘a parametrii dup˘a fiecareˆıncercare ▶ Functie de eroare , E (s) = (Uˆ (s)−u (s))2/2 j θ j u (s) recompensa total˘a observat˘a din starea s pentruˆıncercarea j j Calcul˘am gradientiiˆın raport cu θ. , δE (s) δUˆ (s) θ ← θ −α j = θ +α(u (s)−Uˆ (s)) θ i i i j θ δθ δθ i i ▶ putere de generalizare (st˘ari vizitate → st˘ari nevizitate) FII,UAIC Curs8 IA2025/2026 38/41",narrative
+145,IA_8.pdf_p39,"Con¸tinut Introducere ˆInv˘atarea pasiv˘a , Bazat˘a pe model: ADP (Adaptive Dynamic Programming) F˘ar˘a model: Estimarea direct˘a a utilit˘atii , F˘ar˘a model: ˆInv˘atarea diferentelor temporale , , ˆInv˘atarea activ˘a , Q-learning Deep Q-learning Concluzii FII,UAIC Curs8 IA2025/2026 39/41",narrative
+149,IA_8.pdf_p40,"Concluzii ▶ ˆInv˘atarea cuˆınt˘arire este necesar˘a pentru agentii care evolueaz˘aˆın , , medii necunoscute ▶ ˆInv˘atarea pasiv˘a presupune evaluarea unei politici date , ▶ ˆInv˘atarea activ˘a presupuneˆınv˘atarea unei politici optime , , FII,UAIC Curs8 IA2025/2026 40/41",narrative
+150,IA_8.pdf_p41,Bibliografie ▶ Artificial Intelligence: A modern Approach.,narrative
+151,IA_8.pdf_p41,Reinforcement Learning ▶ Sutton&Barto.,narrative
+152,IA_8.pdf_p41,"An introduction http://incompleteideas.net/book/RLbook2020.pdf FII,UAIC Curs8 IA2025/2026 41/41",narrative
+153,IA_8.pdf_p41,Artificial Intelligence is A modern Approach. Ch. 21. Reinforcement,diagram_extracted
+154,IA_8.pdf_p41,http is //incompleteideas.net/book/RLbook2020.pdf,diagram_extracted
+155,IA_3.pdf_p1,"Artificial Intelligence 3rd year, 1st semester State based models for decision problems Week 3: informed strategies and alternative problem spaces “In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing.” Theodore Roosevelt",narrative
+156,IA_3.pdf_p1,Week 3 is informed strategies and alternative problem spaces,diagram_extracted
+157,IA_3.pdf_p2,Let’s find a NP-complete problem and a computer able to solve it Problem: finding a path in a graph Describing a model - reducing a problem • describe a state • identify special states and the problem space • describe the transitions and validate them • specify a search strategy,narrative
+158,IA_3.pdf_p2,Problem is finding a path in a graph,diagram_extracted
+159,IA_3.pdf_p3,Search strategies ● Uninformed - no distinction between states ○ Random ○ BFS and Uniform Cost ○ DFS and Iterative Deepening ○ Backtracking ○ Bidirectional ● Informed - heuristics to help distinguish between states ○ Greedy best-first ○ Hillclimbing and Simulated Annealing ○ Beam search ○ A* and IDA*,narrative
+160,IA_3.pdf_p4,Common sense is as good as a mathematical proof.,narrative
+161,IA_3.pdf_p4,Statistical proofs are hard to get and largely irrelevant.,narrative
+162,IA_3.pdf_p4,"Brute force (search) is great, but intelligence is faster.",narrative
+163,IA_3.pdf_p5,Finding a relevant heuristic A heuristic should direct the search towards the goal.,narrative
+164,IA_3.pdf_p5,"Heuristic: function applied to any state, returns extreme and opposing values for all initial state(s) and for at least one final state(s).",narrative
+165,IA_3.pdf_p5,"h: S -> [min, max], h(IS) = min/max, h(FS) = max/min",narrative
+166,IA_3.pdf_p5,"Heuristic is function applied to any state, returns extreme and",diagram_extracted
+167,IA_3.pdf_p6,"Types of heuristics If h(IS) = max, h(FS) = 0, h is a distance.",narrative
+168,IA_3.pdf_p6,"Below, h is a distance.",narrative
+169,IA_3.pdf_p6,"If h(S) <= shortest_path(S,FS), h is admissible.",narrative
+170,IA_3.pdf_p6,An admissible heuristic never overestimates the shortest path in the problem space between a state and the goal.,narrative
+171,IA_3.pdf_p6,"If h(A) ≤ h(A,B) + h(B) if B is reachable from A, h is consistent.",narrative
+172,IA_3.pdf_p6,Requiring that a node is included in a path (solution) should estimate at least as lengthy paths.,narrative
+173,IA_3.pdf_p7,"Lets try finding a heuristic For Hanoi Towers: ● Number of pieces on the goal tower ● If starting tower is 1 and goal is n, sum of all values in a state ● ?",narrative
+174,IA_3.pdf_p7,For Sliding Puzzle: ● Number of pieces placed correctly For chess: ● How many pieces I have - how many pieces has the opponent?,narrative
+175,IA_3.pdf_p7,● A maximal value - number of moves available to the opponent?,narrative
+176,IA_3.pdf_p7,"h should always be relatively easy to compute, good enough is enough",narrative
+177,IA_3.pdf_p8,Three way of looking at solutions path in a graph path in a space heuristic function graph h(S) solution,narrative
+178,IA_3.pdf_p9,Greedy (best-first) Evaluate all unexplored states accessible from the current state.,narrative
+179,IA_3.pdf_p9,Select the unexplored state closer to the goal (best score according to a heuristic).,narrative
+180,IA_3.pdf_p10,"Greedy evaluation Best case: gets you to the final state much quicker than DFS, ?",narrative
+181,IA_3.pdf_p10,doesn’t guarantee optimal solution.,narrative
+182,IA_3.pdf_p10,Worst case: DFS with bad choices.,narrative
+183,IA_3.pdf_p10,Best case is gets you to the final,diagram_extracted
+184,IA_3.pdf_p10,Worst case is DFS with bad,diagram_extracted
+185,IA_3.pdf_p11,h(S) Hillclimbing Select one accessible state which is at least as close to the final state as the current one.,narrative
+186,IA_3.pdf_p11,h is not a distance!,narrative
+187,IA_3.pdf_p11,"h(IS) = min, h(FS) = max h(NewState) ≥ h(CurrentState) solution",narrative
+188,IA_3.pdf_p12,h(S) Hillclimbing evaluation Best case: fastest general ?,narrative
+189,IA_3.pdf_p12,Worst case: fails to find a solution (local optimum).,narrative
+190,IA_3.pdf_p12,https://www.youtube.com/watch?v=j1H3jAAGlEA&l ist=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi&in solution dex=4,narrative
+191,IA_3.pdf_p12,Best case is fastest general,diagram_extracted
+192,IA_3.pdf_p12,Worst case is fails to find a,diagram_extracted
+193,IA_3.pdf_p12,https is //www.youtube.com/watch?v=j1H3jAAGlEA&l,diagram_extracted
+194,IA_3.pdf_p13,"Hillclimbing Selection Algorithm eligible_neighbors = {}; For each state n reachable from current_state applying one valid transition If h(n)better than h(current_state) add n to eligible_neighbors; Select next_state from eligible_neighbors; Frequently used selections: ● First one found - most common ● Best one (greedy) ● All, in the order they were found, choosing next state available if stuck (hillclimbing-backtracking)",narrative
+195,IA_3.pdf_p14,"Simulated annealing Hillclimbing, but allows choosing a state further away from the goal, with an ever decreasing probability the closer you get to the goal state.",narrative
+196,IA_3.pdf_p14,No more local optimum.,narrative
+197,IA_3.pdf_p14,Slower than hillclimbing.,narrative
+198,IA_3.pdf_p14,http is //www.cse.iitm.ac.in/~vplab/courses/optimization/SA_SEL_SLIDES.pdf,diagram_extracted
+199,IA_3.pdf_p15,Beam search BFS but only keeps in a sorted list best k visited states.,narrative
+200,IA_3.pdf_p15,The list should be re-sorted and extra states removed after every new explored state.,narrative
+201,IA_3.pdf_p15,Explores all states in the sorted list until the final state is found - should be first in the list.,narrative
+202,IA_3.pdf_p15,Does not guarantee the optimum solution!,narrative
+203,IA_3.pdf_p16,"A* and IDA* A* is mostly Dijkstra combined with Greedy, IDA* is informed IDDFS IDDFS explores nodes by distance from initial state d(S) A* explores nodes by d(S) + h(S), where h(S) is the estimated distance to the goal state (h has to be an admissible heuristic and a distance) Always chooses the unexplored state which is closest to both the initial state and the goal state.",narrative
+204,IA_3.pdf_p16,https is //www.redblobgames.com/pathfinding/a-star/introduction.html,diagram_extracted
+205,IA_3.pdf_p16,https is //adrianstoll.com/post/a-star-pathfinding-algorithm-animation/,diagram_extracted
+206,IA_3.pdf_p17,"A* Algorithm Current_state = Initial_state; Best_score = maximum of h; Sorted_queue = {All neighbours of Current_state, with computed h+1 scores, marked as unexplored}; While the score of the first unexplored state S in Sorted_queue is lower than Best_score If S is a final state, Best_score = score of S; Mark S as explored; Add to Sorted_queue all its neighbours with computed h+d score and mark them unexplored; If a duplicate state appears in Sorted_queue, keep only the occurrence with lowest score and transfer explored status; Sort Sorted_queue; The optimal path is recovered from the last state updating Best_score and looking for explored neighbours with lower score up to the initial state.",narrative
+207,IA_3.pdf_p18,A* Always finds the optimum A h(A) = 1 solution.,narrative
+208,IA_3.pdf_p18,3 h(B) = 4 B,narrative
+210,IA_3.pdf_p19,real = 4 5 Don’t stop when you find the goal state!,narrative
+211,IA_3.pdf_p19,Keep looking until all 3 states with better scores have h(B) = 4 been explored.,narrative
+212,IA_3.pdf_p19,real = 4 B,narrative
+213,IA_3.pdf_p21,"Optimizing A* Consistent heuristic: h(A) ≤ h(A,B) + h(B) if B is reachable from A Simplified Memory Bounded A* ● Prunes (removes) states for which the path was more costly than estimated, up to a set number of states (memory bounded) ● Remembers costs of reaching pruned states from each explored state ● If solution is not found, recovers pruned states and explores them",narrative
+214,IA_3.pdf_p21,"Consistent heuristic is h(A) ≤ h(A,B) + h(B) if B is reachable from A",diagram_extracted
+215,IA_3.pdf_p22,Choose a strategy ● Do you want a solution quickly?,narrative
+216,IA_3.pdf_p22,● Do you want the best solution?,narrative
+217,IA_3.pdf_p22,● Do you want all solutions?,narrative
+218,IA_3.pdf_p22,● How much do you know about the problem?,narrative
+219,IA_3.pdf_p22,● Are you sure the state representation is good enough?,narrative
+220,IA_3.pdf_p23,Non-deterministic problem space Stochastic: known possibilities and probabilities Non-deterministic: known possibilities Each transition has multiple possible outcomes AND-OR trees,narrative
+221,IA_3.pdf_p23,Stochastic is known possibilities,diagram_extracted
+222,IA_3.pdf_p23,Non-deterministic is known,diagram_extracted
+223,IA_3.pdf_p24,"Partially observable problem space: you know what could happen after a transition, you don’t know what will happen after a transition.",narrative
+224,IA_3.pdf_p24,Partially observable problem space is you know what could happen,diagram_extracted
+225,IA_3.pdf_p25,Unknowable problem space: you don’t know what could happen after a transition,narrative
+226,IA_3.pdf_p25,Unknowable problem space is you don’t know what could happen,diagram_extracted
+227,IA_3.pdf_p26,Next week: Constraint satisfaction problems (Variable based models),narrative
+228,IA_3.pdf_p26,Next week is Constraint satisfaction problems (Variable based models),diagram_extracted
+229,IA_3.pdf_p27,Week 5: Games ?,narrative
+230,IA_3.pdf_p27,Interactive decision problems (games): ● Solution is not built exclusively by your strategy ● Not all final states are the same Hardest solvable problems in AI.,narrative
+231,IA_3.pdf_p27,NLP problems hardest potentially solvable.,narrative
+232,IA_3.pdf_p27,Week 5 is Games,diagram_extracted
+233,IA_9.pdf_p1,"Artificial Intelligence 3rd year, 1st semester Knowledge representation and inference systems “We are drowning in information but starved for knowledge.”― John Naisbitt",narrative
+234,IA_9.pdf_p2,How did you learn that a cat has whiskers?,narrative
+235,IA_9.pdf_p2,Does it matter?,narrative
+236,IA_9.pdf_p3,What is knowledge?,narrative
+237,IA_9.pdf_p3,Intelligence applied to information produces knowledge.,narrative
+238,IA_9.pdf_p3,Knowledge supplements intelligence.,narrative
+239,IA_9.pdf_p3,"Intelligence is asking the right question, knowledge is having the right answer.",narrative
+240,IA_9.pdf_p4,Is knowledge useful to a computer?,narrative
+241,IA_9.pdf_p4,Knowledge can supplement a slow or insufficient intelligence.,narrative
+242,IA_9.pdf_p4,Example: chatbot templates and the Turing test.,narrative
+243,IA_9.pdf_p4,"Knowledge is a product, not a process (like intelligence), so it can be provided ready-made to the computer.",narrative
+244,IA_9.pdf_p4,"Knowledge is built on facts, heuristics and intuition and can change.",narrative
+245,IA_9.pdf_p4,Let’s look at unambiguous and easily parse-able representations.,narrative
+246,IA_9.pdf_p4,Example is chatbot templates and the Turing test.,diagram_extracted
+247,IA_9.pdf_p5,"Linnaeus, C. (1753).",narrative
+248,IA_9.pdf_p5,Stockholm: Laurentii Salvii.,narrative
+249,IA_9.pdf_p6,Taxonomy Greek: taxis (arrangement) nomia (method) A taxonomy is language independent (as is all knowledge).,narrative
+250,IA_9.pdf_p6,Nodes are concepts.,narrative
+251,IA_9.pdf_p6,No ambiguity due to careful lexicalisations and domain focus.,narrative
+252,IA_9.pdf_p6,Relations are semantic.,narrative
+253,IA_9.pdf_p6,Only one type of relation: “is-a”,narrative
+254,IA_9.pdf_p6,Greek is taxis (arrangement) nomia (method),diagram_extracted
+255,IA_9.pdf_p6,Only one type of relation is “is-a”,diagram_extracted
+256,IA_9.pdf_p7,"X IS-A Y: X is a specific type of Y, with additional properties ● Symmetry: if a bear IS-A mammal, a mammal IS-A bear?",narrative
+257,IA_9.pdf_p7,● Reflexivity: bear IS-A bear?,narrative
+258,IA_9.pdf_p7,"● Transitivity: if a black bear IS-A bear and a bear IS-A mammal, a black bear IS-A mammal?",narrative
+259,IA_9.pdf_p7,● Connectivity: cat IS-A bear or bear IS-A cat?,narrative
+260,IA_9.pdf_p7,"“is-a” is asymmetric, irreflexive, transitive and not connected, thus is a strict order relation over the set of concepts (no cycles in a taxonomy).",narrative
+261,IA_9.pdf_p7,"X IS-A Y is X is a specific type of Y, with additional properties",diagram_extracted
+262,IA_9.pdf_p7,"● Symmetry is if a bear IS-A mammal, a mammal IS-A bear?",diagram_extracted
+263,IA_9.pdf_p7,● Reflexivity is bear IS-A bear?,diagram_extracted
+264,IA_9.pdf_p7,"● Transitivity is if a black bear IS-A bear and a bear IS-A mammal, a",diagram_extracted
+265,IA_9.pdf_p7,● Connectivity is cat IS-A bear or bear IS-A cat?,diagram_extracted
+266,IA_9.pdf_p8,Are taxonomies enough?,narrative
+267,IA_9.pdf_p8,Can you represent all your computer science knowledge in a taxonomy?,narrative
+268,IA_9.pdf_p8,Is IS-A enough?,narrative
+269,IA_9.pdf_p8,How adaptable is a taxonomy to new knowledge?,narrative
+270,IA_9.pdf_p9,Semantic networks Directed graphs with concepts as nodes and semantic relations labeling edges.,narrative
+271,IA_9.pdf_p9,"Can also be represented as a list of predicates: has (Cat, Fur), lives in (Fish, Water)",narrative
+272,IA_9.pdf_p10,Semantic frames “to drive” frame Agent John John drives a car.,narrative
+273,IA_9.pdf_p10,Object a car Identified by an action (event) OR Starting point ?,narrative
+274,IA_9.pdf_p10,a type reference: Fluffy the cat Ending point ?,narrative
+275,IA_9.pdf_p10,“Cat” frame Beneficiary ?,narrative
+276,IA_9.pdf_p10,Name Fluffy Modal ?,narrative
+277,IA_9.pdf_p10,a type reference is Fluffy the cat Ending point ?,diagram_extracted
+278,IA_9.pdf_p11,"Conceptual network Events and referential networks cat mouse Referential network: part of a semantic network in which nodes identify actual objects, not eating agent object concepts.",narrative
+279,IA_9.pdf_p11,Event: defined as a set of relations with is_a is_a referential network connections.,narrative
+280,IA_9.pdf_p11,Frames ca be references and marked in a semantic network.,narrative
+281,IA_9.pdf_p11,"Fluffy Squeeky Eating: Referential network ⋀ agent(is_a(Fluffy, cat)) object(is_a(Squeeky, mouse))",narrative
+282,IA_9.pdf_p11,Referential network is part of a semantic network,diagram_extracted
+283,IA_9.pdf_p11,Event is defined as a set of relations with,diagram_extracted
+284,IA_9.pdf_p12,Reasoning on semantic networks(I) Relations are inherited.,narrative
+285,IA_9.pdf_p12,"IS-A(cat, mammal) AND IS-A(mammal, animal) => IS-A(cat, animal) Answering queries.",narrative
+286,IA_9.pdf_p12,⋀ Eating: agent (Fluffy) object (?x),narrative
+287,IA_9.pdf_p12,Eating is agent (Fluffy) object (?x),diagram_extracted
+288,IA_9.pdf_p13,Conceptual network Reasoning on semantic networks(II) cat mouse Daemons: procedures used to eating agent object automatically maintain and enhance a semantic network.,narrative
+289,IA_9.pdf_p13,"is_a is_a medium If (IS-A(Fluffy, Fluffy size Squeeky ⋀ animal)) ⋀ Referential network (length(Fluffy, ?x)) ?x ∊ [50,100] => size(Fluffy, medium)",narrative
+290,IA_9.pdf_p13,Daemons is procedures used to,diagram_extracted
+291,IA_9.pdf_p14,"Synsets = lists of synonymic senses of different words (over 120.000) S: (n) student, pupil, educatee (a learner who is enrolled in an educational institution) Relations?",narrative
+292,IA_9.pdf_p14,"6 types of semantic relations: ● Antonymy: opposite meaning of good - bad ● Hyponymy: IS-A (is a specific kind of…) student - person ● Meronymy: part of (is structurally included in…) head - student ● Troponymy: identifies a manner of… whisper - speak ● Entailment: identifies requirements divorce - marriage ● Derivation: related to, produced by product - factory",narrative
+293,IA_9.pdf_p14,● Antonymy is opposite meaning of good - bad,diagram_extracted
+294,IA_9.pdf_p14,● Hyponymy is IS-A (is a specific kind of…) student - person,diagram_extracted
+295,IA_9.pdf_p14,● Meronymy is part of (is structurally included in…) head - student,diagram_extracted
+296,IA_9.pdf_p14,● Troponymy is identifies a manner of… whisper - speak,diagram_extracted
+297,IA_9.pdf_p14,● Entailment is identifies requirements divorce - marriage,diagram_extracted
+298,IA_9.pdf_p14,"● Derivation is related to, produced by product - factory",diagram_extracted
+299,IA_9.pdf_p15,"Ontology Definitions (courtesy of Merriam-Webster): 1: a branch of metaphysics concerned with the nature and relations of being 2: a particular theory about the nature of being or the kinds of things that have existence Unambiguous representation of knowledge, more expressive than a taxonomy.",narrative
+300,IA_9.pdf_p16,"Semantic triplet (Semantic) Relation Concept Concept A B Relation(Concept A, Concept B) We can represent any knowledge using semantic triplets.",narrative
+301,IA_9.pdf_p16,Try with any knowledge you possess.,narrative
+302,IA_9.pdf_p16,We can build complex structures (ontologies) using these triplets.,narrative
+303,IA_9.pdf_p16,"The complexity is given by the size, local complexity is reduced.",narrative
+304,IA_9.pdf_p16,You rarely need to explore the entire ontology.,narrative
+305,IA_9.pdf_p16,We can extract complex knowledge from triplets/ontologies.,narrative
+306,IA_9.pdf_p16,What is the Relation between A and B?,narrative
+307,IA_9.pdf_p16,With whom is A/B in Relation?,narrative
+308,IA_9.pdf_p16,Between who does Relation exists?,narrative
+309,IA_9.pdf_p17,"Ontology: attempt of a formal definition A hypergraph O(C, R) and a set I where: ● C is a set of concepts c, where c is defined as a tuple (i, d, l, r, p, r), where: ○ i is an unique identifier; ○ d is a list of definitions; ○ l is a list of lexicalisations; ○ r is a list of references to other related sources; ○ p is a list of property identifiers (relations with one member); ○ r is a list of relation identifiers with c as a member.",narrative
+310,IA_9.pdf_p17,Ontology is attempt of a formal definition,diagram_extracted
+311,IA_9.pdf_p18,"Ontology: attempt of a formal definition ● R is a set of semantic relations r, each defined as a triple (i, m, b), where: ○ i is an unique identifier; ○ m is the number of members of that relation; ○ b indicates whether the relation is bidirectional.",narrative
+312,IA_9.pdf_p18,● I is a set of inferences (rules) over the ontology performing changes to it.,narrative
+313,IA_9.pdf_p18,Instance: concept to which no other concept can be linked by IS-A.,narrative
+315,IA_9.pdf_p18,Instance is concept to which no other concept can be linked by IS-A.,diagram_extracted
+316,IA_9.pdf_p19,Ontology viewers and editors Most common format: RDF ● PuffinSemantics ● GraphDB ● WebVOWL ● Protégé ● Fluent Editor Knowledge Graphs are instanced ontologies and are very common.,narrative
+317,IA_9.pdf_p19,Most common format is RDF,diagram_extracted
+318,IA_9.pdf_p20,Ontologies: unlimited expressiveness ● Anything can be included as a concept/instance ● Concepts/instances can have any properties ● Any semantic relation can be included ● Consistent relations/properties are not mandatory (but highly recommended) ● Built for continuous maintenance and development - use inferences!,narrative
+319,IA_9.pdf_p20,Ontologies is unlimited expressiveness,diagram_extracted
+320,IA_9.pdf_p21,The Semantic Web Classic web Semantic web,narrative
+321,IA_9.pdf_p22,Semantic web: current state Describe linked data?,narrative
+322,IA_9.pdf_p22,JSON-LD Open Graph Detailed domain ontologies?,narrative
+323,IA_9.pdf_p22,Dbpedia.org Schema.org Semantic web browser?,narrative
+324,IA_9.pdf_p22,"LodView Magpie OK, so what’s the problem?",narrative
+325,IA_9.pdf_p22,THIS but also this,narrative
+326,IA_9.pdf_p22,Semantic web is current state,diagram_extracted
+327,IA_9.pdf_p23,Upper Merged Ontologies SUMO (appoximately 25000 terms linked) Dolce Yago,narrative
+328,IA_9.pdf_p24,Potential difficulties in knowledge representation ● Semantic parasitism: externally inferred semantics Metaphors: is “semantic parasitism” something positive or negative in an ontology?,narrative
+329,IA_9.pdf_p24,● Semantic subjectivity: different semantics for different contexts,narrative
+330,IA_9.pdf_p24,● Semantic parasitism is externally inferred semantics,diagram_extracted
+331,IA_9.pdf_p24,Metaphors is is “semantic parasitism” something positive or,diagram_extracted
+332,IA_9.pdf_p24,● Semantic subjectivity is different semantics for different contexts,diagram_extracted
+333,IA_9.pdf_p25,"Watson’s first experiment Considering the following series of numbers which was built observing a rule, propose a similar series observing the same rule and one disobeying the same rule.",narrative
+334,IA_9.pdf_p25,2 - 4 - 6 More info,narrative
+335,IA_9.pdf_p26,Watson’s selection task The four cards have a letter on one side and a number on the other side.,narrative
+336,IA_9.pdf_p26,Which cards do you need to turn in order to check if the cards obey the rule: All odd numbers have vowels on the other side?,narrative
+337,IA_9.pdf_p26,need to turn in order to check if the cards obey the rule is All odd numbers have vowels on the,diagram_extracted
+338,IA_9.pdf_p27,Alternative to logical cognitive systems Lewis–Stalnaker possible-worlds semantics: 1.,narrative
+339,IA_9.pdf_p27,Possible worlds exist (not actually in the real world).,narrative
+340,IA_9.pdf_p27,Other worlds are the same as the real world (same complexity and capabilities).,narrative
+341,IA_9.pdf_p27,We know of the actual world we inhabit.,narrative
+342,IA_9.pdf_p27,Actual is an index for the world it is uttered.,narrative
+343,IA_9.pdf_p27,Possible worlds cannot be reduced to something more basic.,narrative
+344,IA_9.pdf_p27,Alternative: Probabilistic reasoning,narrative
+345,IA_9.pdf_p27,Alternative is Probabilistic reasoning,diagram_extracted
+346,IA_9.pdf_p28,Open book vs Closed book exam Tests memory Tests intelligence in applying knowledge The goal should never be the accumulation Test analytical ability (looking for of knowledge.,narrative
+347,IA_9.pdf_p28,"The right answer means knowledge, recognizing relevant knowledge) nothing without the right question (42).",narrative
+348,IA_4.pdf_p1,"Probleme de satisfacere a restrictiilor , IA 2025/2026",narrative
+349,IA_4.pdf_p2,"Con¸tinut Introducere Algoritmi de c˘autare ˆImbun˘at˘atirea algoritmului de c˘autare , Structura grafului de restrictii , C˘autare local˘a FII,UAIC Curs4 IA2025/2026 2/60",narrative
+350,IA_4.pdf_p3,"Probleme de satisfacere a constrˆangerilor (CSP) ▶ Sunt definite prin: variabilele X cu valori din domeniul D si o i i , multime de constrˆangeri care specific˘a combinatiile permise de valori , , pentru submultimi de variabile.",narrative
+351,IA_4.pdf_p3,", ▶ O asignare este consistent˘a dac˘a nu suntˆınc˘alcate constrˆangeri.",narrative
+352,IA_4.pdf_p3,O asignare este complet˘a dac˘a include toate variabilele.,narrative
+353,IA_4.pdf_p3,Solutie: o asignare complet˘a de valori variabilelor a.ˆı.,narrative
+354,IA_4.pdf_p3,"toate , constrˆangerile sunt satisf˘acute.",narrative
+355,IA_4.pdf_p3,"▶ NP-hard ▶ algoritmi cu scop-general, mai puternici decˆat algoritmii de c˘autare standard ▶ MaxCSP: maximizeaz˘a num˘arul de constrˆangeri satisf˘acute FII,UAIC Curs4 IA2025/2026 3/60",narrative
+356,IA_4.pdf_p3,Sunt definite prin is variabilele X cu valori din domeniul D si o,diagram_extracted
+357,IA_4.pdf_p3,Solutie is o asignare complet˘a de valori variabilelor a.ˆı. toate,diagram_extracted
+358,IA_4.pdf_p3,MaxCSP is maximizeaz˘a num˘arul de constrˆangeri satisf˘acute,diagram_extracted
+359,IA_4.pdf_p4,"Exemplu: Colorarea unei h˘arti , Variabile: WA, NT, Q, NSW, V, SA, T Domenii: D = {red,green,blue} i Constrˆangeri: regiunile adiacente trebuie s˘a aib˘a culori diferite WA ̸= NT (dac˘a limbajul permite), sau (WA,NT) ∈ {(red,green),(red,blue),(green,red),(green,blue),...} FII,UAIC Curs4 IA2025/2026 4/60",narrative
+360,IA_4.pdf_p4,Exemplu is Colorarea unei h˘arti,diagram_extracted
+361,IA_4.pdf_p4,"Variabile is WA, NT, Q, NSW, V, SA, T",diagram_extracted
+362,IA_4.pdf_p4,"Domenii is D = {red,green,blue}",diagram_extracted
+363,IA_4.pdf_p4,Constrˆangeri is regiunile adiacente trebuie s˘a aib˘a culori diferite,diagram_extracted
+364,IA_4.pdf_p5,"Exemplu: Colorarea unei h˘arti , Solutiile sunt asign˘ari care satisfac toate restrictiile.",narrative
+365,IA_4.pdf_p5,", , {WA = red,NT = green,Q = red,NSW = green,V = red,SA = blue,T = green} FII,UAIC Curs4 IA2025/2026 5/60",narrative
+367,IA_4.pdf_p6,"Exemplu: N-Regine Formularea 1: Variabile: X ij Domenii: {0,1} (cid:80) Constrˆangeri X = N i,j ij ∀i,j,k (X ,X ) ∈ {(0,0),(0,1),(1,0)} ij ik ∀i,j,k (X ,X ) ∈ {(0,0),(0,1),(1,0)} ij kj ∀i,j,k (X ,X ) ∈ {(0,0),(0,1),(1,0)} ij i+k,j+k ∀i,j,k (X ,X ) ∈ {(0,0),(0,1),(1,0)} ij i+k,j−k FII,UAIC Curs4 IA2025/2026 6/60",narrative
+368,IA_4.pdf_p6,Exemplu is N-Regine,diagram_extracted
+369,IA_4.pdf_p6,"Domenii is {0,1}",diagram_extracted
+370,IA_4.pdf_p6,(cid is 80),diagram_extracted
+371,IA_4.pdf_p7,"Exemplu: N-Regine Formularea 2: Variabile: Q k Domenii: {1,2,3,...,N} Constrˆangeri Exprimate implicit: ∀i,j non−threatening(Q ,Q ) i j Exprimate explicit: (Q ,Q ) ∈ {(1,3),(1,4),...}... 1 2 FII,UAIC Curs4 IA2025/2026 7/60",narrative
+373,IA_4.pdf_p7,"Domenii is {1,2,3,...,N}",diagram_extracted
+374,IA_4.pdf_p7,"Exprimate implicit is ∀i,j non−threatening(Q ,Q )",diagram_extracted
+375,IA_4.pdf_p7,"Exprimate explicit is (Q ,Q ) ∈ {(1,3),(1,4),...}...",diagram_extracted
+376,IA_4.pdf_p8,"Exemplu: Sudoku Variabile: x ∈ {1,...,9} =: N (valorile din celulele corespunz˘atoare) ij Restrictii de inegalitate (perechi): toate valorile de pe o linie, coloan˘a, , regiune sunt diferite x ̸= x ∀k ̸= i,j ∈ N,(linie) ij ik x ̸= x ∀k ̸= i,j ∈ N,(coloana) ij kj x ̸= x ∀(i ,j ) ̸= (i ,j ) ∈ C ,∀i,j ∈ N′ = {1,2,3},(regiune) i1j1 i2j2 1 1 2 2 ij x ∈ N ∀i,j ∈ N ij C = {(3(i −1)+i′,3(j −1)+j′)|(i′,j′) ∈ N′xN′} ij Se poate utiliza restrictia global˘a alldifferent pentru o formulare mai , puternic˘a: alldifferent(x |j ∈ N) ∀i ∈ N,(linie) ij alldifferent(x |i ∈ N) ∀j ∈ N,(coloana) ij alldifferent(C ) ∀i,j ∈ N′,(regiune) ij x ∈ N ∀i,j ∈ N i,j FII,UAIC Curs4 IA2025/2026 8/60",narrative
+377,IA_4.pdf_p8,Exemplu is Sudoku,diagram_extracted
+378,IA_4.pdf_p8,"Variabile is x ∈ {1,...,9} =: N (valorile din celulele corespunz˘atoare)",diagram_extracted
+379,IA_4.pdf_p8,"Restrictii de inegalitate (perechi) is toate valorile de pe o linie, coloan˘a,",diagram_extracted
+380,IA_4.pdf_p9,"Exemplu: Cryptarithmetic puzzle Variabile: F T U W R O X X X 1 2 3 Domenii: {0,1,2,3,4,5,6,7,8,9} Constrˆangeri: alldiff(F,T,U,W,R,O) O +O = R +10·X , etc.",narrative
+381,IA_4.pdf_p9,"1 Solution: F = 1,O = 4,R = 8,T = 7,W = 3,U = 6 (734+734=1468) FII,UAIC Curs4 IA2025/2026 9/60",narrative
+382,IA_4.pdf_p9,Exemplu is Cryptarithmetic puzzle,diagram_extracted
+383,IA_4.pdf_p9,Variabile is F T U W R O X X X,diagram_extracted
+384,IA_4.pdf_p9,"Domenii is {0,1,2,3,4,5,6,7,8,9}",diagram_extracted
+385,IA_4.pdf_p9,"Solution is F = 1,O = 4,R = 8,T = 7,W = 3,U = 6 (734+734=1468)",diagram_extracted
+386,IA_4.pdf_p10,"Exemplu: Job-shop scheduling Asamblarea unei masini , ▶ Sarcini: instaleaz˘a axele (fat˘a, spate), fixeaz˘a rotile, strˆange piulitele , , , (pentru fiecare roat˘a), fixeaz˘a capacele rotilor, inspecteaz˘a ansamblul , final.",narrative
+387,IA_4.pdf_p10,"Modelare: variabila: sarcin˘a, valoare: timpul la careˆıncepe (minute).",narrative
+388,IA_4.pdf_p10,"X = {Axle ,Axle ,Wheel ,Wheel ,Wheel ,Wheel , F B RF LF RB LB Nuts ,Nuts ,Nuts ,Nuts ,Cap ,Cap ,Cap ,Cap ,Inspect} RF LF RB LB RF LF RB LB ▶ Constrˆangeri: ▶ o sarcin˘a trebuie s˘aˆınceap˘aˆınaintea alteia (o roat˘a trebuie instalat˘a ˆınaintea capacului) T +d ≤T (T trebuie s˘aˆınceap˘aˆınaintea lui T ) 1 1 2 1 2 ▶ o sarcin˘a necesit˘a o perioad˘a de timp pentru a fi finalizat˘a FII,UAIC Curs4 IA2025/2026 10/60",narrative
+389,IA_4.pdf_p10,Exemplu is Job-shop scheduling,diagram_extracted
+390,IA_4.pdf_p10,"Sarcini is instaleaz˘a axele (fat˘a, spate), fixeaz˘a rotile, strˆange piulitele",diagram_extracted
+391,IA_4.pdf_p10,"Modelare is variabila: sarcin˘a, valoare: timpul la careˆıncepe (minute).",diagram_extracted
+392,IA_4.pdf_p11,Exemplu: Job-shop scheduling Asamblarea unei masini.,narrative
+393,IA_4.pdf_p11,"Constrˆangeri: , ▶ Axele trebuie instalateˆınaintea rotilor , Axle +10 ≤ Wheel F RF ▶ Dup˘a fixarea rotilor, strˆange piulitele si apoi ataseaz˘a capacele , , , , Wheel +1 ≤ Nuts ; Nuts +2 ≤ Cap RF RF RF RF ▶ Pentru a aseza axele, se utilizeaz˘a un instrument (Axle , Axle nu se , F B suprapun) (Axle +10 ≤ Axle ) or (Axle +10 ≤ Axle ) F B B F ▶ Inspectia este la sfˆarsit si dureaz˘a 3 minute , , , X +d ≤ Inspect X ▶ Ansamblul trebuie terminatˆın 30 de minute D = {1,2,3,...,27} FII,UAIC Curs4 IA2025/2026 11/60",narrative
+395,IA_4.pdf_p12,"Exemplu: planificarea orarului Planificarea orarului profesorilor si a elevilor , ▶ Profesori, materii, clase, s˘ali, intervale orare Un profesor pred˘a anumite materii O materie este tinut˘a la anumite clase , ▶ Constrˆangeri: ▶ dou˘a cursuri pentru aceeasi clas˘a nu pot fi programateˆın acelasi timp , , ▶ un profesor prefer˘a anumite intervale orare, etc.",narrative
+396,IA_4.pdf_p12,"FII,UAIC Curs4 IA2025/2026 12/60",narrative
+397,IA_4.pdf_p12,Exemplu is planificarea orarului,diagram_extracted
+398,IA_4.pdf_p13,"Exemplu: planificarea orarului t ∈ T timp, r ∈ R s˘ali, c ∈ C cursuri, s ∈ S studenti, (c ,c ) ∈ SA: c , c , i j i j nu se pot suprapune (acelasi profesor), z cursurile alocate grupei s , s ▶ Variabile: x = t cursul c este programat la t c y = r cursul c are locˆın r c ▶ Constrˆangeri: ▶ x =t, for c ∈C, ... c ▶ dou˘a cursuri nu se pot desf˘asuraˆın acelasi timp (acelasi profesor) , , , If x =t and (c ,c )∈SA then x ̸=t if overlap(t ,t ) c1 1 1 2 c2 2 1 2 ▶ dou˘a cursuri alocate aceleiasi grupe de studenti nu se pot desf˘asuraˆın , , , acelasi timp , If z =c and z =c and x =t then x ̸=t if overlap(t ,t ) s 1 s 2 c1 1 c2 2 1 2 ▶ dou˘a cursuri nu pot fi programateˆın acelasi timpˆın aceeasi sal˘a , , If (x =t )(x =t )(y =r ) then y ̸=r if overlap(t ,t ) c1 1 c2 2 c1 1 c2 1 1 2 FII,UAIC Curs4 IA2025/2026 13/60",narrative
+400,IA_4.pdf_p13,"t ∈ T timp, r ∈ R s˘ali, c ∈ C cursuri, s ∈ S studenti, (c ,c ) ∈ SA is c , c",diagram_extracted
+401,IA_4.pdf_p13,Variabile is x = t cursul c este programat la t,diagram_extracted
+402,IA_4.pdf_p14,"Probleme din lumea real˘a ▶ Planificarea orarului personalului medical ▶ Planificarea transportuluiˆın comun, a constructiei unei fabrici, , Floorplanning, etc.",narrative
+403,IA_4.pdf_p14,"▶ Meeting scheduling ▶ Probleme de asignare (a profesorilor la clase) ▶ Configurare hardware, etc.",narrative
+404,IA_4.pdf_p14,"Obs: multe probleme din lumea real˘a implic˘a variabile cu valori reale https://www.csplib.org/Problems/ FII,UAIC Curs4 IA2025/2026 14/60",narrative
+405,IA_4.pdf_p14,Obs is multe probleme din lumea real˘a implic˘a variabile cu valori reale,diagram_extracted
+406,IA_4.pdf_p14,https is //www.csplib.org/Problems/,diagram_extracted
+407,IA_4.pdf_p15,"Tipuri de variabile si constrˆangeri , ▶ Variabile discrete (domenii finite (dimensiune domeniu d =⇒ O(dn) asign˘ari complete) si infinite) si continue , , ▶ Constrˆangeri ▶ unare implic˘a o singur˘a variabil˘a ex: SA̸=green ▶ binare implic˘a perechi de variabile ex: SA̸=WA Probleme CSP binare: fiecare constrˆangere se refer˘a la cel mult dou˘a variabile ▶ de ordin superior implic˘a 3 sau mai multe variabile ex: cryptarithmetic puzzle ▶ Preferinte (restrictii soft) ex: rosu este mai bun decˆat verde , , , reprezentate prin costuri asociate asign˘arilor → probleme de optimizare FII,UAIC Curs4 IA2025/2026 15/60",narrative
+408,IA_4.pdf_p15,Probleme CSP binare is fiecare constrˆangere se refer˘a la cel mult dou˘a,diagram_extracted
+409,IA_4.pdf_p15,Preferinte (restrictii soft) ex is rosu este mai bun decˆat verde,diagram_extracted
+410,IA_4.pdf_p16,"Graful de restrictii , Nodurile sunt variabile, muchiile reprezint˘a restrictii.",narrative
+411,IA_4.pdf_p16,", Algoritmii cu scop-general utilizeaz˘a structura grafului pentru a accelera c˘autarea (ex: Tasmania este o subproblem˘a independent˘a) FII,UAIC Curs4 IA2025/2026 16/60",narrative
+412,IA_4.pdf_p16,c˘autarea (ex is Tasmania este o subproblem˘a independent˘a),diagram_extracted
+413,IA_4.pdf_p17,"Con¸tinut Introducere Algoritmi de c˘autare ˆImbun˘at˘atirea algoritmului de c˘autare , Structura grafului de restrictii , C˘autare local˘a FII,UAIC Curs4 IA2025/2026 17/60",narrative
+414,IA_4.pdf_p18,Formularea standard (c˘autare incremental˘a) St˘arile sunt definite prin valorile asignate.,narrative
+415,IA_4.pdf_p18,"▶ Starea initial˘a: asignarea vid˘a, ∅ , ▶ Functia succesor: atribuie o valoare unei variabile neasignate , ▶ Testarea obiectivului: asignarea curent˘a este complet˘a FII,UAIC Curs4 IA2025/2026 18/60",narrative
+416,IA_4.pdf_p18,"Starea initial˘a is asignarea vid˘a, ∅",diagram_extracted
+417,IA_4.pdf_p18,Functia succesor is atribuie o valoare unei variabile neasignate,diagram_extracted
+418,IA_4.pdf_p18,Testarea obiectivului is asignarea curent˘a este complet˘a,diagram_extracted
+419,IA_4.pdf_p19,"Formularea standard (c˘autare incremental˘a) ▶ Solutiile se g˘asesc la adˆancimea nˆın arbore (n variabile asignate) , =⇒ utilizeaz˘a DFS ▶ Factorul de ramificare este nd, la urm˘atorul nivel (n−1)d, etc.",narrative
+420,IA_4.pdf_p19,"→ n!dn frunze, dn asign˘ari posibile FII,UAIC Curs4 IA2025/2026 19/60",narrative
+421,IA_4.pdf_p20,"Backtracking Asign˘arile variabilelor sunt comutative [WA = red, NT = green] la fel ca [NT = green, WA = red] La fiecare nod consider˘am asignarea unei singure variabile (nu intr˘aˆın conflict cu asignarea curent˘a) =⇒ d noduri pe nivel si dn frunze , C˘autarea DFS pentru CSP cu asign˘ari pentru o singur˘a variabil˘a: backtracking.",narrative
+422,IA_4.pdf_p20,Backtracking este algoritmul de baz˘a neinformat pentru CSP.,narrative
+423,IA_4.pdf_p20,"FII,UAIC Curs4 IA2025/2026 20/60",narrative
+424,IA_4.pdf_p21,"Exemplu Backtracking Cˆand un nod este extins, se verific˘a dac˘a fiecare stare urm˘atoare este consistent˘a,ˆınainte de a fi ad˘augat˘a.",narrative
+425,IA_4.pdf_p21,"FII,UAIC Curs4 IA2025/2026 21/60",narrative
+426,IA_4.pdf_p22,Backtracking Backtracking = DFS + ordonarea variabilelor + fail-on-violation Poate rezolva problema celor n regine pentru n ≈ 25.,narrative
+427,IA_4.pdf_p22,"FII,UAIC Curs4 IA2025/2026 22/60",narrative
+428,IA_4.pdf_p23,"Con¸tinut Introducere Algoritmi de c˘autare ˆImbun˘at˘atirea algoritmului de c˘autare , Structura grafului de restrictii , C˘autare local˘a FII,UAIC Curs4 IA2025/2026 23/60",narrative
+429,IA_4.pdf_p24,"ˆ Imbun˘at˘atirea algoritmului de c˘autare , 1.",narrative
+430,IA_4.pdf_p24,Ce variabil˘a trebuie asignat˘a?,narrative
+431,IA_4.pdf_p24,ˆIn ce ordine trebuie verificate valorile?,narrative
+432,IA_4.pdf_p24,Putem detecta esecul mai devreme?,narrative
+433,IA_4.pdf_p24,Putem profita de structura problemei?,narrative
+434,IA_4.pdf_p24,"FII,UAIC Curs4 IA2025/2026 24/60",narrative
+435,IA_4.pdf_p25,"Minimum-remaining-values Minimum-remaining-values (MRV): alege variabila cu cele mai putine , valori permise (variabila cea mai constrˆans˘a).",narrative
+436,IA_4.pdf_p25,"”Fail-first” heuristic FII,UAIC Curs4 IA2025/2026 25/60",narrative
+437,IA_4.pdf_p25,Minimum-remaining-values (MRV) is alege variabila cu cele mai putine,diagram_extracted
+438,IA_4.pdf_p26,"Least-constraining-value Least-constraining-value: alege valoarea cea mai putin constrˆans˘a , (cea care exclude cele mai putine valori) , Exemplu: ce valoare alegem pentru Q?",narrative
+439,IA_4.pdf_p26,Combinarea acestor euristici face posibil˘a rezolvarea problemei 1000-regine.,narrative
+440,IA_4.pdf_p26,"FII,UAIC Curs4 IA2025/2026 26/60",narrative
+441,IA_4.pdf_p26,Least-constraining-value is alege valoarea cea mai putin constrˆans˘a,diagram_extracted
+442,IA_4.pdf_p26,Exemplu is ce valoare alegem pentru Q?,diagram_extracted
+443,IA_4.pdf_p27,"Chestionar FII,UAIC Curs4 IA2025/2026 27/60",narrative
+444,IA_4.pdf_p28,"Chestionar FII,UAIC Curs4 IA2025/2026 28/60",narrative
+445,IA_4.pdf_p29,"Forward checking Idee: actualizeaz˘a domeniul variabilelor neasignate ▶ atunci cˆand select˘am o valoare pentru o variabil˘a, elimin˘a valoarea din domeniul variabilelor neasignate, conectate cu aceasta FII,UAIC Curs4 IA2025/2026 29/60",narrative
+446,IA_4.pdf_p29,Idee is actualizeaz˘a domeniul variabilelor neasignate,diagram_extracted
+447,IA_4.pdf_p30,"Forward checking Idee: actualizeaz˘a domeniul variabilelor neasignate ▶ atunci cˆand select˘am o valoare pentru o variabil˘a, elimin˘a valoarea din domeniul variabilelor neasignate, conectate cu aceasta FII,UAIC Curs4 IA2025/2026 30/60",narrative
+449,IA_4.pdf_p31,"Forward checking Idee: actualizeaz˘a domeniul variabilelor neasignate ▶ atunci cˆand select˘am o valoare pentru o variabil˘a, elimin˘a valoarea din domeniul variabilelor neasignate, conectate cu aceasta FII,UAIC Curs4 IA2025/2026 31/60",narrative
+451,IA_4.pdf_p32,"Forward checking Idee: actualizeaz˘a domeniul variabilelor neasignate ▶ atunci cˆand select˘am o valoare pentru o variabil˘a, elimin˘a valoarea din domeniul variabilelor neasignate, conectate cu aceasta FII,UAIC Curs4 IA2025/2026 32/60",narrative
+453,IA_4.pdf_p33,"Forward checking - algoritm FII,UAIC Curs4 IA2025/2026 33/60",narrative
+454,IA_4.pdf_p34,"Generalized look ahead FII,UAIC Curs4 IA2025/2026 34/60",narrative
+455,IA_4.pdf_p35,"Propagarea constrˆangerilor Forward checking propag˘a informatii variabilelor neasignate, dar nu asigur˘a , detectarea timpurie a esecurilor: , NT si SA nu pot fi colorate ambele cu albastru!",narrative
+456,IA_4.pdf_p35,", Nu exist˘a propagareˆıntre variabilele neasignate!",narrative
+457,IA_4.pdf_p35,"FII,UAIC Curs4 IA2025/2026 35/60",narrative
+458,IA_4.pdf_p36,Arc consistency Arc consistency: cea mai simpl˘a form˘a de propagare; face ca fiecare arc s˘a fie consistent.,narrative
+459,IA_4.pdf_p36,"X → Y este consistent dac˘a si numai dac˘a , pentru fiecare valoare x a lui X, exist˘a o valoare permis˘a y pentru Y FII,UAIC Curs4 IA2025/2026 36/60",narrative
+460,IA_4.pdf_p36,Arc consistency is cea mai simpl˘a form˘a de propagare; face ca fiecare arc s˘a,diagram_extracted
+462,IA_4.pdf_p37,"X → Y este consistent dac˘a si numai dac˘a , pentru fiecare valoare x a lui X, exist˘a o valoare permis˘a y pentru Y FII,UAIC Curs4 IA2025/2026 37/60",narrative
+465,IA_4.pdf_p38,"X → Y este consistent dac˘a si numai dac˘a , pentru fiecare valoare x a lui X, exist˘a o valoare permis˘a y pentru Y Dac˘a X pierde o valoare, vecinii lui X trebuie verificati.",narrative
+466,IA_4.pdf_p38,", FII,UAIC Curs4 IA2025/2026 38/60",narrative
+469,IA_4.pdf_p39,"X → Y este consistent dac˘a si numai dac˘a , pentru fiecare valoare x a lui X, exist˘a o valoare permis˘a y pentru Y Daca X pierde o valoare, vecinii lui X trebuie verificati.",narrative
+470,IA_4.pdf_p39,", Arc consistency detecteaz˘a esecul mai devreme decˆat Forward checking.",narrative
+471,IA_4.pdf_p39,", Poate fi executat ca un pas de preprocesare sau dup˘a fiecare asignare.",narrative
+472,IA_4.pdf_p39,"FII,UAIC Curs4 IA2025/2026 39/60",narrative
+474,IA_4.pdf_p40,Algoritmul Arc consistency Fiecare arc e ad˘augatˆın Q de max d ori.,narrative
+475,IA_4.pdf_p40,Complexitate timp: O(n2d3); versiuni O(n2d2).,narrative
+476,IA_4.pdf_p40,"FII,UAIC Curs4 IA2025/2026 40/60",narrative
+477,IA_4.pdf_p40,Complexitate timp is versiuni,diagram_extracted
+478,IA_4.pdf_p41,"Propagarea constrˆangerilor ▶ 3-consistent˘a (path consistency), k-consistent˘a , , k-consistent˘a: orice asignare consistent˘a a k −1 variabile poate fi , extins˘a la o instantiere de k variabile , Dac˘a o problem˘a CSP cu n variabile este n-consistent˘a, atunci nu mai e necesar˘a c˘autarea Backtracking.",narrative
+479,IA_4.pdf_p41,"▶ Utilizarea tehnicilor de propagare a constrˆangerilor implic˘a si o , crestere a timpului de executie , , ▶ un compromisˆıntre propagare si c˘autare; dac˘a propagarea dureaz˘a mai , mult decˆat c˘autarea, atunci nu se merit˘a FII,UAIC Curs4 IA2025/2026 41/60",narrative
+480,IA_4.pdf_p41,k-consistent˘a is orice asignare consistent˘a a k −1 variabile poate fi,diagram_extracted
+481,IA_4.pdf_p42,"Conflict-Directed Backjumping (CBJ) ▶ Backtracking: neˆıntoarcem la variabila anterioar˘a pentru a-i asigna o nou˘a valoare ▶ neˆıntoarcem UN nivelˆın arborele de c˘autare ▶ Cˆand ajungemˆıntr-un punct din care nu mai putem continua (datorit˘a unei inconsistente), putemˆıncerca s˘a identific˘am cauza problemei , ▶ ˆın loc s˘a neˆıntoarcem un nivel, ne putemˆıntoarce direct la variabila care a cauzat problema FII,UAIC Curs4 IA2025/2026 42/60",narrative
+482,IA_4.pdf_p42,Backtracking is neˆıntoarcem la variabila anterioar˘a pentru a-i asigna o,diagram_extracted
+483,IA_4.pdf_p43,"Conflict-Directed Backjumping ▶ Idee: Mentine o multime de conflicte CONFLICT SET pentru fiecare , , variabil˘a (actualizat˘a pe m˘asur˘a ce asign˘am valori variabilelor) ▶ Consider˘am variabila curent˘a X .",narrative
+484,IA_4.pdf_p43,"Multimea CONFLICT SET a lui X i , i este multimea de VARIABILE ASIGNATE ANTERIOR conectate cu , X (datorit˘a unei restrictii) i , ▶ Dac˘a nu am identificat o asignare valid˘a pentru variabila curent˘a X , i neˆINTOARCEM la variabila X , din multimea de conflicte a lui X , k , i cea mai apropiat˘a ▶ Actualiz˘am multimea de conflicte a lui X , k CONFLICT SET(X ) = k CONFLICT SET(X )∪CONFLICT SET(X )\X k i k FII,UAIC Curs4 IA2025/2026 43/60",narrative
+485,IA_4.pdf_p43,Idee is Mentine o multime de conflicte CONFLICT SET pentru fiecare,diagram_extracted
+486,IA_4.pdf_p44,"Conflict-Directed Backjumping Exemplu: colorarea unei h˘arti , X nu esteˆın multimea de conflicte a lui X ; neˆıntoarcem la cea mai 7 , 3 apropiat˘a variabil˘a din multimea de conflicte (X ) , 6 FII,UAIC Curs4 IA2025/2026 44/60",narrative
+487,IA_4.pdf_p44,Exemplu is colorarea unei h˘arti,diagram_extracted
+488,IA_4.pdf_p45,"Conflict-Directed Backjumping FII,UAIC Curs4 IA2025/2026 45/60",narrative
+489,IA_4.pdf_p46,"Conflict-Directed Backjumping FII,UAIC Curs4 IA2025/2026 46/60",narrative
+490,IA_4.pdf_p47,"Con¸tinut Introducere Algoritmi de c˘autare ˆImbun˘at˘atirea algoritmului de c˘autare , Structura grafului de restrictii , C˘autare local˘a FII,UAIC Curs4 IA2025/2026 47/60",narrative
+491,IA_4.pdf_p48,"Structura problemei Tasmania si continentul sunt subprobleme independente , Identificabile ca si componente conexe ale grafului constrˆangerilor.",narrative
+492,IA_4.pdf_p48,", FII,UAIC Curs4 IA2025/2026 48/60",narrative
+493,IA_4.pdf_p49,"Structura problemei Presupunem c˘a fiecare subproblem˘a are c variabile, dintr-un total de n. Complexitateaˆın cazul cel mai nefavorabil este n/c ·dc, liniarˆın n Exemplu: n = 80, d = 2, c = 20 280 = 4 miliarde de ani la 10 milioane noduri/sec vs. 4·220 = 0.4 secunde la 10 milioane noduri/sec Sunt rare situatiile acestea.",narrative
+494,IA_4.pdf_p49,", FII,UAIC Curs4 IA2025/2026 49/60",narrative
+495,IA_4.pdf_p49,"Exemplu is n = 80, d = 2, c = 20",diagram_extracted
+496,IA_4.pdf_p50,"Probleme CSP cu structur˘a arborescent˘a Teorem˘a: dac˘a graful de constrˆangeri nu are cicluri, problema CSP poate fi rezolvat˘aˆın O(nd2) timp.",narrative
+497,IA_4.pdf_p50,"(Reamintim: pentru problemele generale CSP, complexitatea timpˆın cazul cel mai nefavorabil este O(dn)) FII,UAIC Curs4 IA2025/2026 50/60",narrative
+498,IA_4.pdf_p50,"Teorem˘a is dac˘a graful de constrˆangeri nu are cicluri, problema CSP poate",diagram_extracted
+499,IA_4.pdf_p50,"(Reamintim is pentru problemele generale CSP, complexitatea timpˆın cazul cel",diagram_extracted
+500,IA_4.pdf_p51,"Probleme CSP cu structur˘a arborescent˘a O problem˘a CSP este directed arc-consistent pentru o ordonare X ,X ,...,X a variabilelor ⇐⇒ fiecare X este arc-consistent cu 1 2 n i X ,∀j > i. j Metod˘a: 1.",narrative
+501,IA_4.pdf_p51,"Alege o variabil˘a drept r˘ad˘acin˘a, ordoneaz˘a variabilele de la r˘ad˘acin˘a la frunze a.ˆı.",narrative
+502,IA_4.pdf_p51,p˘arintele fiecarui nodˆıl precedeˆın ordonare 2.,narrative
+503,IA_4.pdf_p51,"For j = n downto 2, aplic˘a Make-Arc-Consistent(Parent(X ),X ) j j 3.",narrative
+504,IA_4.pdf_p51,"For j = 1 to n, asigneaz˘a X (o valoare consistent˘a din domeniu) j FII,UAIC Curs4 IA2025/2026 51/60",narrative
+505,IA_4.pdf_p52,Probleme CSP cu o structur˘a ”aproape” arbore Cutset conditioning ▶ Alege o submultime S de variabile a.ˆı.,narrative
+506,IA_4.pdf_p52,"graful de constrangeri devine , arbore dup˘a stergerea lui S (S cutset) , ▶ Pentru fiecare asignare a variabilelor din S, sterge din domeniul , celorlalte variabile valori care sunt inconsistente cu asignarea; returneaz˘a cele dou˘a solutii.",narrative
+507,IA_4.pdf_p52,", Timpul de executie O(dc ·(n−c)d2), c dimensiune cutset (rapid pentru , valori mici ale lui c) FII,UAIC Curs4 IA2025/2026 52/60",narrative
+508,IA_4.pdf_p53,"Con¸tinut Introducere Algoritmi de c˘autare ˆImbun˘at˘atirea algoritmului de c˘autare , Structura grafului de restrictii , C˘autare local˘a FII,UAIC Curs4 IA2025/2026 53/60",narrative
+509,IA_4.pdf_p54,"Algoritmi euristici pentru CSP Hill-climbing, Simulated annealing lucreaz˘a cu st˘ari ”complete” (toate variabilele asignate) Pentru a aplica pe probleme CSP: permitem st˘ari cu restrictii nesatisfacute , operatori care reasigneaz˘a valori variabilelor Selectarea variabilei: alege aleator o variabil˘a conflictual˘a Selectarea valorii utilizˆand euristica min-conflicts: alege valoarea careˆıncalc˘a cele mai putine restrictii , , min h(s) = num˘arul de restrictii violate , FII,UAIC Curs4 IA2025/2026 54/60",narrative
+510,IA_4.pdf_p54,Selectarea variabilei is alege aleator o variabil˘a conflictual˘a,diagram_extracted
+511,IA_4.pdf_p55,"Min-conflicts FII,UAIC Curs4 IA2025/2026 55/60",narrative
+512,IA_4.pdf_p56,"Exemplu: 4-Regine Variabile: Q , Q , Q , Q (cˆate o regin˘a pentru fiecare coloan˘a) 1 2 3 4 Domenii: D = {1,2,3,4} (pe ce linie se afl˘a fiecare regin˘a) i Constrˆangeri: Q ̸= Q (nu pot fi pe aceeasi linie) i j , |Q −Q | ≠ |i −j| (sau pe aceeasi diagonal˘a) i j , FII,UAIC Curs4 IA2025/2026 56/60",narrative
+513,IA_4.pdf_p56,Exemplu is 4-Regine,diagram_extracted
+514,IA_4.pdf_p56,"Variabile is Q , Q , Q , Q (cˆate o regin˘a pentru fiecare coloan˘a)",diagram_extracted
+515,IA_4.pdf_p56,"Domenii is D = {1,2,3,4} (pe ce linie se afl˘a fiecare regin˘a)",diagram_extracted
+516,IA_4.pdf_p57,"Exemplu: 4-Regine ▶ Stare: 4 regine pe 4 coloane (44 = 256 st˘ari) ▶ Operatori: mut˘a regina (pe coloan˘a) ▶ Testarea obiectivului: nu exist˘a atacuri ▶ Evaluare: h(s) = num˘arul de atacuri FII,UAIC Curs4 IA2025/2026 57/60",narrative
+518,IA_4.pdf_p57,Stare is 4 regine pe 4 coloane (44 = 256 st˘ari),diagram_extracted
+519,IA_4.pdf_p57,Operatori is mut˘a regina (pe coloan˘a),diagram_extracted
+520,IA_4.pdf_p57,Testarea obiectivului is nu exist˘a atacuri,diagram_extracted
+521,IA_4.pdf_p57,Evaluare is h(s) = num˘arul de atacuri,diagram_extracted
+522,IA_4.pdf_p58,"Compararea algoritmilor pentru CSP Num˘arul mediu de verific˘ari a consistentei necesare pentru a rezolva , problema FII,UAIC Curs4 IA2025/2026 58/60",narrative
+523,IA_4.pdf_p59,"Concluzii ▶ Probleme de satisfacere a restrictiilor , st˘ari: asign˘ari ale variabilelor restrictii intre variabile , ▶ Backtracking ▶ Euristici de ordonare a variabilelor si selectare a valorilor , ▶ Forward-checking previne asign˘ari care garanteaz˘a esecul ulterior.",narrative
+524,IA_4.pdf_p59,", Propagarea constrangerilor (Arc consistency) reduce domeniile.",narrative
+525,IA_4.pdf_p59,▶ Problemele cu structur˘a arborescent˘a pot fi rezolvateˆın timp liniar.,narrative
+526,IA_4.pdf_p59,▶ Metodele de c˘autare local˘a (Iterative min-conflicts) sunt de obicei eficienteˆın practic˘a.,narrative
+527,IA_4.pdf_p59,"FII,UAIC Curs4 IA2025/2026 59/60",narrative
+528,IA_4.pdf_p59,st˘ari is asign˘ari ale variabilelor,diagram_extracted
+529,IA_4.pdf_p60,"Bibliografie ▶ S. Russell, P. Norvig.",narrative
+530,IA_4.pdf_p60,Artificial Intelligence: A Modern Approach (3rd Edition).,narrative
+531,IA_4.pdf_p60,"Prentice-Hall, Englewood Cliffs, NJ, 2010 (6.",narrative
+532,IA_4.pdf_p60,Constraint Satisfaction Problems) ▶ R. Bartak.,narrative
+533,IA_4.pdf_p60,"Constraint Programming ▶ Solvers: CP Optimizer, OR-Tools FII,UAIC Curs4 IA2025/2026 60/60",narrative
+534,IA_4.pdf_p60,"S. Russell, P. Norvig. Artificial Intelligence is A Modern Approach (3rd",diagram_extracted
+535,IA_4.pdf_p60,"Solvers is CP Optimizer, OR-Tools",diagram_extracted
+536,IA_1.pdf_p1,"Artificial Intelligence 3rd year, 1st semester ”Science is the belief in the ignorance of experts.” Richard Feynman Lab teachers: Lecture teachers: Laura Cornei Ionuț Cristian Pistol E-mail: laura.cornei@info.uaic.ro E-mail: ionut.pistol@info.uaic.ro Diana Trandabăț Mădălina Răschip E-mail: diana.trandabat@info.uaic.ro E-mail:madalina.raschip@info.uaic.ro",narrative
+537,IA_1.pdf_p1,E-mail is laura.cornei@info.uaic.ro,diagram_extracted
+538,IA_1.pdf_p1,E-mail is ionut.pistol@info.uaic.ro,diagram_extracted
+539,IA_1.pdf_p1,E-mail is diana.trandabat@info.uaic.ro,diagram_extracted
+540,IA_1.pdf_p1,E-mail is madalina.raschip@info.uaic.ro,diagram_extracted
+541,IA_1.pdf_p2,"Course information Timetable Course webpage Discord server Evaluation: ● Points given for project tasks (4) and written tests (3) at seminars(4 X 1 + 3 X 2 = L, maximum 10).",narrative
+542,IA_1.pdf_p2,"● Project (PP, maximum 10).",narrative
+543,IA_1.pdf_p2,"● Written exam (E, maximum 10).",narrative
+544,IA_1.pdf_p2,● Bonus points for course and lab activity (B).,narrative
+545,IA_1.pdf_p2,● Grades are given using the formula ROUND(L*0.4 + PP*0.2 + E*0.4 + B).,narrative
+546,IA_1.pdf_p2,To pass you need E at least 5 and final score of at least 4.5.,narrative
+547,IA_1.pdf_p4,Related course materials CS221: Artificial Intelligence: Principles and Techniques Lecture Videos | Artificial Intelligence | Electrical Engineering and Computer Science | MIT OpenCourseWare,narrative
+548,IA_1.pdf_p4,CS221 is Artificial Intelligence: Principles and Techniques,diagram_extracted
+549,IA_1.pdf_p5,"Defining Artificial Intelligence Artificial Intelligence: Wikipedia, Britannica, Merriam-Webster Intelligence: Wikipedia, Britannica, Merriam-Webster",narrative
+550,IA_1.pdf_p5,"Artificial Intelligence is Wikipedia, Britannica, Merriam-Webster",diagram_extracted
+551,IA_1.pdf_p5,"Intelligence is Wikipedia, Britannica, Merriam-Webster",diagram_extracted
+552,IA_1.pdf_p6,Is this AI?,narrative
+553,IA_1.pdf_p7,How about this?,narrative
+554,IA_1.pdf_p8,This is not AI,narrative
+555,IA_1.pdf_p9,Defining AI ● Turing test: is an average human able to distinguish between a human and a computer behind two terminals?,narrative
+556,IA_1.pdf_p9,● Chinese room: is using rules equivalent to understanding?,narrative
+557,IA_1.pdf_p9,● Strong vs weak AI,narrative
+558,IA_1.pdf_p9,● Turing test is is an average human able to distinguish between a human,diagram_extracted
+559,IA_1.pdf_p9,● Chinese room is is using rules equivalent to understanding?,diagram_extracted
+560,IA_1.pdf_p10,"Brief history of conversational agents: 50s to 70s - templates and regular expressions <aiml version=""1.0.1"" encoding = ""UTF-8""?> <category> <pattern> HELLO ALICE </pattern> <template> Hello User </template> </category> </aiml>",narrative
+561,IA_1.pdf_p11,Brief history of conversational agents: 80s to 2000s - language models and Markov chains,narrative
+562,IA_1.pdf_p12,Brief history of conversational agents: Current state-of-the-art - Transformers and Reinforcement Learning,narrative
+563,IA_1.pdf_p13,"To conclude this interlude… ● ChatGPTs are conversational agents, not AIs or LLMs ● Current conversational agents don’t think, they just re-use approximate human reasoning ● They need to hallucinate to cover inevitable lack of coverage ● They are (and should be used as) powerful search and summarisation engines, editors and virtual assistants.",narrative
+564,IA_1.pdf_p13,● For this year’s project you will be required to use them.,narrative
+565,IA_1.pdf_p14,Defining AI Knowledge vs intelligence Making decisions,narrative
+570,IA_1.pdf_p16,Connectionism vs computationalism: is intelligent behaviour a consequence or a goal?,narrative
+571,IA_1.pdf_p16,Connectionism: intelligence is a product of Computationalism: intelligence is a product structure of functions,narrative
+572,IA_1.pdf_p16,Connectionism vs computationalism is is intelligent,diagram_extracted
+573,IA_1.pdf_p16,Connectionism is intelligence is a product of Computationalism: intelligence is a product,diagram_extracted
+574,IA_1.pdf_p17,"Four perspectives on AI: Acting humanly ● Computer manifest human capabilities: NLP, knowledge representation, reasoning, learning ● Pro: human intelligence is the highest form ● Cons: bird flight is the best kind of flight?",narrative
+575,IA_1.pdf_p17,Four perspectives on AI is Acting humanly,diagram_extracted
+576,IA_1.pdf_p17,"capabilities is NLP, knowledge",diagram_extracted
+577,IA_1.pdf_p17,● Pro is human intelligence is the,diagram_extracted
+578,IA_1.pdf_p17,● Cons is bird flight is the best,diagram_extracted
+579,IA_1.pdf_p18,Four perspectives on AI: Thinking humanly ● Computer has similar thinking mechanisms as humans: artificial “brains” - replicated biological cognitive processes ● Pro: easy to explain and evaluate results ● Cons: do we know how humans think?,narrative
+580,IA_1.pdf_p18,Four perspectives on AI is Thinking humanly,diagram_extracted
+581,IA_1.pdf_p18,humans is artificial “brains” -,diagram_extracted
+582,IA_1.pdf_p18,● Pro is easy to explain and,diagram_extracted
+583,IA_1.pdf_p18,● Cons is do we know how,diagram_extracted
+584,IA_1.pdf_p19,"Four perspectives on AI: Thinking rationally ● Computer reasons using an accepted deductive system (a set of logical rules) ● Pro: Easy to replicate, easy to prove ● Cons: Informal knowledge is not conductive to formal rules, logical solutions are not conductive to informal realities",narrative
+585,IA_1.pdf_p19,Four perspectives on AI is Thinking rationally,diagram_extracted
+586,IA_1.pdf_p19,"● Pro is Easy to replicate, easy to",diagram_extracted
+587,IA_1.pdf_p19,● Cons is Informal knowledge is,diagram_extracted
+588,IA_1.pdf_p20,"Four perspectives on AI: Acting rationally ● Computer produces rational results: rational agents with well defined scopes ● Pro: most useful results, most common type of AI ● Cons: who defines the goals?",narrative
+589,IA_1.pdf_p20,can it really do everything?,narrative
+590,IA_1.pdf_p20,Four perspectives on AI is Acting rationally,diagram_extracted
+591,IA_1.pdf_p20,results is rational agents with,diagram_extracted
+592,IA_1.pdf_p20,"● Pro is most useful results, most",diagram_extracted
+593,IA_1.pdf_p20,● Cons is who defines the goals?,diagram_extracted
+594,IA_1.pdf_p21,Four functional types of AI ● Reactive Machines: AI produces an output based on the provided current goal.,narrative
+595,IA_1.pdf_p21,"Significant techniques: rules (deterministic or stochastic), neural networks, state and variable based models.",narrative
+596,IA_1.pdf_p21,● Limited Memory: AI adapts using current experiences in order to improve future behaviour.,narrative
+597,IA_1.pdf_p21,"Significant techniques: reinforcement learning, genetic algorithms - evolutive networks, LSTM models.",narrative
+598,IA_1.pdf_p21,"● Theory of Mind: AI capable of analyzing, processing and predicting the human mind (behaviour and goals).",narrative
+599,IA_1.pdf_p21,● Self Aware: AI capable of setting it’s own goals and changing its own behaviour.,narrative
+600,IA_1.pdf_p21,● Reactive Machines is AI produces an output based on the provided current,diagram_extracted
+601,IA_1.pdf_p21,"goal. Significant techniques is rules (deterministic or stochastic), neural",diagram_extracted
+602,IA_1.pdf_p21,● Limited Memory is AI adapts using current experiences in order to improve,diagram_extracted
+603,IA_1.pdf_p21,"future behaviour. Significant techniques is reinforcement learning, genetic",diagram_extracted
+604,IA_1.pdf_p21,"● Theory of Mind is AI capable of analyzing, processing and predicting the",diagram_extracted
+605,IA_1.pdf_p21,● Self Aware is AI capable of setting it’s own goals and changing its own,diagram_extracted
+606,IA_1.pdf_p22,Defining a reasonable and practical decision system An decision (intelligent) system has to be able to: ● Understand a model and a goal ● Recognize and be able to employ means to reach the goal ● Decide if and when to use those means ● Provide a satisfactory answer for the established goal,narrative
+607,IA_1.pdf_p23,"The pillars of modern AI Data Structures Modeling Databases Graph Algorithms Formal Languages, Automata and Compilers Knowledge Based Systems Logics for Computer Science Algorithms Design Graph Algorithms Reasoning Learning Probabilities and Statistics Machine Learning Neural Networks",narrative
+608,IA_1.pdf_p24,"Modeling An AI engine should be able to describe, work with and output real-world data All models are lossy",narrative
+609,IA_1.pdf_p25,"Reasoning An AI engine should be able to discover new data (concepts, relations) from the available data Inferred data can be contradicted by real data - exceptions are messy",narrative
+610,IA_1.pdf_p26,An AI engine should be able to adapt it’s model for particular contexts What is learned is at best as good as the available data,narrative
+611,IA_1.pdf_p27,First approach: state-based models ● in what way should I change the current state of the problem in order to get closer or reach the goal?,narrative
+612,IA_1.pdf_p27,"● compute a solution (algorithm - sequence of transitions) starting from an initial state and ending in the goal state ● mostly covered by search strategies, reasoning systems, AI for games",narrative
+613,IA_1.pdf_p27,First approach is state-based models,diagram_extracted
+614,IA_1.pdf_p28,Second approach: variable-based models ● what formula (function) can be applied to the problem data in order to output the goal?,narrative
+615,IA_1.pdf_p28,"● start from arbitrary formulas, test them over the expected results and adjust accordingly ● mostly covered by machine learning and constraint satisfaction problems",narrative
+616,IA_1.pdf_p28,Second approach is variable-based models,diagram_extracted
+617,IA_1.pdf_p29,Course synopsis Weeks 2 and 3: State-based models ● (Decision) problems ● Representing states ● Search strategies ● Deterministic and non-deterministic problem spaces ?,narrative
+618,IA_1.pdf_p29,Can the computer solve NP-complete problems?,narrative
+619,IA_1.pdf_p29,Weeks 2 and 3 is State-based models,diagram_extracted
+620,IA_1.pdf_p30,Course synopsis Week 4: Constraint satisfaction problems ● Variable-based models ● Soft constraints ● Optimisations Can the computer satisfy constraints over variables in a model?,narrative
+621,IA_1.pdf_p30,Week 4 is Constraint satisfaction problems,diagram_extracted
+622,IA_1.pdf_p31,Course synopsis Week 5: Games ● Types of games ● Games theory ● Strategies Can the computer play games competitively?,narrative
+624,IA_1.pdf_p32,Course synopsis Weeks 6: Neural networks ● Perceptrons ● Machine learning ● Applications in games and NLP Can the computer learn anything?,narrative
+625,IA_1.pdf_p32,Weeks 6 is Neural networks,diagram_extracted
+626,IA_1.pdf_p33,Course synopsis Weeks 6-7-10: Reinforcement learning and applications ● Markov decision process ● Q Learning,narrative
+627,IA_1.pdf_p33,Weeks 6-7-10 is Reinforcement learning,diagram_extracted
+628,IA_1.pdf_p34,Course synopsis Weeks 9-11: Knowledge representation and NLP ● Ontologies ● Understanding natural language ● Language ambiguity Can the computer talk to us using our language?,narrative
+629,IA_1.pdf_p34,Weeks 9-11 is Knowledge representation,diagram_extracted
+630,IA_1.pdf_p35,Course synopsis Week 12: Bayesian networks ● Reasoning with probabilities ● Independence and conditional independence Can the computer decide and learn on probabilistic data?,narrative
+631,IA_1.pdf_p35,Week 12 is Bayesian networks,diagram_extracted
+632,IA_1.pdf_p36,Course synopsis Week 13: Planning ● STRIPS and PDDL ● Forward and backward search Can the computer find a plan which is guaranteed to succeed?,narrative
+633,IA_1.pdf_p36,Week 13 is Planning,diagram_extracted
+634,IA_1.pdf_p37,More about AI Why Intelligence Is Not a Computational Process von Neumann bottleneck Reasoning agents,narrative
+635,IA_5.pdf_p1,"Artificial Intelligence 3rd year, 1st semester Week 5: Game theory “The true source of uncertainty lies in the intentions of others.” Peter L. Bernstein",narrative
+636,IA_5.pdf_p1,Week 5 is Game theory,diagram_extracted
+637,IA_5.pdf_p2,What is a Game?,narrative
+638,IA_5.pdf_p2,An adversarial search problem A interactive decision problem where ● The solution is not built exclusively by a single strategy ● Not all final states are desirable,narrative
+639,IA_5.pdf_p3,These are puzzles (decision problems) and not games (interactive decision problems)!,narrative
+640,IA_5.pdf_p4,A Game always has: A starting state (the game instance) ● At least one state which determines the end of the game if ● reached At least one goal for each player (not necessarily an end state) ● Rules for each player (not always the same) ● At least two sources determining changes to the current state ●,narrative
+641,IA_5.pdf_p5,Additional references Stanford Game Theory Online Yale Game Theory Giacomo Bonanno Game Theory,narrative
+642,IA_5.pdf_p6,Zero sum games ● Something won by a player is lost by the other(s).,narrative
+643,IA_5.pdf_p6,● Also called strictly competitive games.,narrative
+644,IA_5.pdf_p6,● Many games are not zero-sum!,narrative
+645,IA_5.pdf_p6,Non zero-sum game: I have n money and I want to give it to a group of m players.,narrative
+646,IA_5.pdf_p6,Each of the m players has to write a sum on a piece of paper visible only to them.,narrative
+647,IA_5.pdf_p6,I collect all pieces of paper and total the sums.,narrative
+648,IA_5.pdf_p6,"If the total is at most as much as n, each player gets the written amount, otherwise nobody gets anything.",narrative
+649,IA_5.pdf_p7,Single player games ● One active player - one controlling strategy ● At least one additional source of information ● Cannot be zero-sum games Multiple player games ● Can have different rules and goals for all players.,narrative
+650,IA_5.pdf_p7,● Symmetrical games: all rules and goals are the same for all players.,narrative
+651,IA_5.pdf_p7,● Symmetrical games is all rules and goals,diagram_extracted
+652,IA_5.pdf_p8,"Other types of games ● If the state change is determined by multiple player decisions at the same time, the game is simultaneous.",narrative
+653,IA_5.pdf_p8,"● If the state change is determined in alternative turns by each player, the game has alternate moves.",narrative
+654,IA_5.pdf_p8,"● If each player knows everything about the current state of the game, all previous decisions made by all players and all rules and goals of all players, the game has perfect information.",narrative
+655,IA_5.pdf_p8,"● Imperfect information games: card games, kriegspiel, others.",narrative
+656,IA_5.pdf_p8,"● Imperfect information games is card games, kriegspiel, others.",diagram_extracted
+657,IA_5.pdf_p9,"OK, now let’s implement a game as an interactive decision problem The game: Tic-Tac-Toe On a 3x3 board two players place alternatively pieces (first one X pieces, second one O pieces) until either one of them has three pieces in the same row, column or diagonal (in which case that player has won the game), or no more pieces can be placed (in which case the game ended in a draw).",narrative
+658,IA_5.pdf_p9,"Two player game, symmetrical, zero-sum, alternate moves.",narrative
+659,IA_5.pdf_p9,The game is Tic-Tac-Toe,diagram_extracted
+660,IA_5.pdf_p10,"Describing a state (p, b , b , b , b , b , b , b , b , b ) 11 12 13 21 22 23 31 32 33 ● p𝞊{1,2}, 1 if we are next to move, 2 if the opponent; ● b 𝞊{0,1,2}, 0 if the b position is empty, 1 if it’s occupied by one ij ij of our pieces and 2 if it’s one of the opponents.",narrative
+661,IA_5.pdf_p10,"is (1, 2, 1, 2, 2, 2, 1, 1, 2, 1)",narrative
+662,IA_5.pdf_p11,"Game initialisation State initialisation (int first_player) { return (first_player, 0, 0, 0, 0, 0, 0, 0, 0, 0) ; } Select which player is moving first and send selection as parameter for initialisation.",narrative
+663,IA_5.pdf_p12,Game ending int IsFinal (State S) { if same_value_column_line_diagonal(S) return value; elseif no_zero_values(S) return 0; else return -1; },narrative
+664,IA_5.pdf_p13,"Transition and validation State move (State S, int position) { S[position]=S[0]; S[0]=3-S[0]; return S; } Boolean Validate (State S, int position) { return (S[position]==0); }",narrative
+665,IA_5.pdf_p14,How should a strategy look like?,narrative
+666,IA_5.pdf_p15,"Void strategy(State s) { While (!isFinal(s)) { If it’s my turn Choose position; If (Validate (s, position)) s = Transition(s, position); Else get other player(s) decisions and change s } }",narrative
+667,IA_5.pdf_p16,"The MINIMAX strategy ● Select a depth for exploration, at the minimum it has to include a full step for all other players.",narrative
+668,IA_5.pdf_p16,● Select a score function (heuristic) which evaluates a state as to its value for the other player(s).,narrative
+669,IA_5.pdf_p16,"The better the score, the less desirable that state is from your perspective.",narrative
+670,IA_5.pdf_p16,The opponent should either be the maximising player (higher score is better) or minimising player (lower score is better).,narrative
+671,IA_5.pdf_p16,"score minimax(depth, state, next_player) { if(final(state)||(depth==0)) return score(state); else if (next_player is the minimising one) return min(minimax(depth-1,each neighbour state,next_player); else return max(minimax(depth-1,each neighbour state,next_player); }",narrative
+672,IA_5.pdf_p17,"The MINIMAX strategy example S A B C 1 5 9 8 3 9 2 minimax(2, S, AI) = min (score (minimax (1, A, OP)), score (minimax (1, B, OP)), score (minimax (1, C, OP))) = min (max (1, 5, 9), max (8), max (3, 9, 2)) = 8 (choice B)",narrative
+673,IA_5.pdf_p18,"MINIMAX considerations ● The objective of MINIMAX is to allow the opponent to make the worst possible moves, assuming it will always choose the best move available.",narrative
+674,IA_5.pdf_p18,● The depth of exploration is crucial to the MINIMAX accuracy.,narrative
+675,IA_5.pdf_p18,● The depth of exploration is limited by the necessity to store every explored state.,narrative
+676,IA_5.pdf_p18,"For chess (average branching factor of 35), a depth of 4 would require 1,500,625 states.",narrative
+677,IA_5.pdf_p18,An exhaustive exploration would require 1030 states.,narrative
+678,IA_5.pdf_p18,● MINIMAX is predictable and assumes predictable opponents.,narrative
+679,IA_5.pdf_p19,Optimising MINIMAX S MIN<=9 A MAX>=9 9,narrative
+680,IA_5.pdf_p20,Optimising MINIMAX S MIN=9 A MAX=9 9 8,narrative
+681,IA_5.pdf_p21,Optimising MINIMAX ?,narrative
+682,IA_5.pdf_p21,S MIN=9 A MAX=9 MAX>=10 B 9 8 10,narrative
+683,IA_5.pdf_p22,Optimising MINIMAX S MIN=9 A MAX=9 MAX>=10 B 9 8 10,narrative
+684,IA_5.pdf_p23,"The ALPHA-BETA optimisation ● For each state up to (but not including) the selected depth, keep two values (alpha and beta), alpha being the minimum maximum up to that depth and beta being the maximum score up to that depth.",narrative
+685,IA_5.pdf_p23,"● If for a state alpha is greater or equal than beta, stop exploring further accessible states.",narrative
+686,IA_5.pdf_p23,● Update alpha and beta scores each time a score is computed.,narrative
+687,IA_5.pdf_p23,"score alphabeta(depth, state, next_player, alpha, beta) { if(final(state)||(depth==0)) return score(state); else for all neighbour states if (next_player is minimising) score = min(alphabeta (depth-1, each_child, next_player, alpha, beta); if (score <= alpha) return alpha; if (score < beta) beta = score; else score = max(alphabeta (depth-1, each_child, next_player, alpha, beta); if (score >= beta) return beta; if (score > alpha) alpha = score; return score; } implemented alternative",narrative
+688,IA_5.pdf_p24,ALPHA-BETA example alpha=3 S beta=-1000 alpha=8 alpha=9 beta=3 beta=9 A alpha=9 B C beta=8 1 5 9 8 3 9 2 ALPHA-BETA is sensitive to the order of evaluation of neighbours and can be further optimised by an order heuristic.,narrative
+689,IA_5.pdf_p24,Minimax game search algorithm with alpha-beta pruning,narrative
+690,IA_5.pdf_p25,Normal (strategic) form representation Uses a matrix of payoffs to represent all possible strategies for each player.,narrative
+691,IA_5.pdf_p25,Works for complete games (all information is known to all players).,narrative
+692,IA_5.pdf_p25,One matrix for each pair of players.,narrative
+693,IA_5.pdf_p25,One column for each combination of moves.,narrative
+694,IA_5.pdf_p25,Player’s possible moves Opponent’s possible moves Player’s payoffs considering the opponents’ moves.,narrative
+695,IA_5.pdf_p26,Prisoner’s dilemma A B Deny Confess Deny -1 -1 -3 0 Confess 0 -3 -2 -2 What is the best strategy for A?,narrative
+696,IA_5.pdf_p27,"Prisoner’s dilemma A B Deny Confess Deny -1 -1 -3 0 Confess 0 -3 -2 -2 Average payoff for A, with non-cooperation.",narrative
+697,IA_5.pdf_p27,If A chooses Deny: (-1+-3)/2 = -2 If A chooses Confess: (0+-2)/2=-1,narrative
+698,IA_5.pdf_p27,If A chooses Deny is (-1+-3)/2 = -2 If A chooses Confess: (0+-2)/2=-1,diagram_extracted
+699,IA_5.pdf_p28,Prisoner’s dilemma A B Deny Confess Deny -1 -1 -3 0 Confess 0 -3 -2 -2 Strategy: The decisions made by a player for all possible states in which he has to make a decision.,narrative
+700,IA_5.pdf_p28,A strategy making the same choice everytime is called a pure strategy.,narrative
+701,IA_5.pdf_p28,"For example, choosing “Deny” all the time is a pure strategy for player A.",narrative
+702,IA_5.pdf_p28,Strategy is The decisions made by a player for all possible states in which he has to make a,diagram_extracted
+703,IA_5.pdf_p29,Dominant strategy A strategy is dominant if it always provides payoffs at least as good as any other strategy.,narrative
+704,IA_5.pdf_p29,A strategy is strictly dominant is the payoffs are always better than any other strategy.,narrative
+705,IA_5.pdf_p29,Is there a dominant strategy for Prisoner’s Dilemma?,narrative
+709,IA_5.pdf_p30,"Yes, “Confess” is a strictly dominant strategy.",narrative
+710,IA_5.pdf_p31,The Monty Hall problem,narrative
+711,IA_5.pdf_p32,Pareto optimality A strategy is Pareto optimal if no change can be made to it in order to improve the players’ payoff without diminishing the other players payoffs.,narrative
+712,IA_5.pdf_p32,"(Deny/Deny) is Pareto optimal, as well as (Deny/Confess) and (Confess/Deny).",narrative
+713,IA_5.pdf_p32,(Confess/Confess) is not optimal as if either player changes decision to improve outcome the outcome for the other player will decrease.,narrative
+714,IA_5.pdf_p32,What about the game below?,narrative
+715,IA_5.pdf_p32,"(Y/Y), (X/Y), (Y/X) are Paretto optimal, (X/X) is not Paretto optimal.",narrative
+716,IA_5.pdf_p32,X Y X 1 1 2 2 Y 2 2 1 3,narrative
+717,IA_5.pdf_p33,"Nash Equilibrium If in a game all players obey the game rules and aim to maximize their payoffs, there is at least one strategy for each player which guarantees maximum payoffs for each player.",narrative
+718,IA_5.pdf_p33,That strategy is called Nash optimum or equilibrium.,narrative
+719,IA_5.pdf_p33,No player has a reason to change an equilibrium as long as anybody follows one.,narrative
+720,IA_5.pdf_p33,A dominant and Paretto optimal strategy is always an equilibrium.,narrative
+721,IA_5.pdf_p33,"However, for most games no dominant strategies exist.",narrative
+722,IA_5.pdf_p33,More about equilibria.,narrative
+723,IA_5.pdf_p34,Hunting game Stag Rabbit Stag 5 5 0 3 Rabbit 3 0 4 4 Are there any dominant strategies?,narrative
+724,IA_5.pdf_p34,Are there any equilibria?,narrative
+726,IA_5.pdf_p35,NO Are there any equilibria?,narrative
+727,IA_5.pdf_p35,"YES: (Stag, Stag) and (Rabbit, Rabbit) Equilibria are dependent on the other players behaving as expected!",narrative
+728,IA_5.pdf_p35,"Are there any equilibria? YES is (Stag, Stag) and (Rabbit, Rabbit)",diagram_extracted
+729,IA_5.pdf_p36,"Chicken game Straight Turn Straight -3 -3 3 -2 Turn -2 3 -3 -3 The two equilibria (Straight, Turn) and (Turn, Straight) are very dependent on the opponent’s strategy, otherwise both players get worse results.",narrative
+730,IA_5.pdf_p37,The money game I have n money and I want to give it to a group of m players.,narrative
+734,IA_5.pdf_p37,Is there any dominant strategy?,narrative
+735,IA_5.pdf_p37,What is the equilibrium?,narrative
+741,IA_5.pdf_p38,NO What is the equilibrium?,narrative
+742,IA_5.pdf_p38,Each player writes n/m.,narrative
+743,IA_5.pdf_p39,The Goalkeeper game Shooter Keeper L eft Right Left -1 1 1 -1 Right 1 -1 -1 1 There is no pure strategy equilibria.,narrative
+744,IA_5.pdf_p39,What is the actual equilibria?,narrative
+745,IA_5.pdf_p40,Computing equilibria as a mixed strategy Shooter Keeper L eft Right Left -1 1 1 -1 Right 1 -1 -1 1 The equilibria (EQS and EQK) must provide equal payoffs for all possible opponent decisions.,narrative
+746,IA_5.pdf_p40,EQS(Left) payoff is -1*EQK(Left)+1*EQK(Right) EQS(Right) payoff is 1*EQK(Left)-1*EQK(Right) Equal payoff means that -1*EQK(Left)+1*EQK(Right)=1*EQK(Left)-1*EQK(Right) So EQK(Left)=EQK(Right)=0.5 since EQK(Right)+EQK(Left)=1.,narrative
+747,IA_5.pdf_p40,Equilibria is reached when both choices are made with the same frequency.,narrative
+748,IA_5.pdf_p41,Mixed strategies Strategies which are not pure are called mixed.,narrative
+749,IA_5.pdf_p41,"For most games, pure strategies are not equilibria.",narrative
+750,IA_5.pdf_p41,"Mixed strategies are usually non-deterministic, making some random decisions (stochastic or probabilistic).",narrative
+751,IA_5.pdf_p41,How can we compute the equilibria for the goalkeeper game?,narrative
+752,IA_5.pdf_p42,Equilibria work only if all players obey the game rules and aim to maximize their payoffs.,narrative
+753,IA_5.pdf_p42,Can you trust the other players?,narrative
+754,IA_5.pdf_p42,How much can you cooperate with them?,narrative
+755,IA_5.pdf_p42,Minimax is an equilibria for all two player zero-sum game.,narrative
+756,IA_5.pdf_p42,A chess program implementing Minimax is easy to defeat.,narrative
+757,IA_5.pdf_p42,Trust in Game Theory,narrative
+758,IA_5.pdf_p43,Parrondo's paradox There is at least one winning strategy which can be built using two losing strategies alternatively.,narrative
+759,IA_5.pdf_p43,Game: add or substract money.,narrative
+760,IA_5.pdf_p43,Game ends if sum at or below zero.,narrative
+761,IA_5.pdf_p43,"S1: If you have an even sum, add 3.",narrative
+762,IA_5.pdf_p43,Otherwise substract 5.,narrative
+763,IA_5.pdf_p43,"S2: If you have an odd sum, substract 1.",narrative
+764,IA_5.pdf_p43,"S1,S2,S1,S2,... is dominant for both S1 and S2.",narrative
+765,IA_5.pdf_p43,Game is add or substract money. Game ends if sum at or below zero.,diagram_extracted
+766,IA_5.pdf_p44,Overall considerations about strategies ● Strategies should have to have a way of estimating the missing information (eg.,narrative
+767,IA_5.pdf_p44,"other player’s decisions) ● Strategies have to be unpredictable: many use either random steps or select randomly between two or more strategies ● You can prove that some strategies are better than others ● If a there is a strategy better than all others then it’s not a game, it’s a puzzle ● An useful benchmark strategy is the equilibria which exists and can be determined for all games Computer “outsmarts” Kasparov and Fisher outthinks computers",narrative
+768,IA_5.pdf_p44,● Strategies have to be unpredictable is many use either random steps or select randomly,diagram_extracted
+769,IA_5.pdf_p45,Monte-Carlo strategies ● Generate all neighbours of the current state and add them to the graph until a set depth has been reached OR until enough final states have been reached ● Run a simulation for all unexplored states in the graph ○ Until n final states are reached OR ○ Up to depth m ● Compute a score for each state after each simulation (for example (positive-negative)/n)) ● Update the scores of all nodes above the current one using the newly computed score ● Return to the first step ● Select the neighbour of the starting state with the best score More,narrative
+770,IA_7.pdf_p1,Reinforcement learning (I) IA 2025/2026,narrative
+771,IA_7.pdf_p2,"Con¸tinut Introducere Procese de decizie Markov Value iteration Policy iteration FII,UAIC Curs7 IA2025/2026 2/43",narrative
+772,IA_7.pdf_p3,"ˆ Inv˘atare cuˆınt˘arire (Reinforcement learning) , Agentul trebuie s˘aˆınvete un comportament, f˘ar˘a a avea un instructor , ▶ Agentul are o sarcin˘a deˆındeplinit ▶ Efectueaz˘a o serie de actiuni , ▶ Prime¸ste feedback din partea mediului: cˆat de bine a actionat pentru , a-siˆındeplini sarcina.",narrative
+773,IA_7.pdf_p3,", Agentul prime¸ste o recompens˘a pozitiv˘a dac˘aˆındepline¸ste bine sarcina, altfel o recompens˘a negativ˘a.",narrative
+774,IA_7.pdf_p3,Aceast˘a modalitatea deˆınv˘atare se nume¸steˆınv˘atare cuˆınt˘arire.,narrative
+775,IA_7.pdf_p3,", , FII,UAIC Curs7 IA2025/2026 3/43",narrative
+776,IA_7.pdf_p3,Prime¸ste feedback din partea mediului is cˆat de bine a actionat pentru,diagram_extracted
+777,IA_7.pdf_p4,"Modelul de interactiune , ▶ Agentul efectueaz˘a actiuni , ▶ Mediulˆıi prezint˘a agentului situatii numite st˘ari si acord˘a recompense , , Traiectorie / episod (s ,a ,r ,s ,a ,r ,...) 0 0 1 1 1 2 FII,UAIC Curs7 IA2025/2026 4/43",narrative
+778,IA_7.pdf_p5,"ˆ Inv˘atare cuˆınt˘arire , ▶ Scopul: de a determina agentul s˘a actioneze a.ˆı.",narrative
+779,IA_7.pdf_p5,"s˘a-¸si maximizeze , recompensele ▶ Agentul trebuie s˘a identifice secventa de actiuni ce conduce la , , ˆındeplinirea sarcinii ▶ Obtinerea de date siˆınv˘atare supervizat˘a pe aceste date , , , Date de antrenare: (S,A,R) Stare, Actiune, Recompens˘a , FII,UAIC Curs7 IA2025/2026 5/43",narrative
+780,IA_7.pdf_p5,Scopul is de a determina agentul s˘a actioneze a.ˆı. s˘a-¸si maximizeze,diagram_extracted
+781,IA_7.pdf_p5,"Date de antrenare is (S,A,R) Stare, Actiune, Recompens˘a",diagram_extracted
+782,IA_7.pdf_p6,"Aplicatii: TD-Gammon , O retea neuronal˘a antrenat˘a cu TD-learning , ▶ intrarea: configuratie , ▶ iesirea: o estimare a valorii pentru acea configuratie , , Invat˘a din simul˘ari (joac˘a jocuriˆımpotriva luiˆınsusi) , , FII,UAIC Curs7 IA2025/2026 6/43",narrative
+783,IA_7.pdf_p6,Aplicatii is TD-Gammon,diagram_extracted
+784,IA_7.pdf_p6,intrarea is configuratie,diagram_extracted
+785,IA_7.pdf_p6,iesirea is o estimare a valorii pentru acea configuratie,diagram_extracted
+786,IA_7.pdf_p7,"Aplicatii: robotic˘a , AIBO:ˆınvat˘a s˘a mearg˘a ’04 Minitaur quadrupedal robot: ˆınvat˘a , , (utilizˆand Policy gradient) s˘a mearg˘a (actor-critic deep RL) https://sites.google.com/view/ https://www.cs.utexas.edu/users/ minitaur-locomotion/ AustinVilla/?p=research/learned_walk FII,UAIC Curs7 IA2025/2026 7/43",narrative
+787,IA_7.pdf_p7,Aplicatii is robotic˘a,diagram_extracted
+788,IA_7.pdf_p7,AIBO is ˆınvat˘a s˘a mearg˘a ’04 Minitaur quadrupedal robot: ˆınvat˘a,diagram_extracted
+789,IA_7.pdf_p7,https is //sites.google.com/view/,diagram_extracted
+790,IA_7.pdf_p7,https is //www.cs.utexas.edu/users/,diagram_extracted
+791,IA_7.pdf_p8,"Deep Reinforcement Learning AlphaGo (Google DeepMind, ’15): programul aˆınv˘atat s˘a joace jocurile , Atari 2600 urm˘arind doar afisajul si scorul , , ▶ 2016: a cˆastigatˆımpotriva lui Lee Sedol, juc˘ator de GO profesionist , cu 9 dan, premiu: 1 000 000$ ▶ 2017: a cˆastigatˆımpotriva lui Ke Jie, cel mai bun juc˘ator de GO , AlphaGo Zero: aˆınv˘atat s˘a joace f˘ar˘a informatii din jocuri ale persoanelor , , umane si aˆınvins AlphaGo cu 100-0 (oct. ’17) , AlphaZero aˆınvins AlphaGo Zero cu 60-40 si a ajuns dup˘a doar 9 ore de , antrenare la un nivel superior tuturor programelor de sah si GO existente , , (dec. ’17) FII,UAIC Curs7 IA2025/2026 8/43",narrative
+792,IA_7.pdf_p8,"AlphaGo (Google DeepMind, ’15) is programul aˆınv˘atat s˘a joace jocurile",diagram_extracted
+793,IA_7.pdf_p8,"2016 is a cˆastigatˆımpotriva lui Lee Sedol, juc˘ator de GO profesionist",diagram_extracted
+794,IA_7.pdf_p8,"cu 9 dan, premiu is 1 000",diagram_extracted
+795,IA_7.pdf_p8,"2017 is a cˆastigatˆımpotriva lui Ke Jie, cel mai bun juc˘ator de GO",diagram_extracted
+796,IA_7.pdf_p8,AlphaGo Zero is aˆınv˘atat s˘a joace f˘ar˘a informatii din jocuri ale persoanelor,diagram_extracted
+797,IA_7.pdf_p9,"Con¸tinut Introducere Procese de decizie Markov Value iteration Policy iteration FII,UAIC Curs7 IA2025/2026 9/43",narrative
+798,IA_7.pdf_p10,"Decizii secventiale , ▶ Mediu determinist ▶ (sus, sus, dreapta, dreapta, dreapta) ▶ Mediu stochastic ▶ Model de tranzitii P(s′|s,a): probabilitatea de a ajunge din starea sˆın , starea s′ efectuˆand actiunea a , ▶ Actiunea obtine efectul dorit cu probabilitatea 0.8 , , ▶ Agentul primeste o recompens˘a: -0.04 pentru st˘arile nonterminale; , +/-1 pentru st˘arile terminale FII,UAIC Curs7 IA2025/2026 10/43",narrative
+799,IA_7.pdf_p10,"Model de tranzitii P(s′|s,a) is probabilitatea de a ajunge din starea sˆın",diagram_extracted
+800,IA_7.pdf_p10,Agentul primeste o recompens˘a is -0.04 pentru st˘arile nonterminale;,diagram_extracted
+801,IA_7.pdf_p11,"Deterministic vs. stochastic Stochastic: pentru secventa (sus, sus, dreapta, dreapta, dreapta), ajungemˆın , starea final˘a cu probabilitatea 0.85 =0.33 FII,UAIC Curs7 IA2025/2026 11/43",narrative
+802,IA_7.pdf_p11,"Stochastic is pentru secventa (sus, sus, dreapta, dreapta, dreapta), ajungemˆın",diagram_extracted
+803,IA_7.pdf_p12,"Presupunerea Markov Proces Markov: un model matematic pentru a descrie o secvent˘a de , evenimente.",narrative
+804,IA_7.pdf_p12,"▶ Starea curent˘a s depinde de un istoric finit al st˘arilor anterioare t ▶ Proces Markov de ordinˆıntˆai: starea curent˘a s depinde doar de t starea anterioar˘a s t−1 P(s |s ,...,s ) = P(s |s ) t t−1 0 t t−1 FII,UAIC Curs7 IA2025/2026 12/43",narrative
+805,IA_7.pdf_p12,Proces Markov is un model matematic pentru a descrie o secvent˘a de,diagram_extracted
+806,IA_7.pdf_p12,Proces Markov de ordinˆıntˆai is starea curent˘a s depinde doar de,diagram_extracted
+807,IA_7.pdf_p13,"Proces de decizie Markov (Markov Decision Process) Proces de decizie Markov: o problem˘a de decizie secvential˘a pentru un , mediu stochastic cu un model de tranzitie Markov si recompense aditive , , ▶ St˘ari s ∈ S (starea initial˘a s ), actiuni a ∈ A , 0 , ▶ Modelul de tranzitii P(s′|s,a) , ▶ Functia de recompens˘a R(s) , Cum arat˘a o solutie?",narrative
+808,IA_7.pdf_p13,"Trebuie s˘a specifice ce actiune s˘a execute agentulˆın , , fiecare stare (politic˘a π).",narrative
+809,IA_7.pdf_p13,Sunt probleme de c˘autare nedeterministe.,narrative
+810,IA_7.pdf_p13,Expectimax: cˆand oponentul nu joac˘a optim.,narrative
+811,IA_7.pdf_p13,"FII,UAIC Curs7 IA2025/2026 13/43",narrative
+812,IA_7.pdf_p13,Proces de decizie Markov is o problem˘a de decizie secvential˘a pentru un,diagram_extracted
+813,IA_7.pdf_p13,Alg. de c˘autare. Expectimax is cˆand oponentul nu joac˘a optim.,diagram_extracted
+814,IA_7.pdf_p14,"Exemplu ▶ Un robot (masin˘a) vrea s˘a c˘al˘atoreasc˘a departe, repede.",narrative
+815,IA_7.pdf_p14,", ▶ St˘ari: Cool, Warm, Overheated.",narrative
+816,IA_7.pdf_p14,"Actiuni: Slow, Fast.",narrative
+817,IA_7.pdf_p14,"Dac˘a merge , mai repede, primeste o recompens˘a dubl˘a.",narrative
+818,IA_7.pdf_p14,", FII,UAIC Curs7 IA2025/2026 14/43",narrative
+819,IA_7.pdf_p14,"St˘ari is Cool, Warm, Overheated. Actiuni: Slow, Fast. Dac˘a merge",diagram_extracted
+820,IA_7.pdf_p15,"Exemplu: arborele de c˘autare FII,UAIC Curs7 IA2025/2026 15/43",narrative
+821,IA_7.pdf_p15,Exemplu is arborele de c˘autare,diagram_extracted
+822,IA_7.pdf_p16,Arbori de c˘autare pentru MDP ▶ Fiecare stare proiecteaz˘a un arbore de c˘autare.,narrative
+823,IA_7.pdf_p16,"s stare, (s,a,s′) tranzitie, P(s′|s,a), R(s,a,s′) , ▶ ˆIn problemele de c˘autare, scopul este de a identifica o secvent˘a , optim˘a.",narrative
+824,IA_7.pdf_p16,"ˆIn MDP, scopul este de a identifica o politic˘a optim˘a π∗ (strategie) ▶ π :S →A π(s) este actiunea recomandat˘aˆın starea s , FII,UAIC Curs7 IA2025/2026 16/43",narrative
+825,IA_7.pdf_p17,MDP ▶ Utilitate: suma recompenselor pentru o secvent˘a de st˘ari.,narrative
+826,IA_7.pdf_p17,", Recompensa este cˆastigul imediat, pe termen scurt; utilitatea este , cˆastigul total, pe termen lung.",narrative
+827,IA_7.pdf_p17,", ▶ Calitatea unei politici: utilitatea asteptat˘a a secventelor posibile de , , st˘ari.",narrative
+828,IA_7.pdf_p17,"Mediu stochastic: putem avea o secvent˘a diferit˘a de st˘ari cˆand , execut˘am aceeasi politic˘a din starea initial˘a.",narrative
+829,IA_7.pdf_p17,", , ▶ Politica optim˘a π∗ maximizeaz˘a utilitatea asteptat˘a.",narrative
+830,IA_7.pdf_p17,", FII,UAIC Curs7 IA2025/2026 17/43",narrative
+831,IA_7.pdf_p17,Utilitate is suma recompenselor pentru o secvent˘a de st˘ari.,diagram_extracted
+832,IA_7.pdf_p17,Calitatea unei politici is utilitatea asteptat˘a a secventelor posibile de,diagram_extracted
+833,IA_7.pdf_p17,Mediu stochastic is putem avea o secvent˘a diferit˘a de st˘ari cˆand,diagram_extracted
+834,IA_7.pdf_p18,"MDP Exemplu: politica optim˘a si valorile st˘arilor , FII,UAIC Curs7 IA2025/2026 18/43",narrative
+835,IA_7.pdf_p18,Exemplu is politica optim˘a si valorile st˘arilor,diagram_extracted
+836,IA_7.pdf_p19,"Utilit˘ati , Orizont finit ▶ U ([s ,s ,...,s ]) = U ([s ,s ,...,s ]),∀k > 0 h 0 1 N+k h 0 1 N Dup˘a momentul N, nimic nu mai conteaz˘a.",narrative
+837,IA_7.pdf_p19,"▶ Politica optim˘a nu este stationar˘a: actiunea optimal˘a pentru o , , anumit˘a stare se poate schimbaˆın timp.",narrative
+838,IA_7.pdf_p19,"Exemplu: ▶ N =3→ trebuie s˘a riste (sus) , ▶ N =100→ poate alege solutia mai sigur˘a (stˆanga) , FII,UAIC Curs7 IA2025/2026 19/43",narrative
+839,IA_7.pdf_p19,Politica optim˘a nu este stationar˘a is actiunea optimal˘a pentru o,diagram_extracted
+840,IA_7.pdf_p20,"Utilit˘ati , Orizont infinit ▶ Nu exist˘a un termen limit˘a fix ▶ Politica optim˘a este stationar˘a , ▶ a. Recompense aditive U ([s ,s ,s ,...]) = R(s )+R(s )+R(s )+... h 0 1 2 0 1 2 ▶ b. Recompense actualizate (discounted) U ([s ,s ,s ,...]) = R(s )+γR(s )+γ2R(s )+... h 0 1 2 0 1 2 γ ∈ [0,1] factorul de actualizare (discount factor) indic˘a faptul c˘a recompensele viitoare conteaz˘a mai putin decˆat cele imediate.",narrative
+841,IA_7.pdf_p20,", FII,UAIC Curs7 IA2025/2026 20/43",narrative
+842,IA_7.pdf_p21,"Recompense actualizate U ([s ,s ,s ,...]) = R(s )+γR(s )+γ2R(s )+... h 0 1 2 0 1 2 ▶ Valorile recompenselor scad exponential , Exemplu 1: γ = 0.5 R(s ) = 1,R(s ) = 2,... 0 1 U([1,2,3]) = 1∗1+0.5∗2+0.25∗3 U([1,2,3]) < U([3,2,1]) Exemplu 2: Quiz FII,UAIC Curs7 IA2025/2026 21/43",narrative
+843,IA_7.pdf_p21,Exemplu 1 is γ = 0.5,diagram_extracted
+844,IA_7.pdf_p21,Exemplu 2 is Quiz,diagram_extracted
+845,IA_7.pdf_p22,"Orizont infinit - evaluare Trebuie s˘a ne asigur˘am c˘a utilitatea unei secvente posibil infinite este , finit˘a.",narrative
+846,IA_7.pdf_p22,▶ Abordarea 1.,narrative
+847,IA_7.pdf_p22,"Dac˘a recompensele sunt m˘arginite si γ < 1 atunci: , ∞ ∞ (cid:88) (cid:88) U ([s ,s ,s ,...]) = γtR(s ) ≤ γtR = R /(1−γ) h 0 1 2 t max max t=0 t=0 ▶ Abordarea 2.",narrative
+848,IA_7.pdf_p22,"Dac˘a mediul contine st˘ari terminale si se garanteaz˘a , , faptul c˘a agentul va atinge una din ele (avem o politic˘a adecvat˘a, proper policy), putem utiliza γ = 1 FII,UAIC Curs7 IA2025/2026 22/43",narrative
+849,IA_7.pdf_p22,(cid is 88) (cid:88),diagram_extracted
+850,IA_7.pdf_p23,"Utilitatea asteptat˘a , ▶ Fiecare politic˘a genereaz˘a secvente multiple de st˘ari, datorit˘a , incertitudinii tranzitiilor P(s′|s,a) , ▶ Fie S o variabil˘a aleatoare: stareaˆın care ajunge agentul la t momentul t executˆand politica π; S = s. 0 Utilitatea asteptat˘a obtinut˘a prin executia politicii π din starea s: , , , (cid:34) ∞ (cid:35) (cid:88) Uπ(s) = E γtR(S ) t t=0 ( = valoarea asteptat˘a a sumei recompenselor actualizate, obtinute , , pentru toate secventele posibile de st˘ari) , FII,UAIC Curs7 IA2025/2026 23/43",narrative
+851,IA_7.pdf_p23,Fie S o variabil˘a aleatoare is stareaˆın care ajunge agentul la,diagram_extracted
+852,IA_7.pdf_p23,(cid is 34) (cid:35),diagram_extracted
+854,IA_7.pdf_p24,"Evaluarea unei politici ▶ Politica optim˘a π∗ = argmax Uπ(s) s π ▶ Uπ∗(s) utilitatea adev˘arat˘a a unei st˘ari: valoarea asteptat˘a a sumei , recompenselor actualizate dac˘a agentul execut˘a o politic˘a optim˘a Exemplu: fie γ = 1 si R(s) = −0.04.",narrative
+855,IA_7.pdf_p24,", Aproape de starea final˘a utilit˘atile sunt mai mari pentru c˘a este nevoie de , mai putini pasi cu recompens˘a negativ˘a pentru atingerea st˘arii respective.",narrative
+856,IA_7.pdf_p24,", , FII,UAIC Curs7 IA2025/2026 24/43",narrative
+857,IA_7.pdf_p24,utilitatea adev˘arat˘a a unei st˘ari is valoarea asteptat˘a a sumei,diagram_extracted
+858,IA_7.pdf_p24,Exemplu is fie γ = 1 si R(s) = −0.04.,diagram_extracted
+859,IA_7.pdf_p25,"Maximum Expected Utility Principiul Maximum Expected Utility: alege actiunea care maximizeaz˘a , utilitatea asteptat˘a a st˘arii urm˘atoare , (cid:88) π∗(s) = argmax P(s′|s,a)U(s′) a∈A(s) s′ FII,UAIC Curs7 IA2025/2026 25/43",narrative
+860,IA_7.pdf_p25,Principiul Maximum Expected Utility is alege actiunea care maximizeaz˘a,diagram_extracted
+862,IA_7.pdf_p26,"Ecuatia Bellman , (cid:88) U(s) = R(s)+γmax P(s′|s,a)U(s′) a∈A(s) s′ Ecuatia Bellman (1957): utilitatea unei st˘ari este recompensa imediat˘a , pentru acea stare, R(s), plus utilitatea asteptat˘a maxim˘a a st˘arii , urm˘atoare.",narrative
+863,IA_7.pdf_p26,"FII,UAIC Curs7 IA2025/2026 26/43",narrative
+865,IA_7.pdf_p26,Ecuatia Bellman (1957) is utilitatea unei st˘ari este recompensa imediat˘a,diagram_extracted
+866,IA_7.pdf_p27,"Exemplu Utilitatea st˘arii (1,1): U(1,1) = −0.04+γmax[0.8U(1,2)+0.1U(2,1)+0.1U(1,1), (Up) 0.9U(1,1)+0.1U(1,2), (Left) 0.9U(1,1)+0.1U(2,1), (Down) 0.8U(2,1)+0.1U(1,2)+0.1U(1,1)] (Right) Cea mai bun˘a actiune: Up.",narrative
+867,IA_7.pdf_p27,", FII,UAIC Curs7 IA2025/2026 27/43",narrative
+868,IA_7.pdf_p27,Cea mai bun˘a actiune is Up.,diagram_extracted
+869,IA_7.pdf_p28,"Rezolvarea unui proces de decizie Markov ▶ n st˘ari posibile ▶ n ecuatii Bellman, una pentru fiecare stare , ▶ n ecuatii cu n necunoscute: U(s) , Nu se poate rezolva ca sistem de ecuatii liniare din cauza functiei max , , FII,UAIC Curs7 IA2025/2026 28/43",narrative
+870,IA_7.pdf_p28,n ecuatii cu n necunoscute is U(s),diagram_extracted
+871,IA_7.pdf_p29,"Con¸tinut Introducere Procese de decizie Markov Value iteration Policy iteration FII,UAIC Curs7 IA2025/2026 29/43",narrative
+872,IA_7.pdf_p30,"I. Iterarea valorilor (Value iteration) Calculeaz˘a utilitatea fiec˘arei st˘ari si identific˘a actiunea optim˘aˆın fiecare , , stare Algoritm pentru calcularea politicii optime: ▶ Initializeaz˘a utilit˘atile cu valori arbitrare , , ▶ Actualizeaz˘a utilitatea fiec˘arei st˘ari din utilit˘atile vecinilor , (cid:88) U (s) = R(s)+γmax P(s′|s,a)U (s′) i+1 a i s′ ▶ Repet˘a pentru fiecare s simultan, pˆan˘a la atingerea unui echilibru FII,UAIC Curs7 IA2025/2026 30/43",narrative
+874,IA_7.pdf_p31,"Iterarea valorilor: pseudocod FII,UAIC Curs7 IA2025/2026 31/43",narrative
+875,IA_7.pdf_p31,Iterarea valorilor is pseudocod,diagram_extracted
+876,IA_7.pdf_p32,Iterarea valorilor Din Sutton&Barto.,narrative
+877,IA_7.pdf_p32,"Reinforcement Learning: an introduction Functia utilitate U ↔ V functie valoare , , FII,UAIC Curs7 IA2025/2026 32/43",narrative
+878,IA_7.pdf_p32,Din Sutton&Barto. Reinforcement Learning is an introduction,diagram_extracted
+879,IA_7.pdf_p33,"Iterarea valorilor ▶ Exemplu: Cursa ▶ Demo: https://courses.grainger.illinois.edu/cs440/fa2018/ lectures/mdp-value-demo.pdf FII,UAIC Curs7 IA2025/2026 33/43",narrative
+880,IA_7.pdf_p33,Exemplu is Cursa,diagram_extracted
+881,IA_7.pdf_p33,Demo is https://courses.grainger.illinois.edu/cs440/fa2018/,diagram_extracted
+882,IA_7.pdf_p34,"Probleme ale algoritmului Iterarea valorilor ▶ O(S2A) per iteratie , ▶ Valoarea “max” pentru fiecare stare se modific˘a rar ▶ Politica converge adesea cu multˆınaintea valorilor FII,UAIC Curs7 IA2025/2026 34/43",narrative
+883,IA_7.pdf_p35,"Con¸tinut Introducere Procese de decizie Markov Value iteration Policy iteration FII,UAIC Curs7 IA2025/2026 35/43",narrative
+884,IA_7.pdf_p36,"Iterarea politicilor ▶ Dac˘a fix˘am politica, avem o singur˘a actiune per stare , ▶ Algoritmul alterneaz˘a urm˘atorii pasi: , ▶ 1.",narrative
+885,IA_7.pdf_p36,"Evaluarea politicii: dat˘a o politic˘a π i , calculeaz˘a U i =Uπi utilit˘at , ile st˘arilor pe baza politicii π i ▶ 2.",narrative
+886,IA_7.pdf_p36,"ˆImbun˘at˘atirea politicii: calculeaz˘a o nou˘a politic˘a π , pe baza , i+1 utilit˘atilor U , i Repet˘a acesti pasi pˆan˘a cˆand politica converge , , FII,UAIC Curs7 IA2025/2026 36/43",narrative
+887,IA_7.pdf_p36,"1. Evaluarea politicii is dat˘a o politic˘a π , calculeaz˘a U =Uπi utilit˘at ile",diagram_extracted
+888,IA_7.pdf_p36,"2. politicii is calculeaz˘a o nou˘a politic˘a π , pe baza",diagram_extracted
+889,IA_7.pdf_p37,"Evaluarea politicii Actiunea pentru fiecare stare e fixat˘a de politic˘a; la iteratia i, politica π , , i specific˘a actiunea π (s)ˆın starea s. , i Ecuatii Bellman simplificate , (cid:88) U (s) = R(s)+γ P(s′|s,π (s))U (s′) i i i s′ ▶ Pentru n st˘ari, sistem de n ecuatii liniare cu n necunoscute , ▶ Se poate rezolva exact ˆın O(n3) sauˆın mod aproximativ ▶ Aplic˘am Value iteration (cid:88) U (s) = R(s)+γ P(s′|s,π (s))U (s′) i+1 i i s′ FII,UAIC Curs7 IA2025/2026 37/43",narrative
+892,IA_7.pdf_p38,"Evaluarea politicii Exemplu: π (1,1) = Up, π (1,2) = Up i i Ecuatiile Bellman simplificate: , U (1,1) = −0.04+0.8U (1,2)+0.1U (1,1)+0.1U (2,1) i i i i U (1,2) = −0.04+0.8U (1,3)+0.2U (1,2) i i i FII,UAIC Curs7 IA2025/2026 38/43",narrative
+893,IA_7.pdf_p38,"Exemplu is π (1,1) = Up, π (1,2) = Up",diagram_extracted
+894,IA_7.pdf_p39,"Imbun˘at˘atirea politicii , ▶ Valorile U(s) se cunosc ▶ Calculeaz˘a pentru fiecare s, actiunea optim˘a , (cid:88) a∗(s) = max P(s′|s,a)U(s′) i a s′ ▶ Dac˘a a∗(s) ̸= π (s), actualizeaz˘a politica: π (s) ← a∗(s) i i i+1 i Se pot actualiza doar p˘artile ”promit˘atoare” ale spatiului de c˘autare.",narrative
+895,IA_7.pdf_p39,", , , FII,UAIC Curs7 IA2025/2026 39/43",narrative
+897,IA_7.pdf_p39,"Dac˘a ̸= π (s), actualizeaz˘a politica is π (s) ←",diagram_extracted
+898,IA_7.pdf_p40,"Iterarea politicilor: pseudocod Demo: https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_dp.html FII,UAIC Curs7 IA2025/2026 40/43",narrative
+899,IA_7.pdf_p40,Iterarea politicilor is pseudocod,diagram_extracted
+900,IA_7.pdf_p40,Demo is https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_dp.html,diagram_extracted
+901,IA_7.pdf_p41,Metode de tip Monte-Carlo Sunt utilizate atunci cˆand mediul este necunoscut.,narrative
+902,IA_7.pdf_p41,"Idee: esantionare pentru a estima functiile utilitate U (s),∀s.",narrative
+903,IA_7.pdf_p41,", , π Gener˘am traiectorii pentru fiecare episod.",narrative
+904,IA_7.pdf_p41,Recompensa (reward-to-go) de la momentul t: G = r +γr +γ2r .... t t t+1 t+2 U (s) = E[G |S = s].,narrative
+905,IA_7.pdf_p41,"π t t Estim˘am utilitatea unei st˘ari: ▶ First-visit MC: media sumei recompenselor obtinuteˆın urma primelor , vizit˘ari ale lui s V(s) ≈ (2+1–5+4)/4 = 0.5 ▶ Every-visit MC: media sumei recompenselor obtinute pentru toate , vizit˘arile lui s FII,UAIC Curs7 IA2025/2026 41/43",narrative
+906,IA_7.pdf_p41,"Idee is esantionare pentru a estima functiile utilitate U (s),∀s.",diagram_extracted
+907,IA_7.pdf_p41,Recompensa (reward-to-go) de la momentul t is G = r +γr +γ2r ....,diagram_extracted
+908,IA_7.pdf_p41,First-visit MC is media sumei recompenselor obtinuteˆın urma primelor,diagram_extracted
+909,IA_7.pdf_p41,Every-visit MC is media sumei recompenselor obtinute pentru toate,diagram_extracted
+910,IA_7.pdf_p42,"Programare dinamic˘a vs. Monte Carlo Monte Carlo: astept˘am pˆan˘a la terminarea episodului pentru a calcula , recompensele G .",narrative
+911,IA_7.pdf_p42,O variatie mai mare decˆat la DP.,narrative
+912,IA_7.pdf_p42,"t , FII,UAIC Curs7 IA2025/2026 42/43",narrative
+913,IA_7.pdf_p42,Monte Carlo is astept˘am pˆan˘a la terminarea episodului pentru a calcula,diagram_extracted
+914,IA_7.pdf_p43,Bibliografie ▶ Russel&Norvig.,narrative
+915,IA_7.pdf_p43,Artificial Intelligence: a modern approach.,narrative
+916,IA_7.pdf_p43,Making complex decisions ▶ Sutton&Barto.,narrative
+917,IA_7.pdf_p43,Reinforcement Learning: an introduction.,narrative
+918,IA_7.pdf_p43,"Finite Markov Decision Processes, Ch 4.",narrative
+919,IA_7.pdf_p43,"Dynamic Programming http://incompleteideas.net/book/RLbook2020.pdf FII,UAIC Curs7 IA2025/2026 43/43",narrative
+920,IA_7.pdf_p43,Russel&Norvig. Artificial Intelligence is a modern approach. Ch 17.,diagram_extracted
+921,IA_7.pdf_p43,Sutton&Barto. Reinforcement Learning is an introduction. Ch 3.,diagram_extracted
+923,IA_6.pdf_p1,"Retele neuronale , IA 2025/2026",narrative
+924,IA_6.pdf_p2,"Con¸tinut Introducere Perceptronul Regula de antrenare a perceptronului Gradient Descent si Regula delta , Retele neuronale multi-strat , Backpropagation FII,UAIC Curs6 IA2025/2026 2/57",narrative
+925,IA_6.pdf_p3,"Istoric ▶ McCulloch&Pitts ’43 propun primul model matematic al unui neuron artificial Nu poateˆınv˘ata, parametrii se stabilesc analitic , ▶ Minsky ’51 primul circuit electronic construit ca o retea neuronal˘a , artificial˘a (subcircuite ce functioneaz˘a ca niste neuroni interconectati) , , , ▶ Rosenblatt ’58 dezvolta Perceptronul, prima retea neuronal˘a , functional˘a , ▶ Hinton ’06 pune bazele Deep Neural Network FII,UAIC Curs6 IA2025/2026 3/57",narrative
+926,IA_6.pdf_p4,"Retele neuronale artificiale , ▶ Sunt inspirate din modul de structurare si functionare a creierului , , ˆIncercarea de a reproduce inteligenta (comportamentul unui neuron , biologic).",narrative
+927,IA_6.pdf_p4,"FII,UAIC Curs6 IA2025/2026 4/57",narrative
+928,IA_6.pdf_p5,"Retele neuronale artificiale , Un neuron se conecteaz˘a cu alti neuroni prin intermediul dendritelor.",narrative
+929,IA_6.pdf_p5,", Neuronii comunic˘aˆıntre ei prin intermediul sinapselor (excitatorii sau inhibitorii).",narrative
+930,IA_6.pdf_p5,"Neuronul se poate activa si produce un semnal electric care e , transmis mai departe prin axon.",narrative
+931,IA_6.pdf_p5,Interconectarea neuronilor asigur˘a puterea de calcul.,narrative
+932,IA_6.pdf_p5,"FII,UAIC Curs6 IA2025/2026 5/57",narrative
+933,IA_6.pdf_p6,"Retele neuronale artificiale , Unitate functional˘a (neuron artificial): un model computational simplificat , , al neuronului ▶ semnale de intrare ▶ ponderi atasate conexiunilor , ▶ prag de activare ▶ iesire , Analogii RN biologic˘a RN artificial˘a corpul celulei neuron dendrite intr˘ari axon iesire , sinaps˘a pondere FII,UAIC Curs6 IA2025/2026 6/57",narrative
+934,IA_6.pdf_p6,Unitate functional˘a (neuron artificial) is un model computational simplificat,diagram_extracted
+935,IA_6.pdf_p7,"Retele neuronale artificiale , ▶ Un ansamblu de unit˘ati functionale (neuroni) interconectate , , ▶ Antrenarea presupune determinarea parametrilor retelei, utilizˆand , datele de antrenare ▶ Sunt sisteme adaptive de tip ”cutie neagr˘a” care extrag un model printr-un proces deˆınv˘atare , FII,UAIC Curs6 IA2025/2026 7/57",narrative
+936,IA_6.pdf_p8,"Metode deˆınv˘atare , ▶ Supervizat˘a (clasificare, regresie) ▶ Exemple de antrenare etichetate ▶ Scop: estimarea parametrilor care minimizeaz˘a eroarea (diferentaˆıntre , r˘aspunsurile corecte si cele produse de retea) , , ▶ Nesupervizat˘a (clusterizare, asociere, reducerea dimensionalit˘atii) , ▶ Date de antrenare care nu sunt etichetate ▶ Scop: obtinerea de informatii , , FII,UAIC Curs6 IA2025/2026 8/57",narrative
+937,IA_6.pdf_p8,Scop is estimarea parametrilor care minimizeaz˘a eroarea (diferentaˆıntre,diagram_extracted
+938,IA_6.pdf_p8,Scop is obtinerea de informatii,diagram_extracted
+939,IA_6.pdf_p9,"Aplicatii: Clasificare , Dat˘a o multime de instante (atribute, etichete), s˘a se identifice clasa la , , care apartine o instant˘a nou˘a.",narrative
+940,IA_6.pdf_p9,", , (supervizat˘a) Exemplu: identificarea speciei din care face parte o floare de iris ▶ atribute: lungime si l˘atime sepale/petale , , ▶ clase: Iris versicolor, Iris setosa, Iris virginica FII,UAIC Curs6 IA2025/2026 9/57",narrative
+941,IA_6.pdf_p9,Aplicatii is Clasificare,diagram_extracted
+942,IA_6.pdf_p9,Exemplu is identificarea speciei din care face parte o floare de iris,diagram_extracted
+943,IA_6.pdf_p9,atribute is lungime si l˘atime sepale/petale,diagram_extracted
+944,IA_6.pdf_p9,"clase is Iris versicolor, Iris setosa, Iris virginica",diagram_extracted
+945,IA_6.pdf_p10,"Aplicatii: Regresie , S˘a se determine relatia dintre dou˘a sau mai multe variabile, avˆand un set , de date de antrenare (aproximarea unei functii) , Diferenta dintre clasificare si regresie: tipul iesirii (discret vs. continuu) , , , FII,UAIC Curs6 IA2025/2026 10/57",narrative
+946,IA_6.pdf_p10,Aplicatii is Regresie,diagram_extracted
+947,IA_6.pdf_p10,Diferenta dintre clasificare si regresie is tipul iesirii (discret vs. continuu),diagram_extracted
+948,IA_6.pdf_p11,"Con¸tinut Introducere Perceptronul Regula de antrenare a perceptronului Gradient Descent si Regula delta , Retele neuronale multi-strat , Backpropagation FII,UAIC Curs6 IA2025/2026 11/57",narrative
+949,IA_6.pdf_p12,"Perceptronul (Rosenblatl, 1958) Intrare: un vector de valori reale x i Calculeaz˘a o combinatie liniar˘a a acestora.",narrative
+950,IA_6.pdf_p12,", x w 1 1 x w (cid:80) 2 2 .",narrative
+951,IA_6.pdf_p12,"function x w n n inputs weights w ,...w ponderi (const.",narrative
+952,IA_6.pdf_p12,"reale) atasate conexiunilor; w contributia 1 n , i , intr˘arii x la rezultat i FII,UAIC Curs6 IA2025/2026 12/57",narrative
+953,IA_6.pdf_p12,Intrare is un vector de valori reale x,diagram_extracted
+955,IA_6.pdf_p13,Perceptronul Intrare: un vector de valori reale x i Calculeaz˘a o combinatie liniar˘a a acestora.,narrative
+956,IA_6.pdf_p13,", Returneaz˘a 1, dac˘a rezultatul e mai mare decˆat un prag (−w ), -1 altfel.",narrative
+957,IA_6.pdf_p13,"0 (cid:40) 1 dac˘a w +w x +...w x > 0 0 1 1 n n o(x ,...,x ) = (1) 1 n −1 altfel w bias 0 ˆInv˘atarea unui perceptron: alegerea ponderilor w ,...,w .",narrative
+958,IA_6.pdf_p13,", 0 n FII,UAIC Curs6 IA2025/2026 13/57",narrative
+960,IA_6.pdf_p13,(cid is 40),diagram_extracted
+961,IA_6.pdf_p13,"ˆInv˘atarea unui perceptron is alegerea ponderilor w ,...,w .",diagram_extracted
+962,IA_6.pdf_p14,"Perceptron Notatie simplificat˘a: o intrare constant˘a x = 1. , 0 (cid:80)n w x > 0, sau →− w · →− x > 0. i=0 i i →− →− →− o(x ) = f(w · x ) Functia de activare treapt˘a , (cid:40) 1 dac˘a y ≥ 0 f(y) = 0 altfel Functia de activare semn , (cid:40) 1 dac˘a y ≥ 0 f(y) = −1 altfel Perceptron: un neuron artificial care utilizeaz˘a functia de activare , treapt˘a/semn FII,UAIC Curs6 IA2025/2026 14/57",narrative
+963,IA_6.pdf_p14,Notatie simplificat˘a is o intrare constant˘a x = 1.,diagram_extracted
+964,IA_6.pdf_p14,(cid is 80)n →− →−,diagram_extracted
+967,IA_6.pdf_p14,Perceptron is un neuron artificial care utilizeaz˘a functia de activare,diagram_extracted
+968,IA_6.pdf_p15,"Puterea de reprezentare a perceptronilor ▶ Scopul: s˘a clasific˘am intr˘arileˆın 2 clase ▶ Perceptronul: un hiperplan careˆımparte spatiul vectorilor de intrare , (n-dimensional)ˆın dou˘a regiuni →− →− Ecuatia hiperplanului: w · x = 0 , a) Separabile liniar FII,UAIC Curs6 IA2025/2026 15/57",narrative
+969,IA_6.pdf_p15,Scopul is s˘a clasific˘am intr˘arileˆın 2 clase,diagram_extracted
+970,IA_6.pdf_p15,Perceptronul is un hiperplan careˆımparte spatiul vectorilor de intrare,diagram_extracted
+971,IA_6.pdf_p15,Ecuatia hiperplanului is w · x = 0,diagram_extracted
+972,IA_6.pdf_p16,Puterea de reprezentare a perceptronilor Un perceptron poate fi utilizat pentru a reprezenta functii booleene.,narrative
+973,IA_6.pdf_p16,", Pentru a reprezenta functia AND, set˘am ponderile, spre ex.",narrative
+974,IA_6.pdf_p16,", w = −1.5,w = w = 1 0 1 2 FII,UAIC Curs6 IA2025/2026 16/57",narrative
+975,IA_6.pdf_p17,"Puterea de reprezentare a perceptronilor Functia XOR (1 ⇔ x ̸= x ) nu poate fi reprezentat˘a de un singur , 1 2 perceptron.",narrative
+976,IA_6.pdf_p17,"Orice functie boolean˘a poate fi reprezentat˘a de o retea de unit˘ati , , , interconectate.",narrative
+977,IA_6.pdf_p17,"FII,UAIC Curs6 IA2025/2026 17/57",narrative
+978,IA_6.pdf_p18,"Con¸tinut Introducere Perceptronul Regula de antrenare a perceptronului Gradient Descent si Regula delta , Retele neuronale multi-strat , Backpropagation FII,UAIC Curs6 IA2025/2026 18/57",narrative
+979,IA_6.pdf_p19,Regula de antrenare a perceptronului ▶ ˆInv˘atarea ponderilor: identific˘a vectorul de ponderi a.i.,narrative
+980,IA_6.pdf_p19,"perceptronul , s˘a returneze iesirea corect˘a pentru fiecare exemplu de antrenare.",narrative
+981,IA_6.pdf_p19,", ▶ Genereaz˘a ponderi aleatoare.",narrative
+982,IA_6.pdf_p19,"Calculeaz˘a iesirea pentru fiecare exemplu de antrenare, , modific˘a ponderile atunci cˆand clasific˘a gresit un exemplu.",narrative
+983,IA_6.pdf_p19,", Repet˘a acest procedeu pˆan˘a cˆand perceptronul clasific˘a corect exemplele de antrenare.",narrative
+984,IA_6.pdf_p19,"FII,UAIC Curs6 IA2025/2026 19/57",narrative
+985,IA_6.pdf_p19,ponderilor is identific˘a vectorul de ponderi a.i. perceptronul,diagram_extracted
+986,IA_6.pdf_p20,"Regula de antrenare a perceptronului Ponderile sunt modificate conform regulii de antrenare a perceptronului: w ← w +∆w i i i unde ∆w = η(t −o)x i i t este iesirea dorit˘a pentru exemplul de antrenare, o este iesirea generat˘a , , de perceptron, η rata deˆınv˘atare (const.",narrative
+987,IA_6.pdf_p20,"pozitiv˘a) , FII,UAIC Curs6 IA2025/2026 20/57",narrative
+988,IA_6.pdf_p21,"Intuitie (regula de antrenare a perceptronului) , ▶ Dac˘a exemplul este clasificat corect t −o = 0;∆w = 0 → ponderile i nu sunt actualizate ▶ Dac˘a perceptronul returneaz˘a -1 cˆand iesirea corect˘a este +1 si , , η = 0.1,x = 0.8, atunci ∆w = 0.1(1−(−1))0.8 = 0.16 i i ▶ Dac˘a perceptronul returneaz˘a +1 cand iesirea corect˘a este -1, atunci , ponderea scade FII,UAIC Curs6 IA2025/2026 21/57",narrative
+989,IA_6.pdf_p22,"Convergenta , Atunci cˆand exemplele de antrenare sunt separabile liniar si η suficient de , mic, regula de antrenare a perceptronului converge (considerˆand un nr.",narrative
+990,IA_6.pdf_p22,finit de aplic˘ari a regulii de antrenare a perceptronului) la un vector de ponderi care clasific˘a toate exemplele de antrenare.,narrative
+991,IA_6.pdf_p22,"FII,UAIC Curs6 IA2025/2026 22/57",narrative
+992,IA_6.pdf_p23,"Con¸tinut Introducere Perceptronul Regula de antrenare a perceptronului Gradient Descent si Regula delta , Retele neuronale multi-strat , Backpropagation FII,UAIC Curs6 IA2025/2026 23/57",narrative
+993,IA_6.pdf_p24,"Regula delta Regula de antrenare a perceptronului poate esua dac˘a exemplele nu sunt , separabile liniar.",narrative
+994,IA_6.pdf_p24,"Regula delta: utilizeaz˘a Gradient descent pentru a c˘autaˆın spatiul , vectorilor de ponderi.",narrative
+995,IA_6.pdf_p24,→− →− →− Consider˘am o unitate liniar˘a pentru care iesirea este o(x ) = w · x .,narrative
+996,IA_6.pdf_p24,", Eroarea de antrenare pentru un vector de ponderi w: E( →− w) = 1 (cid:88) (t −o )2 d d 2 d∈D unde D multimea datelor de antrenare, t iesirea dorit˘a pentru exemplul d, , d , o iesirea unit˘atii liniare pentru d. d , , FII,UAIC Curs6 IA2025/2026 24/57",narrative
+997,IA_6.pdf_p24,Regula delta is utilizeaz˘a Gradient descent pentru a c˘autaˆın spatiul,diagram_extracted
+998,IA_6.pdf_p24,1 (cid is 88),diagram_extracted
+999,IA_6.pdf_p25,"Vizualizarea spatiului de ipoteze , Suprafata erorii are forma parabolica, cu un minim global.",narrative
+1000,IA_6.pdf_p25,", Gradient descent: modific˘aˆın mod repetat vectorul de ponderi.",narrative
+1001,IA_6.pdf_p25,"La fiecare pas, vectorul este modificatˆın directia care produce cea mai abrupt˘a , coborˆare.",narrative
+1002,IA_6.pdf_p25,Acest proces continu˘a pˆana la atingerea erorii minime globale.,narrative
+1003,IA_6.pdf_p25,"FII,UAIC Curs6 IA2025/2026 25/57",narrative
+1004,IA_6.pdf_p25,Gradient descent is modific˘aˆın mod repetat vectorul de ponderi. La fiecare,diagram_extracted
+1005,IA_6.pdf_p26,"Gradient descent Gradientul specific˘a directia care produce cea mai mare ascensiuneˆın E. , →− δE δE δE ∇E(w) = [ , ,..., ] δw δw δw 0 1 n →− →− →− Regula de antrenare pentru Gradient descent: w ← w +∆w, unde →− →− ∆w = −η∇E(w), η este rata deˆınv˘atare (const.",narrative
+1006,IA_6.pdf_p26,", δE w = w +∆w , ∆w = −η i i i i δw i FII,UAIC Curs6 IA2025/2026 26/57",narrative
+1007,IA_6.pdf_p26,"Regula de antrenare pentru Gradient descent is w ← w +∆w, unde",diagram_extracted
+1008,IA_6.pdf_p27,Gradient descent δE δ 1 (cid:88) = (t −o )2 d d δw δw 2 i i d∈D 1 (cid:88) δ = (t −o )2 d d 2 δw i d∈D 1 (cid:88) δ = 2(t −o ) (t −o ) d d d d 2 δw i d∈D (cid:88) δ →− →− = (t −o ) (t − w ·x ) d d d d δw i d∈D δE (cid:88) = (t −o )(−x ) d d id δw i d∈D x componenta x a exemplului de antrenare d. id i (cid:80) Actualizarea ponderii cu ∆w = η (t −o )x .,narrative
+1009,IA_6.pdf_p27,"i d∈D d d id FII,UAIC Curs6 IA2025/2026 27/57",narrative
+1010,IA_6.pdf_p27,δE δ 1 (cid is 88),diagram_extracted
+1013,IA_6.pdf_p27,(cid is 88) δ,diagram_extracted
+1016,IA_6.pdf_p28,"Gradient descent FII,UAIC Curs6 IA2025/2026 28/57",narrative
+1017,IA_6.pdf_p29,"Stochastic gradient descent Problemele algoritmului Gradient descent: ▶ convergent˘a lent˘a , ▶ existenta unor minime locale , Stochastic gradient descent: actualizarea ponderilor incremental, calculˆand eroarea pentru fiecare exemplu individual ∆w = η(t −o)x i i unde t valoarea dorit˘a, o iesirea real˘a, x componenta i pentru exemplul de , i antrenare Ecuatia T4.1 esteˆınlocuit˘a cu w ← w +η(t −o)x .",narrative
+1018,IA_6.pdf_p29,", i i i Regula de antrenare ∆w = η(t −o)x se mai numeste regula delta/ i i , regula LMS (least-mean-squares)/regula Adaline.",narrative
+1019,IA_6.pdf_p29,"FII,UAIC Curs6 IA2025/2026 29/57",narrative
+1020,IA_6.pdf_p29,"Stochastic gradient descent is actualizarea ponderilor incremental, calculˆand",diagram_extracted
+1021,IA_6.pdf_p30,"Con¸tinut Introducere Perceptronul Regula de antrenare a perceptronului Gradient Descent si Regula delta , Retele neuronale multi-strat , Backpropagation FII,UAIC Curs6 IA2025/2026 30/57",narrative
+1022,IA_6.pdf_p31,"Retele neuronale multi-strat , O retea neuronal˘a cu propagareˆınainte (feed-forward) cu , ▶ un strat de intrare ▶ unul sau mai multe straturi ascunse ▶ un strat de iesire , ▶ Semnalele de intrare sunt propagateˆınainte prin straturile retelei , ▶ Calculele se realizeaz˘aˆın neuronii din straturile ascunse si din stratul , de iesire , FII,UAIC Curs6 IA2025/2026 31/57",narrative
+1023,IA_6.pdf_p32,"Retele neuronale multi-strat , Pot exprima suprafete de decizie neliniare.",narrative
+1024,IA_6.pdf_p32,", Exemplu: Retea antrenat˘a s˘a recunoasc˘aˆıntre 10 vocale (”h d”).",narrative
+1025,IA_6.pdf_p32,", Semnalul vocal este reprezentat de doi parametri numerici, obtinuti din , analiza spectrala a sunetului.",narrative
+1026,IA_6.pdf_p32,Punctele din figur˘a sunt exemplele de testare.,narrative
+1027,IA_6.pdf_p32,"FII,UAIC Curs6 IA2025/2026 32/57",narrative
+1028,IA_6.pdf_p32,Exemplu is Retea antrenat˘a s˘a recunoasc˘aˆıntre 10 vocale (”h d”).,diagram_extracted
+1029,IA_6.pdf_p33,"Unitate sigmoid →− →− 1 o = σ(w · x ), unde σ(y) = 1+e−y dσ(y) σ functia sigmoid˘a; derivata = σ(y)·(1−σ(y)) , dy FII,UAIC Curs6 IA2025/2026 33/57",narrative
+1030,IA_6.pdf_p34,"Functii de activare neliniar˘a , ▶ Functia sigmoid˘a (logistic˘a) , f(x) = 1 , f′(x) = f(x)(1−f(x)) 1+e−x ▶ Functia sigmoid˘a bipolar˘a (tangenta hiperbolic˘a) , f(x) = 1−e−2x , f′(x) = 1−f(x)2 1+e−2x ▶ Functia ReLU (Rectified Linear Unit) , (cid:40) (cid:40) 0 dac˘a x < 0 0 dac˘a x < 0 f(x) = , f′(x) = x dac˘a x ≥ 0 1 dac˘a x ≥ 0 FII,UAIC Curs6 IA2025/2026 34/57",narrative
+1031,IA_6.pdf_p34,(cid is 40) (cid:40),diagram_extracted
+1032,IA_6.pdf_p35,"Exemplu: retea neuronal˘a cu functia de activare sigmoid , , FII,UAIC Curs6 IA2025/2026 35/57",narrative
+1033,IA_6.pdf_p35,Exemplu is retea neuronal˘a cu functia de activare sigmoid,diagram_extracted
+1034,IA_6.pdf_p36,"Proprietatea de aproximare universal˘a ▶ O retea neuronal˘a cu un strat ascuns, cu un nr.",narrative
+1035,IA_6.pdf_p36,"posibil infinit de , neuroni, poate aproxima orice functie real˘a continu˘a , ▶ Un strat suplimentar poateˆıns˘a reduce foarte mult nr.",narrative
+1036,IA_6.pdf_p36,"de neuroni necesariˆın straturile ascunse ▶ Un perceptron multi-strat cu functii de activare liniare este echivalent , cu un perceptron cu un singur strat ▶ o combinatie liniar˘a de functii liniare este tot o functie liniar˘a , , , ex: f(x)=2x+1, g(y)=y-3, g(f(x))=(2x+1)-3=2x-2 FII,UAIC Curs6 IA2025/2026 36/57",narrative
+1037,IA_6.pdf_p37,"Con¸tinut Introducere Perceptronul Regula de antrenare a perceptronului Gradient Descent si Regula delta , Retele neuronale multi-strat , Backpropagation FII,UAIC Curs6 IA2025/2026 37/57",narrative
+1038,IA_6.pdf_p38,"Algoritmul Backpropagation ▶ Rumelhart, Hinton& Williams, ’86 ▶ ˆInvat˘a ponderileˆıntr-o retea multi-strat.",narrative
+1039,IA_6.pdf_p38,"Foloseste Gradient descent , , , pentru a minimiza eroarea p˘atratic˘aˆıntre iesirea retelei si valorile , , , dorite.",narrative
+1040,IA_6.pdf_p38,"▶ Deoarece avem retele cu mai multe unit˘ati de iesire, redefinim E , , , E( →− w) = 1 (cid:88) (cid:88) (t −o )2 kd kd 2 d∈Dk∈outputs unde outputs multimea de unit˘ati de iesire, t si o valoarea dorit˘a, , , , kd , kd respectiv, iesirea, asociat˘a unit˘atii de iesire k si exemplului de , , , , antrenare d. FII,UAIC Curs6 IA2025/2026 38/57",narrative
+1041,IA_6.pdf_p38,→− 1 (cid is 88) (cid:88),diagram_extracted
+1042,IA_6.pdf_p39,"Algoritmul Backpropagation Are dou˘a faze: ▶ Reteaua primeste vectorul de intrare si propag˘a semnalulˆınainte, strat , , , cu strat, pˆan˘a se genereaz˘a iesirea , ▶ Semnalul de eroare este propagatˆınapoi, de la stratul de iesire c˘atre , stratul de intrare, ajustˆandu-se ponderile retelei , FII,UAIC Curs6 IA2025/2026 39/57",narrative
+1043,IA_6.pdf_p40,"Backpropagation ▶ Initializarea: alege num˘arul de intr˘ari, unit˘ati ascunse si de iesire; , , , , initializeaz˘a ponderile si pragurile cu valori aleatorii mici , , ▶ ˆın general, pot fi valori din intervalul [-0.1, 0.1] ▶ Activarea ▶ →− se consider˘a vectorul de antrenare x ▶ se calculeaz˘a iesirile neuronilor din stratul ascuns ▶ , →− →− se calculeaz˘a iesirile neuronilor din stratul de iesire o =σ(w · x ) , , FII,UAIC Curs6 IA2025/2026 40/57",narrative
+1044,IA_6.pdf_p40,"Initializarea is alege num˘arul de intr˘ari, unit˘ati ascunse si de iesire;",diagram_extracted
+1045,IA_6.pdf_p41,"Backpropagation ▶ Iesirile neuronilor din stratul ascuns , n (cid:88) o = σ( w x ) h hi i i=0 ▶ Iesirile neuronilor din stratul de iesire , , m (cid:88) o = σ( w o ) k ki i i=0 FII,UAIC Curs6 IA2025/2026 41/57",narrative
+1048,IA_6.pdf_p42,"Backpropagation Actualizeaz˘a fiecare pondere w proportional cu rata deˆınv˘atare η, eroarea ji , , δ , si valoarea de intrare x .",narrative
+1049,IA_6.pdf_p42,"j , ji ▶ Pentru neuronii de iesire , ▶ se calculeaz˘a gradientii functiei de eroare ai neuronilor din stratul de , , iesire , Pentru unitatea de iesire k, , δ =(t −o )o (1−o ) k k k k k ▶ Pentru neuronii din stratul ascuns ▶ se calculeaz˘a gradientii functiei de eroare ai neuronilor din stratul , , ascuns Pentru unitatea ascuns˘a h, seˆınsumeaz˘a gradientii δ pentru fiecare , k unitate de iesire influentat˘a de h, ponderate cu w (ponderea de la , , kh stratul ascuns h la stratul de iesire k): , (cid:88) δ =o (1−o ) w δ h h h kh k k∈outputs FII,UAIC Curs6 IA2025/2026 42/57",narrative
+1051,IA_6.pdf_p43,"Actualizarea ponderilor Pentru fiecare exemplu de antrenare d: w = w +∆w ,∆w = −ηδE d, ji ji ji ji δwji unde E este eroarea pentru exemplul de antrenare d d E ( →− w) = 1 (cid:88) (t −o )2 d k k 2 k∈outputs ▶ Ponderile unei unit˘ati de iesire , , ∆w = ηδ x , δ = (t −o )o (1−o ) ji j ji j j j j j ▶ Ponderile unui neuron ascuns (cid:88) ∆w = ηδ x , δ = o (1−o ) w δ ji j ji j j j kj k k∈Downstream(j) FII,UAIC Curs6 IA2025/2026 43/57",narrative
+1052,IA_6.pdf_p43,"Pentru fiecare exemplu de antrenare d is w = w +∆w ,∆w = d,",diagram_extracted
+1053,IA_6.pdf_p43,→− (cid is 88),diagram_extracted
+1055,IA_6.pdf_p44,"Backpropagation Pentru retele feed-forward cu num˘ar arbitrar de straturi, , (cid:88) δ = o (1−o ) w δ r r r sr s s∈layer m+1 δ pentru unitatea r din stratul m este calculat˘a din valorile δ de la r urm˘atorul strat m+1 FII,UAIC Curs6 IA2025/2026 44/57",narrative
+1057,IA_6.pdf_p45,"Chain Rule FII,UAIC Curs6 IA2025/2026 45/57",narrative
+1058,IA_6.pdf_p46,"Derivarea Utiliz˘am regula deˆınl˘antuire: , δE δE δnet d d j = δw δnet δw ji j ji (2) δE d = x ji δnet j FII,UAIC Curs6 IA2025/2026 46/57",narrative
+1059,IA_6.pdf_p47,"Derivarea FII,UAIC Curs6 IA2025/2026 47/57",narrative
+1060,IA_6.pdf_p48,"Derivarea FII,UAIC Curs6 IA2025/2026 48/57",narrative
+1061,IA_6.pdf_p49,"Stochastic Gradient Descent FII,UAIC Curs6 IA2025/2026 49/57",narrative
+1062,IA_6.pdf_p50,"Backpropagation ▶ Se itereaz˘a peste toate exemplele (vectori) de antrenare (o epoc˘a) ▶ Antrenarea retelei continu˘a pˆan˘a cˆand eroarea ajunge sub un prag , acceptabil sau pˆan˘a cˆand se atinge un nr.",narrative
+1063,IA_6.pdf_p50,maxim de epoci de antrenare Exemplu: din Artificial Intelligence.,narrative
+1064,IA_6.pdf_p50,A Guide to Intelligent Systems.,narrative
+1065,IA_6.pdf_p50,"FII,UAIC Curs6 IA2025/2026 50/57",narrative
+1066,IA_6.pdf_p50,Exemplu is din Artificial Intelligence. A Guide to Intelligent Systems.,diagram_extracted
+1067,IA_6.pdf_p51,"Backpropagation ▶ Convergenta: algoritmul Backpropagation converge c˘atre un minim , local ▶ Inv˘atare incremental˘a vs. ˆınv˘atare pe lot (batch learning) , , ▶ batch learning: ponderile se actualizeaz˘a o singur˘a dat˘a, dup˘a prezentarea tuturor vectorilor din grup Avantaj: rezultatele antren˘arii nu mai depind de ordineaˆın care sunt prezentati vectorii de antrenare , FII,UAIC Curs6 IA2025/2026 51/57",narrative
+1068,IA_6.pdf_p51,Convergenta is algoritmul Backpropagation converge c˘atre un minim,diagram_extracted
+1069,IA_6.pdf_p51,"batch learning is ponderile se actualizeaz˘a o singur˘a dat˘a, dup˘a",diagram_extracted
+1070,IA_6.pdf_p51,Avantaj is rezultatele antren˘arii nu mai depind de ordineaˆın care sunt,diagram_extracted
+1071,IA_6.pdf_p52,"Varianta cu ”moment” a algoritmului Backpropagation ▶ Ajustarea ponderilor de la epoca curent˘a se calculeaz˘a pe baza gradientului precum si a ajust˘arilor de la epoca anterioar˘a , ∆w (n) = ηδ x +α∆w (n−1) ji j ji ji unde ∆w (n) ajustarea ponderii la epoca n, 0 ≤ α < 1 const.",narrative
+1072,IA_6.pdf_p52,"ji momentum (inertie) , ▶ Stabilizeaz˘a c˘autarea Why Momentum Really Works, https://distill.pub/2017/momentum/ FII,UAIC Curs6 IA2025/2026 52/57",narrative
+1073,IA_6.pdf_p52,"Why Momentum Really Works, https is //distill.pub/2017/momentum/",diagram_extracted
+1074,IA_6.pdf_p53,"Overfitting Solutii , ▶ weight decay: include o penalitateˆın functia de eroare , (cid:88) E = E +λ w2 ji i,j ▶ utilizarea unui set de validare k-fold cross-validation FII,UAIC Curs6 IA2025/2026 53/57",narrative
+1075,IA_6.pdf_p53,weight decay is include o penalitateˆın functia de eroare,diagram_extracted
+1077,IA_6.pdf_p54,"Regularizare ▶ Dropout: ˆın timpul antren˘arii, set˘am aleatoriu functiile de activare la 0 , ▶ Early stopping: oprim antrenarea FII,UAIC Curs6 IA2025/2026 54/57",narrative
+1078,IA_6.pdf_p54,"Dropout is ˆın timpul antren˘arii, set˘am aleatoriu functiile de activare la 0",diagram_extracted
+1079,IA_6.pdf_p54,Early stopping is oprim antrenarea,diagram_extracted
+1080,IA_6.pdf_p55,"Loss ▶ Cross entropy: pentru modele care returneaz˘a o probabilitate ▶ Mean squared error: pentru regresie FII,UAIC Curs6 IA2025/2026 55/57",narrative
+1081,IA_6.pdf_p55,Cross entropy is pentru modele care returneaz˘a o probabilitate,diagram_extracted
+1082,IA_6.pdf_p55,Mean squared error is pentru regresie,diagram_extracted
+1083,IA_6.pdf_p56,"Proiectarea retelelor neuronale: Etape , ▶ Arhitectura: num˘ar de nivele si de unit˘ati pe fiecare nivel, topologie , , (mod de interconectare), functii de activare , Arhitecturi: unidirectionale vs. recurente , ▶ Antrenare: determinarea valorilor ponderilor ▶ Validare: testarea modelului pe date de test https://playground.tensorflow.org/ FII,UAIC Curs6 IA2025/2026 56/57",narrative
+1084,IA_6.pdf_p56,Proiectarea retelelor neuronale is Etape,diagram_extracted
+1085,IA_6.pdf_p56,"Arhitectura is num˘ar de nivele si de unit˘ati pe fiecare nivel, topologie",diagram_extracted
+1086,IA_6.pdf_p56,Arhitecturi is unidirectionale vs. recurente,diagram_extracted
+1087,IA_6.pdf_p56,Antrenare is determinarea valorilor ponderilor,diagram_extracted
+1088,IA_6.pdf_p56,Validare is testarea modelului pe date de test,diagram_extracted
+1089,IA_6.pdf_p56,https is //playground.tensorflow.org/,diagram_extracted
+1090,IA_6.pdf_p57,"Bibliografie ▶ T. M. Mitchell, Machine Learning, Ch.",narrative
+1091,IA_6.pdf_p57,"4 Artificial Neural Networks, McGraw-Hill Science, 1997 ▶ M. Neqnevitsky.",narrative
+1092,IA_6.pdf_p57,"A Guide to Intelligent Systems, Ch.",narrative
+1093,IA_6.pdf_p57,"Multilayer neural networks, 2005 ▶ S. Russell, P. Norvig, Artificial Intelligence: A Modern Approach, Ch.",narrative
+1094,IA_6.pdf_p57,"18.7 Artificial Neural Networks, Prentice Hall, 1995 FII,UAIC Curs6 IA2025/2026 57/57",narrative
+1095,IA_6.pdf_p57,"S. Russell, P. Norvig, Artificial Intelligence is A Modern Approach, Ch.",diagram_extracted
+1096,IA_2.pdf_p1,"Artificial Intelligence 3rd year, 1st semester State based models for decision problems Week 2: models and uninformed search strategies “Intelligence is what you use when you don't know what to do” Jean Piaget",narrative
+1097,IA_2.pdf_p1,Week 2 is models and uninformed search strategies,diagram_extracted
+1098,IA_2.pdf_p2,We aim to develop rational AI systems: ● we define a problem and goals (instances) ● the AI reaches the goals (solves the instances) ● the AI outputs the result (unexplainable AI) or the solution (explainable AI),narrative
+1100,IA_2.pdf_p3,"● compute a solution (algorithm - sequence of steps) starting from an initial state and ending in the goal state ● mostly covered by search strategies, reasoning systems, AI for games",narrative
+1102,IA_2.pdf_p4,"Solving problems Problem: We have two numbers, A and B.",narrative
+1103,IA_2.pdf_p4,Which is larger?,narrative
+1104,IA_2.pdf_p4,"Instance: A=?, B=?",narrative
+1105,IA_2.pdf_p4,A solution should produce the correct answer for all possible instances,narrative
+1106,IA_2.pdf_p4,"Problem is We have two numbers, A and B. Which is",diagram_extracted
+1107,IA_2.pdf_p4,"Instance is A=?, B=?",diagram_extracted
+1108,IA_2.pdf_p5,What’s the Problem with problems?,narrative
+1109,IA_2.pdf_p5,P = set of problems that can be solved/checked in Polynomial time by a deterministic TM.,narrative
+1110,IA_2.pdf_p5,NP = set of problems that can be solved in Polynomial time by a non-deterministic TM.,narrative
+1111,IA_2.pdf_p5,Validating a NP solution is a P problem.,narrative
+1112,IA_2.pdf_p5,NP-complete = subset of NP with the property that any problem in NP can be reduced to a NP-complete problem in polynomial time.,narrative
+1113,IA_2.pdf_p5,NP-hard = set of problems with the property that any problem in NP can be reduced to a NP-hard problem in polynomial time.,narrative
+1114,IA_2.pdf_p6,Let the computer solve our problems!,narrative
+1115,IA_2.pdf_p6,Or not... Solvable NP-hard problems: QSAT: is a logical proposition using quantified (existential ∃ or universal ∀) variables satisfiable?,narrative
+1116,IA_2.pdf_p6,"Undecideable NP-hard problems: Turing Halting problem: given an algorithm and an input, determine whether the algorithm execution for that input will eventually halt.",narrative
+1117,IA_2.pdf_p6,The rest can be solved by a computer.,narrative
+1118,IA_2.pdf_p6,Solvable NP-hard problems is QSAT: is a logical proposition using,diagram_extracted
+1119,IA_2.pdf_p6,Undecideable NP-hard problems is Turing Halting problem: given an,diagram_extracted
+1120,IA_2.pdf_p7,Stop looking for solutions!,narrative
+1121,IA_2.pdf_p7,"Don’t think about solutions, think about problems.",narrative
+1122,IA_2.pdf_p7,"Solving problems requires effort, describing problems requires intelligence.",narrative
+1123,IA_2.pdf_p7,"“If I had only one hour to save the world, I would spend fifty-five minutes defining the problem, and only five minutes finding the solution.” A.Einstein",narrative
+1124,IA_2.pdf_p8,Let’s find a NP-complete problem and help a computer to solve it Problem: finding a path in a graph Describing a model - reducing a problem • describe a state • identify special states and the problem space • describe the transitions and validate them • specify a search strategy,narrative
+1126,IA_2.pdf_p9,"Problem: finding a path in a graph Finding a path in a graph is NP-complete, however it can easily be scaled up to NP-hard by many slight reformulations, such as: ● Finding a path if the graph has cycles ● Finding the longest path ● Graph coloring ● Finding cliques This means that you can also solve NP-hard problems using the same method by adapting the requirements.",narrative
+1128,IA_2.pdf_p10,Generalized Hanoi Towers We have n towers with m distinct sized pieces placed on one of the towers.,narrative
+1129,IA_2.pdf_p10,"Considering that you can only move one piece at a time and that no piece can be placed on top of a smaller piece, find a sequence of movements that place all pieces on a different tower.",narrative
+1130,IA_2.pdf_p11,Choosing a representation for a state State: all data required to continue looking for a solution No ambiguity Expressive enough to include all required data,narrative
+1131,IA_2.pdf_p11,State is all data required to,diagram_extracted
+1132,IA_2.pdf_p12,"Choosing a representation for a state Compact enough to be easy to store and perform changes on it A list of towers pieces are placed, in the order of piece size size (3, 3, 3, 3, 3, 1, 1, 1, 2, 2) Is this good enough?",narrative
+1133,IA_2.pdf_p13,"Choosing a representation for a state Compact enough to be easy to store and perform changes on it A list of towers where pieces are placed, in the order of piece size, with the number of towers added at the beginning (3, 3, 3, 3, 3, 3, 1, 1, 1, 2, 2) (n, t , t ,...,t ), 1≤t ≤n 1 2 m i",narrative
+1134,IA_2.pdf_p14,Choosing a representation for a state is the most important and difficult step No ambiguity Compact Expressive Includes all required data There is no generally best representation,narrative
+1135,IA_2.pdf_p15,"Special states Initial state (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) State Initialize (int n, int m) { Return (n, 1, 1, 1, …, 1); } m There can be more than one initial state.",narrative
+1136,IA_2.pdf_p15,There has to be at least one initial state.,narrative
+1137,IA_2.pdf_p16,"Special states Final state(s) (n, n, n, n, n, n, n, n, n, n, n) Boolean IsFinal (State s) { If s = (k, k, k, …, k) then return true; m+1 else return false; } There can be more than one final state.",narrative
+1138,IA_2.pdf_p16,There has to be at least one final state.,narrative
+1139,IA_2.pdf_p17,Problem space: all possible states Final state Initial state Finite space (limited variability in chosen state representation and only valid states are included),narrative
+1140,IA_2.pdf_p17,Problem space is all possible states,diagram_extracted
+1141,IA_2.pdf_p18,What is the problem now?,narrative
+1142,IA_2.pdf_p18,How difficult is it to solve?,narrative
+1143,IA_2.pdf_p18,Problem space has m dimensions Final state How many states are within the space?,narrative
+1144,IA_2.pdf_p18,How can you move within the problem space?,narrative
+1145,IA_2.pdf_p18,"Initial state Simon’s Ant Complexity of the solution is determined by the problem, NOT by the way in which you solve it",narrative
+1146,IA_2.pdf_p19,Transitions Only one possible way to change current state: move one piece to another tower.,narrative
+1147,IA_2.pdf_p19,"(n, t , t ,...,t ) → (n, t , t ,...,t ), where t = t for all 1≤i≤m, 11 12 1m 21 22 2m 1i 2i except exactly one i = k State Transition (State s, piece, tower)",narrative
+1148,IA_2.pdf_p19,Only one possible way to change current state is move one piece to,diagram_extracted
+1149,IA_2.pdf_p20,Valid transitions 1.,narrative
+1150,IA_2.pdf_p20,No smaller piece is placed atop piece k 2.,narrative
+1151,IA_2.pdf_p20,"No smaller piece ends up below piece k 1. t ⧧ t , for all 1≤i<k 1i 1k 2. t ⧧ t , for all 1≤i<k 2i 2k Boolean Validate (State s, piece, tower) Implement transitions and validation separately, it’s good practice!",narrative
+1152,IA_2.pdf_p21,"Search strategy Void strategy(State s) { While (!isFinal(s)) { Choose piece, tower; If (Validate (s, piece, tower)) s = Transition(s, piece, tower); } }",narrative
+1153,IA_2.pdf_p22,Search strategies ● Uninformed - no distinction between states ○ Random ○ BFS and Uniform Cost ○ DFS and Iterative Deepening ○ Backtracking ○ Bidirectional ● Informed - heuristics to help distinguish between states ○ Greedy best-first ○ Hillclimbing and Simulated Annealing ○ Beam ○ A* and IDA*,narrative
+1154,IA_2.pdf_p23,Breadth First Search and Uniform Cost ● Visit states in the order of distance (number of transitions) from the initial state.,narrative
+1155,IA_2.pdf_p23,● Explores all immediate neighbors (accessible states) until no more neighbors or final state found.,narrative
+1156,IA_2.pdf_p23,● Has to memorise each generated state: very costly.,narrative
+1157,IA_2.pdf_p23,● Might visit the same state multiple times.,narrative
+1158,IA_2.pdf_p23,"● Finds shortest path (optimum solution) ● Uniform cost: if options have different costs, explore cheaper paths first",narrative
+1159,IA_2.pdf_p23,● Uniform cost is if options have different,diagram_extracted
+1160,IA_2.pdf_p24,"Depth First Search and Iterative Deepening Search ● Visit one immediate neighbor of the current state until final state is found, return to previous unexplored neighbor if no more neighbours available for current state.",narrative
+1163,IA_2.pdf_p24,● Might not finish (if loops are present in the problem space) ● IDS: Explore only up to an increasing depth (distance from initial state) - no more infinite paths,narrative
+1164,IA_2.pdf_p24,● IDS is Explore only up to an increasing,diagram_extracted
+1165,IA_2.pdf_p25,"Random vs DFS ● The same, if random remembers visited neighbours Backtracking vs DFS ● NOT the same ● Backtracking sets an order for the neighbor states ● How do you order states?",narrative
+1166,IA_2.pdf_p25,● Backtracking doesn't need to memorize visited states!,narrative
+1167,IA_2.pdf_p25,"● Backtracking can avoid loops WITHOUT storing visited states ● Backtracking can prune invalid branches earlier, if the order and selection of neighbours is optimal",narrative
+1168,IA_2.pdf_p26,"Bidirectional Search ● Starts exploring from both the initial and final state simultaneously ● Has to memorise each generated state, but they should not be that many ● Finds shortest path (optimum solution) ● What are the reverse transitions?",narrative
+1169,IA_2.pdf_p27,"Comparison Complexity of the solution is given by the problem, NOT by the way in which you solve it Criterion BFS DFS IDS Bidirectional BKT Random ETC NO NA NO NO NA NA Optimum Yes No Yes Yes No No All Yes No Yes Yes Yes No N = average number of accessible states O = length of the optimum solution A = length of the average solution",narrative
+1170,IA_2.pdf_p28,Additional references Uninformed Search Algorithms Stanford Programming Abstractions,narrative
