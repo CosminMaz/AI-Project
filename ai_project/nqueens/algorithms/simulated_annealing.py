@@ -1,6 +1,7 @@
 import numpy as np
 import time
 
+
 def print_board(configuration):
     n = len(configuration)
     board = np.zeros((n, n), dtype=int)
@@ -11,7 +12,7 @@ def print_board(configuration):
 
 
 def gauss_distib_value(x, mean, stdev, factor):
-    return factor/stdev * 0.398942280401 * np.exp(-((x - mean) ** 2) / (2 * (stdev ** 2)))
+    return factor / stdev * 0.398942280401 * np.exp(-((x - mean) ** 2) / (2 * (stdev ** 2)))
 
 
 #===========COD GENERAT CU CHATGPT-5=================
@@ -134,3 +135,5 @@ if __name__ == "__main__":
     print("\n--- Simulated Annealing ---")
     sol_sa = simulated_annealing(N, T=0.01, min_temp = 1e-30, decay = 0.9995)# pt N < 3000
     print_board(sol_sa)
+
+

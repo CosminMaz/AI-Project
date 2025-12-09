@@ -1,4 +1,7 @@
-import time
+"""
+MRV-based backtracking solver for N-Queens.
+"""
+
 
 #================COD GENERAT CU CHATGPT-5================
 def solve_n_queens_mrv(n):
@@ -65,3 +68,5 @@ def solve_n_queens_mrv(n):
     return board if success else None
 
 #================COD GENERAT CU CHATGPT-5================
+
+

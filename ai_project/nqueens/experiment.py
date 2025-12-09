@@ -1,11 +1,18 @@
+import io
 import time
 from contextlib import redirect_stdout
-import io
 
+from ai_project.nqueens.algorithms import (
+    NQueensProblem,
+    NQueensVisualizer,
+    bfs,
+    dfs,
+    iddfs,
+    fast_conflicts,
+    simulated_annealing,
+    solve_n_queens_mrv,
+)
 
-from .others import NQueensProblem, bfs, dfs, iddfs, NQueensVisualizer
-from .simulated_annealing import simulated_annealing, fast_conflicts
-from .mrv import solve_n_queens_mrv
 
 def run_experiment(n_size, limit):
     """
@@ -129,3 +136,5 @@ def generate_response(n_size, results, limit, user_question):
                      "Pentru table mici, unde găsirea unei soluții garantate este importantă și fezabilă, un algoritm de căutare completă ca acesta este ideal.")
 
     return f"Întrebare: {user_question}\n\n{response}"
+
+
