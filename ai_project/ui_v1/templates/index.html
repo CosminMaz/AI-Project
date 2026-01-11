@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Project</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+        }
+        #result {
+            white-space: pre-wrap;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Project</h1>
+    <form id="problem-form">
+        <label for="problem-type">Select a problem:</label>
+        <select id="problem-type" name="problem-type">
+            <option value="nqueens">N-Queens</option>
+            <option value="nash">Nash Equilibrium</option>
+            <option value="minimax">Minimax</option>
+            <option value="csp">CSP</option>
+        </select>
+        <br><br>
+        <div id="nqueens-input">
+            <label for="n-size">Board size (N):</label>
+            <input type="number" id="n-size" name="n-size" value="8">
+        </div>
+        <div id="nash-input" style="display: none;">
+            <label for="nash-matrix">Game Matrix (optional):</label>
+            <textarea id="nash-matrix" name="nash-matrix" rows="4" cols="50"></textarea>
+        </div>
+        <div id="minimax-input" style="display: none;">
+            <label for="minimax-tree">Game Tree:</label>
+            <input type="text" id="minimax-tree" name="minimax-tree" value="[[5, 6], [7, 4]]">
+        </div>
+        <div id="csp-input" style="display: none;">
+            <label for="csp-problem">CSP Problem:</label>
+            <input type="text" id="csp-problem" name="csp-problem" value="variables: A, B; domains: 1-3; constraints: A != B" size="60">
+        </div>
+        <br>
+        <button type="submit">Solve</button>
+    </form>
+
+    <h2>Result:</h2>
+    <pre id="result"></pre>
+
+    <script>
+        const problemType = document.getElementById('problem-type');
+        const nqueensInput = document.getElementById('nqueens-input');
+        const nashInput = document.getElementById('nash-input');
+        const minimaxInput = document.getElementById('minimax-input');
+        const cspInput = document.getElementById('csp-input');
+
+        problemType.addEventListener('change', () => {
+            nqueensInput.style.display = 'none';
+            nashInput.style.display = 'none';
+            minimaxInput.style.display = 'none';
+            cspInput.style.display = 'none';
+
+            if (problemType.value === 'nqueens') {
+                nqueensInput.style.display = 'block';
+            } else if (problemType.value === 'nash') {
+                nashInput.style.display = 'block';
+            } else if (problemType.value === 'minimax') {
+                minimaxInput.style.display = 'block';
+            } else if (problemType.value === 'csp') {
+                cspInput.style.display = 'block';
+            }
+        });
+
+        const form = document.getElementById('problem-form');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            resultDiv.textContent = 'Solving...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch('/solve', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.text();
+            resultDiv.textContent = result;
+        });
+    </script>
+</body>
+</html>

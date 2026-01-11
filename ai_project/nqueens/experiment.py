@@ -2,7 +2,7 @@ import io
 import time
 from contextlib import redirect_stdout
 
-from ai_project.nqueens.algorithms import (
+from .algorithms import (
     NQueensProblem,
     NQueensVisualizer,
     bfs,
@@ -18,82 +18,80 @@ def run_experiment(n_size, limit):
     """
     Rulează toți algoritmii disponibili pentru o dimensiune N dată și compară performanța.
     """
-    print(f"Se rulează experimentul pentru N = {n_size}...\n")
-    
-    results = {}
-    visualizer = NQueensVisualizer(symbols=("♛", "·"))
-
-    # --- Algoritmi de căutare clasică (BFS, DFS, IDDFS) ---
-    # Acești algoritmi sunt foarte lenți pentru N > 10-12, deci îi rulăm doar pentru N mic.
-    classical_algorithms = {
-        "DFS": dfs,
-        "BFS": bfs,
-        "IDDFS": iddfs,
-    }
-
-    if n_size <= limit:
-        for name, algo_func in classical_algorithms.items():
-            print(f"--- Testare {name} ---")
-            problem = NQueensProblem(n_size, algo_func)
-            start_time = time.time()
-            solution = problem.solve()
-            end_time = time.time()
-            
-            runtime = end_time - start_time
-            results[name] = {"time": runtime, "solution": solution.queens if solution else None}
-            
-            if solution:
-                print(f"Soluție găsită în {runtime:.4f} secunde.")
-            else:
-                print(f"Nu s-a găsit soluție (sau a durat prea mult). Timp scurs: {runtime:.4f} secunde.")
-            print("-" * 20 + "\n")
-    else:
-        print(f"Algoritmii clasici (DFS, BFS, IDDFS) sunt omiși deoarece N > {limit} și ar dura prea mult.\n")
-
-
-
-
-    # --- Simulated Annealing ---
-    print("--- Testare Simulated Annealing ---")
-    # Suprimăm output-ul funcției pentru a-l integra în răspunsul final
     f = io.StringIO()
     with redirect_stdout(f):
+        print(f"Se rulează experimentul pentru N = {n_size}...\n")
+        
+        results = {}
+        visualizer = NQueensVisualizer(symbols=("♛", "·"))
+
+        # --- Algoritmi de căutare clasică (BFS, DFS, IDDFS) ---
+        # Acești algoritmi sunt foarte lenți pentru N > 10-12, deci îi rulăm doar pentru N mic.
+        classical_algorithms = {
+            "DFS": dfs,
+            "BFS": bfs,
+            "IDDFS": iddfs,
+        }
+
+        if n_size <= limit:
+            for name, algo_func in classical_algorithms.items():
+                print(f"--- Testare {name} ---")
+                problem = NQueensProblem(n_size, algo_func)
+                start_time = time.time()
+                solution = problem.solve()
+                end_time = time.time()
+                
+                runtime = end_time - start_time
+                results[name] = {"time": runtime, "solution": solution.queens if solution else None}
+                
+                if solution:
+                    print(f"Soluție găsită în {runtime:.4f} secunde.")
+                else:
+                    print(f"Nu s-a găsit soluție (sau a durat prea mult). Timp scurs: {runtime:.4f} secunde.")
+                print("-" * 20 + "\n")
+        else:
+            print(f"Algoritmii clasici (DFS, BFS, IDDFS) sunt omiși deoarece N > {limit} și ar dura prea mult.\n")
+
+
+
+
+        # --- Simulated Annealing ---
+        print("--- Testare Simulated Annealing ---")
+        
         start_time = time.time()
         # Parametrii pot fi ajustați pentru N mai mare
         solution_sa = simulated_annealing(n_size, T=0.01, min_temp=1e-30, decay=0.9995)#T=0.002
         end_time = time.time()
-    
-    runtime = end_time - start_time
-    conflicts = fast_conflicts(solution_sa)
-    results["Simulated Annealing"] = {"time": runtime, "solution": solution_sa, "conflicts": conflicts}
-    
-    print(f"Algoritmul a rulat în {runtime:.4f} secunde.")
-    
-    if conflicts == 0:
-        print("Soluție optimă găsită.")
-    else:
-        print(f"A fost găsită o soluție cu {conflicts} conflicte.")
-    print("-" * 20 + "\n")
+        
+        runtime = end_time - start_time
+        conflicts = fast_conflicts(solution_sa)
+        results["Simulated Annealing"] = {"time": runtime, "solution": solution_sa, "conflicts": conflicts}
+        
+        print(f"Algoritmul a rulat în {runtime:.4f} secunde.")
+        
+        if conflicts == 0:
+            print("Soluție optimă găsită.")
+        else:
+            print(f"A fost găsită o soluție cu {conflicts} conflicte.")
+        print("-" * 20 + "\n")
 
 
 
 
-    # --- MRV ---
-    print("--- Testare MRV ---")
-    # Suprimăm output-ul funcției pentru a-l integra în răspunsul final
-    f = io.StringIO()
-    with redirect_stdout(f):
+        # --- MRV ---
+        print("--- Testare MRV ---")
+        
         start_time = time.time()
         # Parametrii pot fi ajustați pentru N mai mare
         solution_mrv = solve_n_queens_mrv(n_size)
         end_time = time.time()
+        
+        runtime = end_time - start_time
+        results["MRV"] = {"time": runtime, "solution": solution_mrv}
+        
+        print(f"Algoritmul a rulat în {runtime:.4f} secunde.")
     
-    runtime = end_time - start_time
-    results["MRV"] = {"time": runtime, "solution": solution_mrv}
-    
-    print(f"Algoritmul a rulat în {runtime:.4f} secunde.")
-    
-    return results
+    return results, f.getvalue()
 
 def generate_response(n_size, results, limit, user_question):
     """

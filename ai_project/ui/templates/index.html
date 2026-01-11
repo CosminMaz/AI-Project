@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212529;
+            color: #dee2e6;
+            padding: 2em;
+        }
+        .card, .form-control, .form-select {
+            background-color: #343a40;
+            color: #dee2e6;
+        }
+        #result {
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">AI Project</h1>
+        <form id="problem-form">
+            <div class="mb-3">
+                <label for="problem-type" class="form-label">Select a problem:</label>
+                <select id="problem-type" name="problem-type" class="form-select">
+                    <option value="nqueens">N-Queens</option>
+                    <option value="nash">Nash Equilibrium</option>
+                    <option value="minimax">Minimax</option>
+                    <option value="csp">CSP</option>
+                    <option value="graph-coloring">Graph Coloring</option>
+                    <option value="knights-tour">Knight's Tour</option>
+                    <option value="hanoi">Generalized Hanoi</option>
+                </select>
+            </div>
+
+            <div id="nqueens-input" class="mb-3">
+                <label for="n-size" class="form-label">Board size (N):</label>
+                <input type="number" id="n-size" name="n-size" class="form-control" value="8">
+            </div>
+
+            <div id="nash-input" class="mb-3" style="display: none;">
+                <label for="nash-matrix" class="form-label">Game Matrix (optional):</label>
+                <textarea id="nash-matrix" name="nash-matrix" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div id="minimax-input" class="mb-3" style="display: none;">
+                <label for="minimax-tree" class="form-label">Game Tree:</label>
+                <input type="text" id="minimax-tree" name="minimax-tree" class="form-control" value="[[5, 6], [7, 4]]">
+            </div>
+
+            <div id="csp-input" class="mb-3" style="display: none;">
+                <label for="csp-problem" class="form-label">CSP Problem:</label>
+                <input type="text" id="csp-problem" name="csp-problem" class="form-control" value="variables: A, B; domains: 1-3; constraints: A != B">
+            </div>
+
+            <div id="graph-coloring-input" class="mb-3" style="display: none;">
+                <label for="graph-coloring-graph" class="form-label">Graph (JSON Adjacency List):</label>
+                <textarea id="graph-coloring-graph" name="graph-coloring-graph" class="form-control" rows="5">{"A": ["B", "C"], "B": ["A", "C"], "C": ["A", "B"]}</textarea>
+                <label for="graph-coloring-colors" class="form-label mt-2">Colors (comma-separated):</label>
+                <input type="text" id="graph-coloring-colors" name="graph-coloring-colors" class="form-control" value="red, green, blue">
+            </div>
+
+            <div id="knights-tour-input" class="mb-3" style="display: none;">
+                <label for="knights-tour-size" class="form-label">Board size (N):</label>
+                <input type="number" id="knights-tour-size" name="knights-tour-size" class="form-control" value="5">
+            </div>
+
+            <div id="hanoi-input" class="mb-3" style="display: none;">
+                <label for="hanoi-disks" class="form-label">Number of disks:</label>
+                <input type="number" id="hanoi-disks" name="hanoi-disks" class="form-control" value="3">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Solve</button>
+        </form>
+
+        <h2 class="mt-4">Result:</h2>
+        <div class="card">
+            <div class="card-body">
+                <pre id="result"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const problemType = document.getElementById('problem-type');
+        const nqueensInput = document.getElementById('nqueens-input');
+        const nashInput = document.getElementById('nash-input');
+        const minimaxInput = document.getElementById('minimax-input');
+        const cspInput = document.getElementById('csp-input');
+        const graphColoringInput = document.getElementById('graph-coloring-input');
+        const knightsTourInput = document.getElementById('knights-tour-input');
+        const hanoiInput = document.getElementById('hanoi-input');
+
+        problemType.addEventListener('change', () => {
+            nqueensInput.style.display = 'none';
+            nashInput.style.display = 'none';
+            minimaxInput.style.display = 'none';
+            cspInput.style.display = 'none';
+            graphColoringInput.style.display = 'none';
+            knightsTourInput.style.display = 'none';
+            hanoiInput.style.display = 'none';
+
+            if (problemType.value === 'nqueens') {
+                nqueensInput.style.display = 'block';
+            } else if (problemType.value === 'nash') {
+                nashInput.style.display = 'block';
+            } else if (problemType.value === 'minimax') {
+                minimaxInput.style.display = 'block';
+            } else if (problemType.value === 'csp') {
+                cspInput.style.display = 'block';
+            } else if (problemType.value === 'graph-coloring') {
+                graphColoringInput.style.display = 'block';
+            } else if (problemType.value === 'knights-tour') {
+                knightsTourInput.style.display = 'block';
+            } else if (problemType.value === 'hanoi') {
+                hanoiInput.style.display = 'block';
+            }
+        });
+
+        // Trigger the change event on page load
+        problemType.dispatchEvent(new Event('change'));
+
+        const form = document.getElementById('problem-form');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            resultDiv.textContent = 'Solving...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            console.log('Sending data:', data);
+
+            const response = await fetch('/solve', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.text();
+            console.log('Received result:', result);
+            resultDiv.textContent = result;
+        });
+    </script>
+</body>
+</html>

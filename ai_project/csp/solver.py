@@ -1,6 +1,6 @@
 import copy
 from typing import Dict, List, Any, Optional, Generator, Tuple
-from model import CSP
+from .model import CSP
 
 def revise(csp: CSP, xi: str, xj: str, domains: Dict[str, List[Any]]) -> bool:
     """

@@ -22,11 +22,12 @@ class Constraint(ABC):
         pass
 
 class BinaryConstraint(Constraint):
-    """Base class for constraints between exactly two variables."""
-    def __init__(self, var1: str, var2: str):
+    """A constraint between exactly two variables."""
+    def __init__(self, var1: str, var2: str, op: str):
         super().__init__([var1, var2])
         self.var1 = var1
         self.var2 = var2
+        self.op = op
 
     def satisfied(self, assignment: Dict[str, Any]) -> bool:
         # If either variable is not assigned yet, the constraint cannot be violated
@@ -34,33 +35,24 @@ class BinaryConstraint(Constraint):
             return True
         return self.check(assignment[self.var1], assignment[self.var2])
 
-    @abstractmethod
     def check(self, val1, val2) -> bool:
         """Actual logic comparing two values."""
-        pass
-
-# --- Specific Constraint Implementations ---
-
-class NotEqual(BinaryConstraint):
-    def check(self, val1, val2) -> bool:
-        return val1 != val2
+        if self.op == '!=':
+            return val1 != val2
+        if self.op == '==':
+            return val1 == val2
+        if self.op == '<':
+            return val1 < val2
+        if self.op == '>':
+            return val1 > val2
+        if self.op == '<=':
+            return val1 <= val2
+        if self.op == '>=':
+            return val1 >= val2
+        return False
     
     def __str__(self):
-        return f"{self.var1} != {self.var2}"
-
-class LessThan(BinaryConstraint):
-    def check(self, val1, val2) -> bool:
-        return val1 < val2
-
-    def __str__(self):
-        return f"{self.var1} < {self.var2}"
-
-class GreaterThan(BinaryConstraint):
-    def check(self, val1, val2) -> bool:
-        return val1 > val2
-    
-    def __str__(self):
-        return f"{self.var1} > {self.var2}"
+        return f"{self.var1} {self.op} {self.var2}"
 
 # ==========================================
 # 2. The CSP Model
@@ -68,14 +60,20 @@ class GreaterThan(BinaryConstraint):
 
 class CSP:
     """Represents the Constraint Satisfaction Problem state."""
-    def __init__(self, variables: List[str], domains: Dict[str, List[Any]]):
+    def __init__(self, variables: List[str], domains: Dict[str, List[Any]], constraints: List[Constraint] = None):
         self.variables = variables
         self.domains = domains
-        self.constraints: List[Constraint] = []
+        self.constraints: List[Constraint] = constraints if constraints is not None else []
         
         # Adjacency list: Map variable -> List of constraints it is involved in
         # Crucial for efficient Forward Checking and AC-3
         self.neighbors: Dict[str, List[Constraint]] = {v: [] for v in variables}
+        if constraints:
+            for constraint in self.constraints:
+                for var in constraint.variables:
+                    if var in self.neighbors:
+                        self.neighbors[var].append(constraint)
+
 
     def add_constraint(self, constraint: Constraint):
         self.constraints.append(constraint)
@@ -172,14 +170,11 @@ class CSPGenerator:
     @staticmethod
     def _get_random_binary_constraint(var1, var2, allow_inequality=True):
         if allow_inequality:
-            choices = [NotEqual, LessThan, GreaterThan]
-            weights = [0.6, 0.2, 0.2]
+            op = random.choice(['!=', '<', '>'])
         else:
-            choices = [NotEqual]
-            weights = [1.0]
+            op = '!='
             
-        ConstraintClass = random.choices(choices, weights=weights, k=1)[0]
-        return ConstraintClass(var1, var2)
+        return BinaryConstraint(var1, var2, op)
 
     # Update the build methods to accept the 'allow_inequality' flag
     # and pass it to _get_random_binary_constraint
@@ -233,5 +228,5 @@ class CSPGenerator:
 # --- Quick Test ---
 if __name__ == "__main__":
     # Test generation
-    csp = CSPGenerator.generate(num_vars=4, domain_size=3, topology='chain')
+    csp = CSPGenerator.generate(num_vars=4, min_domain_size=3, topology='chain')
     print(csp)
