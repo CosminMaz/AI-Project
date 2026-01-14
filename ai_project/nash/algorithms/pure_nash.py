@@ -3,6 +3,7 @@
 from typing import List, Tuple
 from ai_project.nash.game import NormalFormGame
 
+EPSILON = 1e-9
 
 def find_pure_nash_equilibria(game: NormalFormGame) -> List[Tuple[int, int]]:
     """
@@ -26,25 +27,25 @@ def find_pure_nash_equilibria(game: NormalFormGame) -> List[Tuple[int, int]]:
             payoff_p1, payoff_p2 = game.get_payoff(i, j)
             
             # Verifică dacă i este răspunsul optim al jucătorului 1 la strategia j a jucătorului 2
-            best_response_p1 = i
-            best_payoff_p1 = payoff_p1
+            is_best_response_p1 = True
             for k in range(game.num_rows):
                 p1_payoff_at_k = game.payoff_p1[k][j]
-                if p1_payoff_at_k > best_payoff_p1:
-                    best_payoff_p1 = p1_payoff_at_k
-                    best_response_p1 = k
+                # Dacă există o strategie k care oferă un payoff strict mai mare (cu toleranță)
+                if p1_payoff_at_k > payoff_p1 + EPSILON:
+                    is_best_response_p1 = False
+                    break
             
             # Verifică dacă j este răspunsul optim al jucătorului 2 la strategia i a jucătorului 1
-            best_response_p2 = j
-            best_payoff_p2 = payoff_p2
+            is_best_response_p2 = True
             for k in range(game.num_cols):
                 p2_payoff_at_k = game.payoff_p2[i][k]
-                if p2_payoff_at_k > best_payoff_p2:
-                    best_payoff_p2 = p2_payoff_at_k
-                    best_response_p2 = k
+                # Dacă există o strategie k care oferă un payoff strict mai mare (cu toleranță)
+                if p2_payoff_at_k > payoff_p2 + EPSILON:
+                    is_best_response_p2 = False
+                    break
             
             # Dacă ambele condiții sunt îndeplinite, avem un echilibru Nash
-            if best_response_p1 == i and best_response_p2 == j:
+            if is_best_response_p1 and is_best_response_p2:
                 equilibria.append((i, j))
     
     return equilibria
@@ -64,7 +65,7 @@ def find_best_responses(game: NormalFormGame) -> Tuple[List[List[int]], List[Lis
         best_payoff = max(game.payoff_p1[i][j] for i in range(game.num_rows))
         best_strategies = [
             i for i in range(game.num_rows) 
-            if game.payoff_p1[i][j] == best_payoff
+            if abs(game.payoff_p1[i][j] - best_payoff) < EPSILON
         ]
         best_responses_p1.append(best_strategies)
     
@@ -73,8 +74,8 @@ def find_best_responses(game: NormalFormGame) -> Tuple[List[List[int]], List[Lis
         best_payoff = max(game.payoff_p2[i][j] for j in range(game.num_cols))
         best_strategies = [
             j for j in range(game.num_cols) 
-            if game.payoff_p2[i][j] == best_payoff
+            if abs(game.payoff_p2[i][j] - best_payoff) < EPSILON
         ]
         best_responses_p2.append(best_strategies)
     
-    return (best_responses_p1, best_responses_p2)
+    return best_responses_p1, best_responses_p2

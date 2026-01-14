@@ -55,7 +55,7 @@ class NormalFormGame:
         """
         if not (0 <= row < self.num_rows and 0 <= col < self.num_cols):
             raise IndexError(f"Indici invalizi: ({row}, {col})")
-        return (self.payoff_p1[row][col], self.payoff_p2[row][col])
+        return self.payoff_p1[row][col], self.payoff_p2[row][col]
     
     def is_zero_sum(self) -> bool:
         """Verifică dacă jocul este zero-sum."""

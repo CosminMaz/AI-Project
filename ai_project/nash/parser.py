@@ -79,8 +79,7 @@ def parse_payoff_matrices(text: str) -> Optional[Tuple[List[List[float]], List[L
     Returnează (payoff_matrix_player1, payoff_matrix_player2) sau None.
     """
     # Caută două matrici consecutive sau separate explicit
-    matrices = []
-    
+
     # Pattern pentru două blocuri de matrici
     # Format: matrice1 apoi matrice2 sau (a1,b1), (a2,b2) etc.
     
@@ -99,7 +98,7 @@ def parse_payoff_matrices(text: str) -> Optional[Tuple[List[List[float]], List[L
                            for i in range(sqrt_n)]
                 matrix2 = [[payoffs[i*sqrt_n + j][1] for j in range(sqrt_n)] 
                            for i in range(sqrt_n)]
-                return (matrix1, matrix2)
+                return matrix1, matrix2
         except ValueError:
             pass
     
@@ -121,7 +120,7 @@ def parse_payoff_matrices(text: str) -> Optional[Tuple[List[List[float]], List[L
             if sqrt_n * sqrt_n == n:
                 matrix1 = [numbers[i:i+sqrt_n] for i in range(0, n, sqrt_n)]
                 matrix2 = [numbers[i:i+sqrt_n] for i in range(n, 2*n, sqrt_n)]
-                return (matrix1, matrix2)
+                return matrix1, matrix2
         except ValueError:
             pass
     
@@ -130,7 +129,7 @@ def parse_payoff_matrices(text: str) -> Optional[Tuple[List[List[float]], List[L
     single_matrix = parse_matrix_from_text(text)
     if single_matrix:
         # Pentru jocuri simetrice sau zero-sum, folosim aceeași matrice
-        return (single_matrix, single_matrix)
+        return single_matrix, single_matrix
     
     return None
 
@@ -141,14 +140,14 @@ def extract_matrix_dimensions(text: str) -> Optional[Tuple[int, int]]:
     dim_pattern = r'(\d+)\s*[x×*]\s*(\d+)'
     match = re.search(dim_pattern, text, re.IGNORECASE)
     if match:
-        return (int(match.group(1)), int(match.group(2)))
+        return int(match.group(1)), int(match.group(2))
     
     # Pattern pentru "matrice nxn" sau "n by n"
     square_pattern = r'(\d+)\s*x\s*\1|(\d+)\s*×\s*\2|(\d+)\s*by\s*\3'
     match = re.search(square_pattern, text, re.IGNORECASE)
     if match:
         n = int(match.group(1) or match.group(2) or match.group(3))
-        return (n, n)
+        return n, n
     
     return None
 
