@@ -1,110 +1,112 @@
-def is_valid_move(x, y, board, n):
-    """
-    Checks if a move is valid.
-
-    A move is valid if it is within the board boundaries and the
-    destination square has not been visited yet.
-
-    Args:
-        x (int): The x-coordinate of the move.
-        y (int): The y-coordinate of the move.
-        board (list): The chessboard.
-        n (int): The size of the board.
-
-    Returns:
-        bool: True if the move is valid, False otherwise.
-    """
-    return 0 <= x < n and 0 <= y < n and board[x][y] == -1
-
-def get_onward_moves(x, y, board, n):
-    """
-    Returns the number of possible onward moves from a square.
-
-    This function is used by Warnsdorff's rule to decide which
-    square to move to next.
-
-    Args:
-        x (int): The x-coordinate of the square.
-        y (int): The y-coordinate of the square.
-        board (list): The chessboard.
-        n (int): The size of the board.
-
-    Returns:
-        int: The number of possible onward moves.
-    """
-    count = 0
-    for move_x, move_y in MOVES:
-        if is_valid_move(x + move_x, y + move_y, board, n):
-            count += 1
-    return count
-
-def solve_knights_tour_util(board, n, curr_x, curr_y, move_count):
-    """
-    Recursive utility function to solve the Knight's Tour problem.
-
-    This function uses backtracking and Warnsdorff's rule to find a
-    solution.
-
-    Args:
-        board (list): The chessboard.
-        n (int): The size of the board.
-        curr_x (int): The current x-coordinate of the knight.
-        curr_y (int): The current y-coordinate of the knight.
-        move_count (int): The current move number.
-
-    Returns:
-        bool: True if a solution is found, False otherwise.
-    """
-    board[curr_x][curr_y] = move_count
-
-    if move_count == n * n:
-        return True
-
-    # Aplică euristica Warnsdorff
-    next_moves = []
-    for move_x, move_y in MOVES:
-        next_x, next_y = curr_x + move_x, curr_y + move_y
-        if is_valid_move(next_x, next_y, board, n):
-            onward_moves = get_onward_moves(next_x, next_y, board, n)
-            next_moves.append((onward_moves, next_x, next_y))
-    
-    # Sortează mutările posibile în funcție de numărul de continuări
-    next_moves.sort()
-
-    for _, next_x, next_y in next_moves:
-        if solve_knights_tour_util(board, n, next_x, next_y, move_count + 1):
-            return True
-
-    # Backtrack
-    board[curr_x][curr_y] = -1
-    return False
+import io
+import time
+from contextlib import redirect_stdout
+from .algorithms import bfs, dfs, iddfs, simulated_annealing, solve_knights_tour_mrv, calculate_energy
 
 def solve_knights_tour(n_size):
     """
-    Solves the Knight's Tour problem for a board of size N x N.
+    Solves the Knight's Tour problem using multiple algorithms and compares them.
 
     Args:
         n_size (int): The size of the board.
 
     Returns:
-        str: A message containing the solution or an error message.
+        str: A detailed report.
     """
     if n_size < 5:
         return "Nu există soluție pentru o tablă mai mică de 5x5."
-        
-    board = [[-1 for _ in range(n_size)] for _ in range(n_size)]
-    
-    # Pozițiile posibile de start ale calului
-    global MOVES
-    MOVES = [(2, 1), (1, 2), (-1, 2), (-2, 1),
-             (-2, -1), (-1, -2), (1, -2), (2, -1)]
 
-    # Încearcă să pornească de la (0, 0)
-    if solve_knights_tour_util(board, n_size, 0, 0, 1):
-        # Formatează soluția pentru afișare
-        formatted_solution = ""
+    results = {}
+    output_buffer = io.StringIO()
+
+    with redirect_stdout(output_buffer):
+        print(f"Rezolvare Knight's Tour pentru tablă {n_size}x{n_size}...\n")
+
+        # Limităm algoritmii clasici pentru N mare
+        LIMIT_CLASSIC = 5
+
+        # --- BFS ---
+        if n_size <= LIMIT_CLASSIC:
+            print("--- Testare BFS ---")
+            start = time.time()
+            sol_bfs = bfs(n_size)
+            duration = time.time() - start
+            results['BFS'] = {'time': duration, 'solution': sol_bfs}
+            print(f"Timp: {duration:.4f}s. Soluție găsită: {'DA' if sol_bfs else 'NU'}")
+            print("-" * 20 + "\n")
+        else:
+            print("--- BFS omis (N prea mare) ---\n")
+
+        # --- DFS ---
+        if n_size <= LIMIT_CLASSIC:
+            print("--- Testare DFS ---")
+            start = time.time()
+            sol_dfs = dfs(n_size)
+            duration = time.time() - start
+            results['DFS'] = {'time': duration, 'solution': sol_dfs}
+            print(f"Timp: {duration:.4f}s. Soluție găsită: {'DA' if sol_dfs else 'NU'}")
+            print("-" * 20 + "\n")
+        else:
+            print("--- DFS omis (N prea mare) ---\n")
+
+        # --- IDDFS ---
+        if n_size <= LIMIT_CLASSIC:
+            print("--- Testare IDDFS ---")
+            start = time.time()
+            sol_iddfs = iddfs(n_size)
+            duration = time.time() - start
+            results['IDDFS'] = {'time': duration, 'solution': sol_iddfs}
+            print(f"Timp: {duration:.4f}s. Soluție găsită: {'DA' if sol_iddfs else 'NU'}")
+            print("-" * 20 + "\n")
+        else:
+            print("--- IDDFS omis (N prea mare) ---\n")
+
+        # --- Simulated Annealing ---
+        print("--- Testare Simulated Annealing ---")
+        start = time.time()
+        sol_sa = simulated_annealing(n_size)
+        duration = time.time() - start
+        energy = calculate_energy(sol_sa, n_size)
+        results['Simulated Annealing'] = {'time': duration, 'solution': sol_sa, 'energy': energy}
+        print(f"Timp: {duration:.4f}s. Mutări invalide (Energy): {energy}")
+        print("-" * 20 + "\n")
+
+        # --- MRV (Warnsdorff) ---
+        print("--- Testare MRV (Warnsdorff) ---")
+        start = time.time()
+        sol_mrv = solve_knights_tour_mrv(n_size)
+        duration = time.time() - start
+        results['MRV'] = {'time': duration, 'solution': sol_mrv}
+        print(f"Timp: {duration:.4f}s. Soluție găsită: {'DA' if sol_mrv else 'NU'}")
+        print("-" * 20 + "\n")
+
+    # Generare raport
+    response = output_buffer.getvalue()
+    response += "\n=== Concluzie ===\n"
+
+    valid_algos = {}
+    for name, res in results.items():
+        if res.get('solution'):
+            if name == 'Simulated Annealing' and res['energy'] > 0:
+                continue
+            valid_algos[name] = res['time']
+
+    if valid_algos:
+        fastest = min(valid_algos, key=valid_algos.get)
+        response += f"Cel mai rapid algoritm care a găsit o soluție validă este **{fastest}** ({valid_algos[fastest]:.4f}s).\n"
+        
+        # Formatare soluție ca matrice
+        path = results[fastest]['solution']
+        board = [[0] * n_size for _ in range(n_size)]
+        for i, (r, c) in enumerate(path):
+            board[r][c] = i + 1
+            
+        formatted_sol = ""
         for row in board:
-            formatted_solution += " ".join(f"{num:2d}" for num in row) + "\n"
-        return f"Soluție găsită pentru Turul Calului pe o tablă de {n_size}x{n_size}:\n\n{formatted_solution}"
+            formatted_sol += " ".join(f"{num:2d}" for num in row) + "\n"
+            
+        response += f"\nSoluția ({fastest}):\n{formatted_sol}"
     else:
-        return f"Nu s-a găsit o soluție pentru Turul Calului pe o tablă de {n_size}x{n_size} pornind de la (0,0)."
+        response += "Niciun algoritm nu a găsit o soluție completă validă."
+
+    return response

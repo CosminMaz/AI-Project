@@ -1,0 +1,205 @@
+import random
+import time
+import math
+from collections import deque
+
+MOVES = [(2, 1), (1, 2), (-1, 2), (-2, 1),
+         (-2, -1), (-1, -2), (1, -2), (2, -1)]
+
+class KnightsTourState:
+    def __init__(self, n, path, visited):
+        self.n = n
+        self.path = path # List of (x, y) tuples
+        self.visited = visited # Set of (x, y) tuples
+        self.current_pos = path[-1]
+
+    def is_goal(self):
+        return len(self.path) == self.n * self.n
+
+    def successors(self):
+        children = []
+        cx, cy = self.current_pos
+        for dx, dy in MOVES:
+            nx, ny = cx + dx, cy + dy
+            if 0 <= nx < self.n and 0 <= ny < self.n and (nx, ny) not in self.visited:
+                new_path = self.path + [(nx, ny)]
+                new_visited = self.visited | {(nx, ny)}
+                children.append(KnightsTourState(self.n, new_path, new_visited))
+        return children
+
+# --- Search Algorithms ---
+
+def bfs(n, start_pos=(0,0)):
+    start_state = KnightsTourState(n, [start_pos], {start_pos})
+    frontier = deque([start_state])
+    
+    # BFS will be extremely slow and memory intensive for N > 4
+    # We add a limit to avoid crashing
+    nodes_expanded = 0
+    MAX_NODES = 100000 
+
+    while frontier:
+        state = frontier.popleft()
+        nodes_expanded += 1
+        
+        if state.is_goal():
+            return state.path
+        
+        if nodes_expanded > MAX_NODES:
+            return None # Give up
+
+        for child in state.successors():
+            frontier.append(child)
+    return None
+
+def dfs(n, start_pos=(0,0)):
+    start_state = KnightsTourState(n, [start_pos], {start_pos})
+    stack = [start_state]
+    
+    nodes_expanded = 0
+    MAX_NODES = 500000
+
+    while stack:
+        state = stack.pop()
+        nodes_expanded += 1
+        
+        if state.is_goal():
+            return state.path
+            
+        if nodes_expanded > MAX_NODES:
+            continue # Prune this branch effectively
+
+        for child in state.successors():
+            stack.append(child)
+    return None
+
+def iddfs(n, start_pos=(0,0)):
+    def dls(state, limit):
+        if state.is_goal():
+            return state.path
+        if limit == 0:
+            return None
+        
+        for child in state.successors():
+            result = dls(child, limit - 1)
+            if result is not None:
+                return result
+        return None
+
+    start_state = KnightsTourState(n, [start_pos], {start_pos})
+    depth = 0
+    max_depth = n * n
+    
+    while depth <= max_depth:
+        result = dls(start_state, depth)
+        if result is not None:
+            return result
+        depth += 1
+    return None
+
+# --- Simulated Annealing ---
+# Approach: Permutation of all cells. Energy = number of invalid consecutive moves.
+# Goal: Energy = 0 (valid tour)
+
+def calculate_energy(path, n):
+    energy = 0
+    for i in range(len(path) - 1):
+        p1 = path[i]
+        p2 = path[i+1]
+        dx = abs(p1[0] - p2[0])
+        dy = abs(p1[1] - p2[1])
+        if not ((dx == 1 and dy == 2) or (dx == 2 and dy == 1)):
+            energy += 1
+    return energy
+
+def simulated_annealing(n, max_steps=50000, initial_temp=10.0, cooling_rate=0.999):
+    # Generate all cells
+    cells = [(r, c) for r in range(n) for c in range(n)]
+    
+    # Initial random permutation
+    current_path = list(cells)
+    random.shuffle(current_path)
+    
+    current_energy = calculate_energy(current_path, n)
+    best_path = list(current_path)
+    best_energy = current_energy
+    
+    temp = initial_temp
+    
+    for step in range(max_steps):
+        if best_energy == 0:
+            return best_path
+            
+        if temp <= 0.001:
+            break
+            
+        # Neighbor: Swap two random cells in the path
+        i, j = random.sample(range(n*n), 2)
+        next_path = list(current_path)
+        next_path[i], next_path[j] = next_path[j], next_path[i]
+        
+        next_energy = calculate_energy(next_path, n)
+        delta = next_energy - current_energy
+        
+        if delta < 0 or random.random() < math.exp(-delta / temp):
+            current_path = next_path
+            current_energy = next_energy
+            
+            if current_energy < best_energy:
+                best_path = list(current_path)
+                best_energy = current_energy
+        
+        temp *= cooling_rate
+        
+    return best_path # Likely not a valid full tour, but best effort
+
+# --- MRV (Warnsdorff's Rule) ---
+
+def solve_knights_tour_mrv(n, start_pos=(0,0)):
+    board = [[-1 for _ in range(n)] for _ in range(n)]
+    sx, sy = start_pos
+    
+    def is_valid(x, y):
+        return 0 <= x < n and 0 <= y < n and board[x][y] == -1
+
+    def count_onward_moves(x, y):
+        count = 0
+        for dx, dy in MOVES:
+            if is_valid(x + dx, y + dy):
+                count += 1
+        return count
+
+    def solve(curr_x, curr_y, move_count):
+        board[curr_x][curr_y] = move_count
+        
+        if move_count == n * n:
+            return True
+            
+        # Get all valid next moves
+        candidates = []
+        for dx, dy in MOVES:
+            nx, ny = curr_x + dx, curr_y + dy
+            if is_valid(nx, ny):
+                degree = count_onward_moves(nx, ny)
+                candidates.append((degree, nx, ny))
+        
+        # MRV Heuristic: Sort by degree (ascending)
+        candidates.sort() # Tuples are sorted by first element (degree)
+        
+        for _, nx, ny in candidates:
+            if solve(nx, ny, move_count + 1):
+                return True
+                
+        # Backtrack
+        board[curr_x][curr_y] = -1
+        return False
+
+    if solve(sx, sy, 1):
+        # Convert board matrix to path list for consistency
+        path = [None] * (n * n)
+        for r in range(n):
+            for c in range(n):
+                idx = board[r][c] - 1
+                path[idx] = (r, c)
+        return path
+    return None
