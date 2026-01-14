@@ -175,7 +175,7 @@ if __name__ == "__main__":
     
     print("--- PDF Examiner: Definition Mode ---")
     raw = input("Enter PDF paths (comma separated): ")
-    paths = ["IA_1.pdf", "IA_2.pdf", "IA_3.pdf", "IA_4.pdf", "IA_5.pdf", "IA_6.pdf", "IA_7.pdf", "IA_8.pdf", "IA_9.pdf"]#[p.strip() for p in raw.split(',')]
+    paths = ["IA_1.pdf", "IA_2.pdf", "IA_3.pdf", "IA_4.pdf", "IA_5.pdf", "IA_6.pdf", "IA_7.pdf", "IA_8.pdf", "IA_9.pdf", "IA_10.pdf", "IA_11.pdf"]#[p.strip() for p in raw.split(',')]
     
     if examiner.load_pdfs(paths):
         print("\n--- Quiz Started (Type 'exit' to quit) ---\n")
