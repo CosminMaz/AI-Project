@@ -1,6 +1,7 @@
 import io
 import time
 from contextlib import redirect_stdout
+import numpy as np
 
 from .algorithms import (
     NQueensProblem,
@@ -100,7 +101,25 @@ def generate_response(n_size, results, limit, user_question):
     response = "Răspuns:\n\n"
     response += f"Pentru o tablă de dimensiune {n_size}x{n_size}, am analizat performanța mai multor algoritmi. Iată concluziile:\n\n"
 
-    fastest_algo = min(results, key=lambda k: results[k]['time'])
+    # Identificăm cel mai rapid algoritm care a găsit o soluție validă (fără conflicte)
+    valid_results = {}
+    for name, data in results.items():
+        # Verificăm dacă algoritmul a găsit o soluție
+        if data.get('solution') is not None:
+            # Pentru SA, verificăm explicit numărul de conflicte
+            if name == "Simulated Annealing":
+                if data.get('conflicts', 0) == 0:
+                    valid_results[name] = data['time']
+            # Pentru ceilalți algoritmi (MRV, DFS, etc.), presupunem că dacă returnează o soluție, e validă
+            else:
+                valid_results[name] = data['time']
+
+    if valid_results:
+        fastest_algo = min(valid_results, key=valid_results.get)
+    else:
+        # Dacă nimeni nu a găsit soluție validă, luăm cel mai rapid indiferent de rezultat
+        fastest_algo = min(results, key=lambda k: results[k]['time'])
+
 
     if n_size <= limit:
         response += ("La această dimensiune, algoritmii de căutare clasică precum DFS, BFS și IDDFS sunt capabili "
@@ -113,7 +132,7 @@ def generate_response(n_size, results, limit, user_question):
                      "complexității exponențiale. Ei ar consuma o cantitate foarte mare de timp și memorie.\n\n")
 
     sa_data = results["Simulated Annealing"]
-    response += (f"- **Simulated Annealing**: A rulat foarte rapid, în {sa_data['time']:.4f} secunde. "
+    response += (f"- **Simulated Annealing**: A rulat în {sa_data['time']:.4f} secunde. "
                  f"A găsit o soluție {'optimă (0 conflicte)' if sa_data['conflicts'] == 0 else 'cu ' + str(sa_data['conflicts']) + ' conflicte'}."
                  "\n\n")
     
@@ -125,14 +144,24 @@ def generate_response(n_size, results, limit, user_question):
         response += "Nu a găsit o soluție.\n\n"
 
     response += "**Concluzie:**\n"
-    if n_size > limit or fastest_algo == "Simulated Annealing":
-        response += ("**Simulated Annealing** este cea mai potrivită strategie. Deși nu garantează întotdeauna soluția optimă, "
-                     "este extrem de rapid și eficient pentru table de dimensiuni mari, unde algoritmii clasici eșuează. "
-                     "În acest caz, a fost cel mai rapid și a găsit o soluție de calitate.")
-    else:
-        response += (f"**{fastest_algo}** a fost cea mai potrivită strategie, deoarece a găsit o soluție optimă în cel mai scurt timp ({results[fastest_algo]['time']:.4f}s). "
-                     "Pentru table mici, unde găsirea unei soluții garantate este importantă și fezabilă, un algoritm de căutare completă ca acesta este ideal.")
+    
+    response += f"**{fastest_algo}** a fost cea mai potrivită strategie în acest caz, deoarece a găsit o soluție optimă în cel mai scurt timp ({results[fastest_algo]['time']:.4f}s). "
+
+    if fastest_algo == "Simulated Annealing":
+        response += "Este extrem de eficient pentru probleme de optimizare pe spații mari de stări, deși are o componentă probabilistică."
+    elif fastest_algo == "MRV":
+        response += "Heuristica MRV (Minimum Remaining Values) a redus drastic spațiul de căutare, permițând găsirea rapidă a soluției fără a explora toate posibilitățile inutile."
+    elif fastest_algo in ["DFS", "BFS", "IDDFS"]:
+        response += "Pentru table mici, algoritmii de căutare completă sunt ideali deoarece garantează găsirea soluției."
+
+    # Afișăm soluția găsită de cel mai bun algoritm
+    best_solution = results[fastest_algo].get('solution')
+    if best_solution is not None:
+        response += "\n\n**Soluția găsită:(Regina i se afla pe coloana v[i] in matrice)**\n"
+        # Convertim soluția într-un format lizibil (listă de poziții)
+        if isinstance(best_solution, np.ndarray):
+             response += str(best_solution.tolist())
+        else:
+             response += str(best_solution)
 
     return f"Întrebare: {user_question}\n\n{response}"
-
-
