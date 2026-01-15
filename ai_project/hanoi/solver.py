@@ -4,21 +4,44 @@ from contextlib import redirect_stdout
 from .algorithms import bfs, dfs, iddfs, simulated_annealing, solve_hanoi_recursive
 
 PEGS = {0: 'A', 1: 'B', 2: 'C'}
+"""A dictionary that maps peg indices to their names."""
 
 def format_moves(moves):
+    """Formats a list of moves into a human-readable string.
+
+    Args:
+        moves (list): A list of tuples, where each tuple represents a move
+                      and contains the disk number, source peg, and destination peg.
+
+    Returns:
+        str: A formatted string describing the sequence of moves.
+    """
     if not moves:
         return "Nicio mutare."
     return "\n".join([f"- Mută discul {disk} de la {PEGS[src]} la {PEGS[dest]}" for disk, src, dest in moves])
 
 def solve_hanoi(n_disks):
-    """
-    Solves the Tower of Hanoi problem using multiple algorithms and compares them.
+    """Solves the Tower of Hanoi problem for a given number of disks using multiple algorithms 
+    and compares their performance.
+
+    This function implements and benchmarks several algorithms for solving the Tower of Hanoi puzzle:
+    - Breadth-First Search (BFS)
+    - Depth-First Search (DFS)
+    - Iterative Deepening DFS (IDDFS)
+    - Simulated Annealing
+    - The optimal recursive solution
+
+    For a small number of disks (<= 4), it runs all the search algorithms. For a larger number of disks,
+    it skips the search algorithms that are too slow (BFS, DFS, IDDFS) and only runs Simulated Annealing
+    and the optimal recursive solution.
 
     Args:
-        n_disks (int): The number of disks.
+        n_disks (int): The number of disks to solve for. Must be at least 1.
 
     Returns:
-        str: A detailed report.
+        str: A detailed report string containing the results of each algorithm, including execution time,
+             whether a solution was found, and the number of moves. It also includes a conclusion
+             that summarizes which algorithm was the fastest and the solution it found.
     """
     if n_disks < 1:
         return "Numărul de discuri trebuie să fie cel puțin 1."
